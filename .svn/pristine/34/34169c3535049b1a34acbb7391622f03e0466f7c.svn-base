@@ -1,0 +1,51 @@
+﻿生成启动时间为 2016-07-08 10:56:02。
+     1>项目“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITYTest\EMEWEQUALITYTest.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\EMEWEQUALITYTest.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       GenerateTargetFrameworkMonikerAttribute:
+       正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\AXINTEROP.EMEWELIB.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\EMEWE.COMMON.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEDAL\BIN\DEBUG\EMEWEDAL.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEENTITY\BIN\DEBUG\EMEWEENTITY.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\EMEWEQUALITY.EXE”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\OBJ\DEBUG\INTEROP.ACTIVEXLIB.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\INTEROP.EMEWELIB.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\IRISSKIN2.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\LEDSHOW.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\MICROSOFT.OFFICE.INTEROP.ACCESS.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\MICROSOFT.OFFICE.INTEROP.EXCEL.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\EMEWEQUALITY\BIN\DEBUG\MICROSOFT.OFFICE.INTEROP.WORD.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MetaGen.targets(91,5): warning : 缺少必需的文件“G:\EMEWE\EMEWE_PAPER_JIANGXI\6_CODE\江西理文\PROJECT\20151220\EMEWEQUALITY\MOISTUREDETECTIONRULES\BIN\DEBUG\MOISTUREDETECTIONRULES.DLL”。
+         上一错误已转换为警告，因为调用任务时指定了 ContinueOnError=true。
+       ClCompile:
+         所有输出均为最新。
+         所有输出均为最新。
+         所有输出均为最新。
+       ResourceCompile:
+         所有输出均为最新。
+       Link:
+         所有输出均为最新。
+         EMEWEQUALITYTest.vcxproj -> G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Debug\DefaultTest.dll
+       MetaGen:
+       正在跳过目标“MetaGen”，因为所有输出文件相对于输入文件而言都是最新的。
+       FinalizeBuildStatus:
+         正在删除文件“Debug\EMEWEQUALITYTest.unsuccessfulbuild”。
+         正在对“Debug\EMEWEQUALITYTest.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITYTest\EMEWEQUALITYTest.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.70

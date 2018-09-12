@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 35, 41.125" name="DCQUALITY">
+  <DataContextMoniker Name="/DCQUALITYDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ef902937-b53c-4dec-abaf-1787e49faaa6" absoluteBounds="0.75, 0.75, 2, 1.9535852050781251">
+      <DataClassMoniker Name="/DCQUALITYDataContext/Auditing" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3c10bda-0e7f-4edf-a713-8070bb56fe2f" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15d5ed63-8441-4abe-9eb5-55294b497ac1" absoluteBounds="3.75, 0.75, 2, 1.3805261230468751">
+      <DataClassMoniker Name="/DCQUALITYDataContext/WeightSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d0d122a7-d563-4314-843c-10b1fb50090c" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83ec56ea-9016-44d1-b43c-238ed629fdf8" absoluteBounds="6.25, 29.25, 2, 1.9535852050781273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/Beonduty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f7b516f-03e9-4e62-bda5-53be9d57c0fb" absoluteBounds="6.265, 29.71, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" absoluteBounds="9.25, 30.375, 2, 2.1446048990885416">
+      <DataClassMoniker Name="/DCQUALITYDataContext/ClientInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba9a995c-7bae-4038-b594-147e3597fe1a" absoluteBounds="9.265, 30.835, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93362a73-5a96-4993-a0e5-e5467e1faf85" absoluteBounds="15, 26.375, 2, 2.5266442871093773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/DetectionRules" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bc4fc74-728b-423f-aba9-8939deabcd07" absoluteBounds="15.015, 26.835, 1.9700000000000002, 1.966644287109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" absoluteBounds="0.75, 26.25, 2, 2.1446048990885451">
+      <DataClassMoniker Name="/DCQUALITYDataContext/Dictionary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23968136-be4a-4db6-acdd-f302962b9070" absoluteBounds="0.765, 26.71, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19090813-60eb-4738-83b6-03cb198d20a1" absoluteBounds="6.75, 19.625, 2, 1.3805261230468773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/DutyInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68213d0a-126d-48d0-be0e-c8a97b20cb81" absoluteBounds="6.765, 20.085, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aba72002-6333-4912-a828-c937a920b250" absoluteBounds="0.75, 3.75, 2, 1.3805261230468746">
+      <DataClassMoniker Name="/DCQUALITYDataContext/ExtractPack" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed53329d-cbd6-40e1-8a86-68548f8a9fc5" absoluteBounds="0.765, 4.21, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66648bd1-7e6e-4646-ad6c-4b7d37161a63" absoluteBounds="3.75, 3.75, 2, 1.9535852050781246">
+      <DataClassMoniker Name="/DCQUALITYDataContext/ImageRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13100e18-fbe9-4f72-b0f7-004441ba4651" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f87ff3c-7faa-466d-bcae-83a880623190" absoluteBounds="3.5, 25, 2, 1.7625655110677094">
+      <DataClassMoniker Name="/DCQUALITYDataContext/LogInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b144460-287b-4b5b-89ce-e98aa05ffaac" absoluteBounds="3.515, 25.46, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65956901-d641-42a6-ba47-fdae7532517a" absoluteBounds="6.75, 0.75, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/DCQUALITYDataContext/LogInfo_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="326cd0be-652a-4f4a-8a40-46ae1464e73d" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1998cc54-8c9e-4381-b27b-6b23716136cc" absoluteBounds="9.25, 22.875, 2, 3.2907230631510451">
+      <DataClassMoniker Name="/DCQUALITYDataContext/MenuInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26be7163-510d-4999-9447-5a05f18413c9" absoluteBounds="9.265, 23.335, 1.9700000000000002, 2.7307230631510415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eabfc2d8-104f-4db7-a6d1-055b340706e8" absoluteBounds="3.5, 20.5, 2, 1.5715458170572951">
+      <DataClassMoniker Name="/DCQUALITYDataContext/MenuType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a47e1eea-efb7-4f2f-90b9-32ce41171cac" absoluteBounds="3.515, 20.96, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54306ad4-41d9-4853-85b3-7b9be25c6e42" absoluteBounds="6.75, 3.75, 2.875, 5.2009200032552076">
+      <DataClassMoniker Name="/DCQUALITYDataContext/OCC_MOIST_INTERFACE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd7e03ac-0260-4178-9568-bd778b5eeec9" absoluteBounds="6.765, 4.21, 2.8449999999999998, 4.640920003255208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e4e9151-b53c-41b8-af41-acba16543f0f" absoluteBounds="20.5, 23.375, 2, 2.1446048990885451">
+      <DataClassMoniker Name="/DCQUALITYDataContext/OFFQCRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c060f26d-3226-4ca8-bdd7-cb4ed648390c" absoluteBounds="20.515, 23.835, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b5e2ecc-55b0-4d26-8d42-6ec2dfac225c" absoluteBounds="9.75, 0.75, 2, 1.9535852050781251">
+      <DataClassMoniker Name="/DCQUALITYDataContext/Packets" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7730cc4-1c72-4f1c-bcf2-9ad848767a5c" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7ff7087-969a-45dc-a3a3-46a904ac0ef1" absoluteBounds="12, 31.75, 2, 2.5266442871093773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/ParityInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84b0ee00-725f-4158-9fcf-60fc021edecf" absoluteBounds="12.015, 32.21, 1.9700000000000002, 1.966644287109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90e671d8-4754-4b17-8409-2d595dca3759" absoluteBounds="6.5, 26.25, 2, 2.1446048990885451">
+      <DataClassMoniker Name="/DCQUALITYDataContext/PermissionsInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="153dc8dd-6b63-4367-a804-073bebdaf017" absoluteBounds="6.515, 26.71, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8f8e653d-8208-430a-b009-fadd69809bd1" absoluteBounds="3.5, 27.25, 2, 1.7625655110677094">
+      <DataClassMoniker Name="/DCQUALITYDataContext/PresetTare" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67f46430-ad85-46c7-aa2e-1abb9e33a546" absoluteBounds="3.515, 27.71, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b63ac82-e137-47b0-9c27-32db00f332ed" absoluteBounds="9.75, 3.75, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/DCQUALITYDataContext/PrintData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="897e29d8-6155-424f-9862-6ef46107479a" absoluteBounds="9.765, 4.21, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f20d569-65db-48bf-b413-a597f9d10c25" absoluteBounds="3.5, 22.75, 2, 1.5715458170572951">
+      <DataClassMoniker Name="/DCQUALITYDataContext/PunchProject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbe25232-d74f-42a2-a605-6822a0c0e24a" absoluteBounds="3.515, 23.21, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="127844ae-5a37-446b-9c6d-ff531ca6f6c3" absoluteBounds="3.5, 32.25, 2, 1.9535852050781273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/QCGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0241172e-aa9b-44c0-84ad-7ced55e842cf" absoluteBounds="3.515, 32.71, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4defe29-73c1-43d9-ad4a-e7e34131c68d" absoluteBounds="6.25, 32.375, 2, 1.762565511067713">
+      <DataClassMoniker Name="/DCQUALITYDataContext/QCGroupMember" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd3794e5-7707-4a93-a361-cda11028055d" absoluteBounds="6.265, 32.835, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" absoluteBounds="12.25, 19, 2, 9.78539265950521">
+      <DataClassMoniker Name="/DCQUALITYDataContext/QCInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff4ef973-7502-464a-b6fa-46cddbbfe8c5" absoluteBounds="12.265, 19.46, 1.9700000000000002, 9.2253926595052071" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d338af77-7594-460c-b017-860707e014ec" absoluteBounds="17.75, 25.125, 2, 5.5829593912760416">
+      <DataClassMoniker Name="/DCQUALITYDataContext/QCRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="757689a1-db20-44e3-a3e2-83b19aacbd07" absoluteBounds="17.765, 25.585, 1.9700000000000002, 5.0229593912760411" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f408f391-d602-4d46-9a61-30f4ef58e3b7" absoluteBounds="15, 22.125, 2, 2.9086836751302094">
+      <DataClassMoniker Name="/DCQUALITYDataContext/QCRetest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f760946b-76bf-41d1-bdf8-dfbac68d17ce" absoluteBounds="15.015, 22.585, 1.9700000000000002, 2.348683675130208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fcf217d4-7e7b-447f-9ce8-01c9965204af" absoluteBounds="3.75, 9.75, 2, 3.2907230631510416">
+      <DataClassMoniker Name="/DCQUALITYDataContext/RegisterLoosePaperDistribution" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e5375c5-2d25-4e2b-b244-51170ef6c98e" absoluteBounds="3.765, 10.21, 1.9700000000000002, 2.7307230631510415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43e8eb11-15b6-4c3d-a3e5-edfe2fbc474d" absoluteBounds="9.75, 6.75, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/DCQUALITYDataContext/RoleInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1bbf1639-97d0-481b-97c3-3e672c0bd252" absoluteBounds="9.765, 7.21, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73fe691f-86b5-4edf-a9e4-bb4f345f6509" absoluteBounds="12.75, 0.75, 2, 2.3356245930989585">
+      <DataClassMoniker Name="/DCQUALITYDataContext/SMSConfigure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9172d7f-8b25-4d7e-8dbf-8c0a6963d0db" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.7756245930989583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43b9e3cc-a806-49f6-aa63-1676af5cb132" absoluteBounds="12.75, 3.75, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/DCQUALITYDataContext/SMSHandleSendInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64b1ad20-738f-4eaf-aa43-68114b481d54" absoluteBounds="12.765, 4.21, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc773a3d-9882-4e69-b129-ef9b2fef5c2f" absoluteBounds="12.75, 6.75, 2, 2.5266442871093755">
+      <DataClassMoniker Name="/DCQUALITYDataContext/SMSRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73d4dfac-5340-42da-9108-f84463764e9d" absoluteBounds="12.765, 7.21, 1.9700000000000002, 1.966644287109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6f8f29b-57c8-4fed-9a6d-d2a9fb2028fc" absoluteBounds="12.75, 10.75, 2, 1.9535852050781255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/SmsSend" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b51cad8-2237-47e0-8431-6c5e2a999692" absoluteBounds="12.765, 11.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48df6f63-2c68-4979-be43-cd4b1854dd93" absoluteBounds="12, 28.875, 2, 2.3356245930989594">
+      <DataClassMoniker Name="/DCQUALITYDataContext/SystemSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afa0c262-65f4-454f-b41e-dcc3e8592a88" absoluteBounds="12.015, 29.335, 1.9700000000000002, 1.7756245930989583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" absoluteBounds="3.5, 34.75, 2, 1.9535852050781273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/TestItems" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00b7d1f5-1472-4c3b-9821-1901b9c8f948" absoluteBounds="3.515, 35.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c89f679-ca82-4885-9b41-3639406942dc" absoluteBounds="0.75, 13.75, 2, 1.9535852050781255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/TestItems_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb25712c-0828-4ab8-9843-a923bd901a66" absoluteBounds="0.765, 14.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b58900f1-aa96-4fd5-afb8-25617add4c6e" absoluteBounds="3.75, 13.75, 2, 2.9086836751302094">
+      <DataClassMoniker Name="/DCQUALITYDataContext/Unusual" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4ac753d-db5b-4eaa-8e43-cf15ae284ea9" absoluteBounds="3.765, 14.21, 1.9700000000000002, 2.348683675130208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e4d42c6-bf33-4a63-80e0-eba33fd067d7" absoluteBounds="12.75, 13.75, 2, 2.1446048990885416">
+      <DataClassMoniker Name="/DCQUALITYDataContext/Unusualstandard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a608db69-0885-46cf-9b6f-457b87c4564c" absoluteBounds="12.765, 14.21, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8f5016e-7a16-46be-8c01-e2086c3bbb1a" absoluteBounds="15.75, 0.75, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/DCQUALITYDataContext/UnusualType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26ec09b3-dd76-48df-9f1b-ceb169ad4de3" absoluteBounds="15.765, 1.21, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af271ccb-1698-44c5-9281-cb78a34eaff9" absoluteBounds="9.5, 18.625, 2, 3.6727624511718773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/UserInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb429a73-161b-42a2-a8e4-9d2a97e6ed1c" absoluteBounds="9.515, 19.085, 1.9700000000000002, 3.112762451171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a746d416-3dde-4f63-94fe-050044577679" absoluteBounds="6.5, 21.875, 2, 3.0997033691406273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/UserInfo2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd7076a6-48a2-4d66-83ec-98a00aa1b3d1" absoluteBounds="6.515, 22.335, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02fba844-5845-4d3d-b589-7135083c32ff" absoluteBounds="15.75, 3.75, 2, 1.9535852050781246">
+      <DataClassMoniker Name="/DCQUALITYDataContext/WaterTestConfigure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdfab638-acd1-4b9d-a1c7-493233517aac" absoluteBounds="15.765, 4.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8afe7e0d-b54b-42cc-9b87-eb27f1be99f1" absoluteBounds="15.75, 6.75, 2, 1.9535852050781255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/WaterTestConfigureSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcd6fcf1-849b-45c4-9ff8-6a0c6bda3ddf" absoluteBounds="15.765, 7.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70e971cb-b03e-4c03-8768-085d894a8d0e" absoluteBounds="15.75, 9.75, 2, 1.9535852050781255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/WaterTestPersonConfigure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e501d4a2-248e-4859-9720-899af182abee" absoluteBounds="15.765, 10.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 28.2042057291667); (1.75 : 30.14279296875); (2.19791916666667 : 30.14279296875 : JumpStart); (2.36458583333333 : 30.14279296875 : JumpEnd); (2.46354541666667 : 30.14279296875 : JumpStart); (2.63021208333333 : 30.14279296875 : JumpEnd); (2.91666666666667 : 30.14279296875 : JumpStart); (3.08333333333333 : 30.14279296875 : JumpEnd); (5.91666666666667 : 30.14279296875 : JumpStart); (6.08333333333333 : 30.14279296875 : JumpEnd); (6.25 : 30.14279296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_Beonduty" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="83ec56ea-9016-44d1-b43c-238ed629fdf8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 28.2042057291667); (2.2812525 : 31.64279296875); (2.46354541666667 : 31.64279296875 : JumpStart); (2.63021208333333 : 31.64279296875 : JumpEnd); (4.41666666666667 : 31.64279296875 : JumpStart); (4.58333333333333 : 31.64279296875 : JumpEnd); (5.91666666666667 : 31.64279296875 : JumpStart); (6.08333333333333 : 31.64279296875 : JumpEnd); (7.16666666666667 : 31.64279296875 : JumpStart); (7.33333333333333 : 31.64279296875 : JumpEnd); (9.25 : 31.64279296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_ClientInfo" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 27.6333523645833); (3.25 : 27.6333523645833); (3.35294890098922 : 28.0085386901984 : JumpStart); (3.39705109901078 : 28.1692644625793 : JumpEnd); (3.625 : 29); (5.91666666666667 : 29 : JumpStart); (6.08333333333333 : 29 : JumpEnd); (11.4166666666667 : 29 : JumpStart); (11.5833333333333 : 29 : JumpEnd); (11.6666666666667 : 29 : JumpStart); (11.8333333333333 : 29 : JumpEnd); (11.875 : 29); (11.875 : 28.6875); (12.1041666666667 : 28.6875 : JumpStart); (12.2708333333333 : 28.6875 : JumpEnd); (14.0729166666667 : 28.6875 : JumpStart); (14.2395833333333 : 28.6875 : JumpEnd); (14.4166666666667 : 28.6875 : JumpStart); (14.5833333333333 : 28.6875 : JumpEnd); (14.75 : 28.6875); (14.75 : 28.9164453125); (15.2613856918624 : 28.837770590675 : JumpStart); (15.4261143081376 : 28.8124277266327 : JumpEnd); (16.375 : 28.6664453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_DetectionRules" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="93362a73-5a96-4993-a0e5-e5467e1faf85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 26.4334830729167); (3.5 : 26.4334830729167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_LogInfo" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="0f87ff3c-7faa-466d-bcae-83a880623190" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.015626 : 26.25); (2.015626 : 24.83615234375); (6.35416666666667 : 24.83615234375 : JumpStart); (6.52083333333333 : 24.83615234375 : JumpEnd); (9.25 : 24.83615234375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_MenuInfo" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="1998cc54-8c9e-4381-b27b-6b23716136cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 21.38986328125); (7.54166666666667 : 21.38986328125 : JumpStart); (7.70833333333333 : 21.38986328125 : JumpEnd); (9.25 : 21.38986328125); (9.25 : 22.1781640625); (10.25 : 22.1781640625); (10.25 : 22.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/MenuType/MenuType_MenuInfo" />
+      <nodes>
+        <classShapeMoniker Id="eabfc2d8-104f-4db7-a6d1-055b340706e8" />
+        <classShapeMoniker Id="1998cc54-8c9e-4381-b27b-6b23716136cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.546878 : 26.25); (2.546878 : 21.2241731770833); (3.5 : 21.2241731770833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_MenuType" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="eabfc2d8-104f-4db7-a6d1-055b340706e8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.484374 : 26.25); (1.484374 : 24.4473024495443); (6.4375 : 24.4473024495443); (6.4375 : 28.8125); (11.4166666666667 : 28.8125 : JumpStart); (11.5833333333333 : 28.8125 : JumpEnd); (14.0625 : 28.8125); (14.0625 : 28.8478926595052); (14.9375 : 28.8478926595052); (14.9375 : 26.3125); (17.6875 : 26.3125); (17.6875 : 24.2509212239584); (20.5 : 24.2509212239584)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_OFFQCRecord" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="3e4e9151-b53c-41b8-af41-acba16543f0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 32.0396028645833); (11.4166666666667 : 32.0396028645833 : JumpStart); (11.5833333333333 : 32.0396028645833 : JumpEnd); (12 : 32.0396028645833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/ClientInfo/ClientInfo_ParityInfo" />
+      <nodes>
+        <classShapeMoniker Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" />
+        <classShapeMoniker Id="b7ff7087-969a-45dc-a3a3-46a904ac0ef1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 26.7772330729167); (6.5 : 26.7772330729167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_PermissionsInfo" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="90e671d8-4754-4b17-8409-2d595dca3759" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 27.4359531484375); (3.29166666666667 : 27.4359531484375 : JumpStart); (3.45833333333333 : 27.4359531484375 : JumpEnd); (3.5 : 27.4359531484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_PresetTare" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="8f8e653d-8208-430a-b009-fadd69809bd1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.218748 : 26.25); (1.218748 : 23.4741731770833); (2.46354466666667 : 23.4741731770833 : JumpStart); (2.63021133333333 : 23.4741731770833 : JumpEnd); (3.5 : 23.4741731770833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_PunchProject" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="0f20d569-65db-48bf-b413-a597f9d10c25" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 32.25); (4.5 : 30.620441953125); (5.91666666666667 : 30.620441953125 : JumpStart); (6.08333333333333 : 30.620441953125 : JumpEnd); (6.25 : 30.620441953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCGroup/QCGroup_Beonduty" />
+      <nodes>
+        <classShapeMoniker Id="127844ae-5a37-446b-9c6d-ff531ca6f6c3" />
+        <classShapeMoniker Id="83ec56ea-9016-44d1-b43c-238ed629fdf8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 28.2042057291667); (1.2187475 : 33.14279296875); (2.46354541666667 : 33.14279296875 : JumpStart); (2.63021208333333 : 33.14279296875 : JumpEnd); (3.5 : 33.14279296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_QCGroup" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="127844ae-5a37-446b-9c6d-ff531ca6f6c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 27.2718882734375); (3 : 27.2718882734375); (3 : 31.2855859375); (4.41666666666667 : 31.2855859375 : JumpStart); (4.58333333333333 : 31.2855859375 : JumpEnd); (5.91666666666667 : 31.2855859375 : JumpStart); (6.08333333333333 : 31.2855859375 : JumpEnd); (7.25 : 31.2855859375); (7.25 : 32.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_QCGroupMember" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="a4defe29-73c1-43d9-ad4a-e7e34131c68d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 33.1834830729167); (6.25 : 33.1834830729167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCGroup/QCGroup_QCGroupMember" />
+      <nodes>
+        <classShapeMoniker Id="127844ae-5a37-446b-9c6d-ff531ca6f6c3" />
+        <classShapeMoniker Id="a4defe29-73c1-43d9-ad4a-e7e34131c68d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 27.0369986979167); (15 : 27.0369986979167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCInfo/QCInfo_DetectionRules" />
+      <nodes>
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+        <classShapeMoniker Id="93362a73-5a96-4993-a0e5-e5467e1faf85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 31.3739127604167); (11.4166666666667 : 31.3739127604167 : JumpStart); (11.5833333333333 : 31.3739127604167 : JumpEnd); (14.15625 : 31.3739127604167); (14.15625 : 27.6989973958333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/ClientInfo/ClientInfo_QCInfo" />
+      <nodes>
+        <classShapeMoniker Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" />
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 26.5489600911458); (3.375 : 26.5489600911458); (3.375 : 29.125); (5.91666666666667 : 29.125 : JumpStart); (6.08333333333333 : 29.125 : JumpEnd); (11.4166666666667 : 29.125 : JumpStart); (11.5833333333333 : 29.125 : JumpEnd); (11.75 : 29.125); (11.75 : 28.625); (12.5963511666667 : 28.625 : JumpStart); (12.7630178333333 : 28.625 : JumpEnd); (13.171873 : 28.625); (13.171873 : 27.6989973958333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_QCInfo" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 32.6854895364583); (6 : 32.6854895364583); (6 : 28.75); (11.4166666666667 : 28.75 : JumpStart); (11.5833333333333 : 28.75 : JumpEnd); (12.6796845 : 28.75); (12.6796845 : 27.6989973958333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCGroup/QCGroup_QCInfo" />
+      <nodes>
+        <classShapeMoniker Id="127844ae-5a37-446b-9c6d-ff531ca6f6c3" />
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.2812525 : 25.125); (19.2812525 : 23.8138793359375); (20.5 : 23.8138793359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCRecord/QCRecord_OFFQCRecord" />
+      <nodes>
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+        <classShapeMoniker Id="3e4e9151-b53c-41b8-af41-acba16543f0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 31.185866640625); (11.4166666666667 : 31.185866640625 : JumpStart); (11.5833333333333 : 31.185866640625 : JumpEnd); (15.2604166666667 : 31.185866640625 : JumpStart); (15.4270833333333 : 31.185866640625 : JumpEnd); (18.25 : 31.185866640625); (18.25 : 30.1143619791667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/ClientInfo/ClientInfo_QCRecord" />
+      <nodes>
+        <classShapeMoniker Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" />
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.281252 : 26.25); (2.281252 : 26); (2.46354466666667 : 26 : JumpStart); (2.63021133333333 : 26 : JumpEnd); (3.125 : 26); (3.125 : 27.0625); (3.29166666666667 : 27.0625 : JumpStart); (3.45833333333333 : 27.0625 : JumpEnd); (5.75 : 27.0625); (5.75 : 28.4542057291667); (6.35416666666667 : 28.4542057291667 : JumpStart); (6.52083333333333 : 28.4542057291667 : JumpEnd); (11.4166666666667 : 28.4542057291667 : JumpStart); (11.5833333333333 : 28.4542057291667 : JumpEnd); (12.1041666666667 : 28.4542057291667 : JumpStart); (12.2708333333333 : 28.4542057291667 : JumpEnd); (12.5963511666667 : 28.4542057291667 : JumpStart); (12.7630178333333 : 28.4542057291667 : JumpEnd); (13.0885396666667 : 28.4542057291667 : JumpStart); (13.2552063333333 : 28.4542057291667 : JumpEnd); (14.5 : 28.4542057291667); (14.5 : 29.1664453125); (15.2604166666667 : 29.1664453125 : JumpStart); (15.4270833333333 : 29.1664453125 : JumpEnd); (17.375 : 29.1664453125); (17.375 : 28.1196804895833); (17.75 : 28.1196804895833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_QCRecord" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 25.5625); (17.75 : 25.5625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCInfo/QCInfo_QCRecord" />
+      <nodes>
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 23.4393424479167); (18.75 : 23.4393424479167); (18.75 : 25.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCRetest/QCRetest_QCRecord" />
+      <nodes>
+        <classShapeMoniker Id="f408f391-d602-4d46-9a61-30f4ef58e3b7" />
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 26.9104241822917); (2.875 : 26.9104241822917); (2.875 : 27.25); (6.375 : 27.25); (6.375 : 25.9659244791667); (11.4166666666667 : 25.9659244791667 : JumpStart); (11.5833333333333 : 25.9659244791667 : JumpEnd); (11.75 : 25.9659244791667); (11.75 : 28.0739973958333); (14.5 : 28.0739973958333); (14.5 : 25.875); (16 : 25.875); (16 : 24.7536848958333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_QCRetest" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="f408f391-d602-4d46-9a61-30f4ef58e3b7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 23.4393424479167); (15 : 23.4393424479167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/QCInfo/QCInfo_QCRetest" />
+      <nodes>
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+        <classShapeMoniker Id="f408f391-d602-4d46-9a61-30f4ef58e3b7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 30.6864127604167); (11.4166666666667 : 30.6864127604167 : JumpStart); (11.5833333333333 : 30.6864127604167 : JumpEnd); (12 : 30.6864127604167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/ClientInfo/ClientInfo_SystemSet" />
+      <nodes>
+        <classShapeMoniker Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" />
+        <classShapeMoniker Id="48df6f63-2c68-4979-be43-cd4b1854dd93" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 35.64279296875); (10.25 : 35.64279296875); (10.25 : 32.3292057291667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/TestItems/TestItems_ClientInfo" />
+      <nodes>
+        <classShapeMoniker Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" />
+        <classShapeMoniker Id="bf7123d3-c85e-4f4a-8a6a-f6a3a91ab0da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 35.165143984375); (15.34375 : 35.165143984375); (15.34375 : 28.6664453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/TestItems/TestItems_DetectionRules" />
+      <nodes>
+        <classShapeMoniker Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" />
+        <classShapeMoniker Id="93362a73-5a96-4993-a0e5-e5467e1faf85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 36.120441953125); (17.9999975 : 36.120441953125); (17.9999975 : 30.1143619791667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/TestItems/TestItems_QCRecord" />
+      <nodes>
+        <classShapeMoniker Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" />
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.54687875 : 28.2042057291667); (2.54687875 : 35.64279296875); (3.5 : 35.64279296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_TestItems" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.20576715745192 : 36.5355859375); (4.20576715745192 : 36.7855859375); (4.80824393028846 : 36.7855859375); (4.80824393028846 : 36.5355859375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/TestItems/TestItems_TestItems" />
+      <nodes>
+        <classShapeMoniker Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" />
+        <classShapeMoniker Id="4cc80eb6-d8e7-4dc0-8d26-41cf47126735" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 22.2977624511719); (11.5 : 28.2244986979167); (12.1041666666667 : 28.2244986979167 : JumpStart); (12.2708333333333 : 28.2244986979167 : JumpEnd); (12.5963511666667 : 28.2244986979167 : JumpStart); (12.7630178333333 : 28.2244986979167 : JumpEnd); (13.0885396666667 : 28.2244986979167 : JumpStart); (13.2552063333333 : 28.2244986979167 : JumpEnd); (14.0729166666667 : 28.2244986979167 : JumpStart); (14.2395833333333 : 28.2244986979167 : JumpEnd); (14.7916666666667 : 28.2244986979167 : JumpStart); (14.9583333333333 : 28.2244986979167 : JumpEnd); (15 : 28.2244986979167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_DetectionRules" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="93362a73-5a96-4993-a0e5-e5467e1faf85" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.8750005 : 22.2977624511719); (9.8750005 : 22.8125); (11.4166666666667 : 22.8125 : JumpStart); (11.5833333333333 : 22.8125 : JumpEnd); (12.1875 : 22.8125); (12.1875 : 28.828125); (14.0625 : 28.828125); (14.0625 : 28.8478926595052); (14.875 : 28.8478926595052); (14.875 : 26.3125); (17.625 : 26.3125); (17.625 : 24.6879631119792); (20.5 : 24.6879631119792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_OFFQCRecord" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="3e4e9151-b53c-41b8-af41-acba16543f0f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 22.2977624511719); (11.5 : 27.2271028645833); (8.5 : 27.2271028645833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_PermissionsInfo" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="90e671d8-4754-4b17-8409-2d595dca3759" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 22.2977624511719); (11.5 : 33.1834830729167); (8.25 : 33.1834830729167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_QCGroupMember" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="a4defe29-73c1-43d9-ad4a-e7e34131c68d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 21.5587487792969); (12.25 : 21.5587487792969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_QCInfo" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 22.2977624511719); (11.5 : 28.78125); (11.6666666666667 : 28.78125 : JumpStart); (11.8333333333333 : 28.78125 : JumpEnd); (15.2604166666667 : 28.78125 : JumpStart); (15.4270833333333 : 28.78125 : JumpEnd); (17.75 : 28.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_QCRecord" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="d338af77-7594-460c-b017-860707e014ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 21.0899962792969); (12 : 21.0899962792969); (12 : 20.1322351074219); (12.125 : 20.1322351074219); (12.125 : 18.75); (16 : 18.75); (16 : 22.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCQUALITYDataContext/UserInfo/UserInfo_QCRetest" />
+      <nodes>
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+        <classShapeMoniker Id="f408f391-d602-4d46-9a61-30f4ef58e3b7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 26.6047635016026); (3.04166666666667 : 26.6047635016026 : JumpStart); (3.20833333333333 : 26.6047635016026 : JumpEnd); (3.5 : 26.6047635016026); (3.5 : 26.9375); (6.125 : 26.9375); (6.125 : 25.5); (6.35416666666667 : 25.5 : JumpStart); (6.52083333333333 : 25.5 : JumpEnd); (9 : 25.5); (9 : 22.625); (9.79166716666667 : 22.625 : JumpStart); (9.95833383333333 : 22.625 : JumpEnd); (10.8437475 : 22.625); (10.8437475 : 22.2977624511719)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_UserInfo" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 20.3152630615234); (9.5 : 20.3152630615234)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCQUALITYDataContext/DutyInfo/DutyInfo_UserInfo" />
+      <nodes>
+        <classShapeMoniker Id="19090813-60eb-4738-83b6-03cb198d20a1" />
+        <classShapeMoniker Id="af271ccb-1698-44c5-9281-cb78a34eaff9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 26.25); (1.75 : 22.3491731770833); (2.46354466666667 : 22.3491731770833 : JumpStart); (2.63021133333333 : 22.3491731770833 : JumpEnd); (6.5 : 22.3491731770833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/Dictionary/Dictionary_UserInfo2" />
+      <nodes>
+        <classShapeMoniker Id="f4949d5a-f86a-463d-b1a2-636ee59b0246" />
+        <classShapeMoniker Id="a746d416-3dde-4f63-94fe-050044577679" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.625 : 20.9047265625); (7.625 : 21.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCQUALITYDataContext/DutyInfo/DutyInfo_UserInfo2" />
+      <nodes>
+        <classShapeMoniker Id="19090813-60eb-4738-83b6-03cb198d20a1" />
+        <classShapeMoniker Id="a746d416-3dde-4f63-94fe-050044577679" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="debaceac-061b-4736-8938-5eb7b664f531" absoluteBounds="15.75, 12.75, 2, 4.8188806152343773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_Beonduty_D_Q" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14d285fa-c4f3-41ee-a0fb-2c64cd8fe23e" absoluteBounds="15.765, 13.21, 1.9700000000000002, 4.258880615234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b26f4e3-828d-440c-a321-e680a05406a2" absoluteBounds="0.75, 16.75, 2, 2.5266442871093773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_WeightSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a57fe8cc-dfe4-460a-b824-d17cc0bf02fc" absoluteBounds="0.765, 17.21, 1.9700000000000002, 1.966644287109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06297881-dcd9-4648-8ad3-1498b8db5cc5" absoluteBounds="18.75, 5.75, 2, 4.8188806152343755">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_CarTongJI_zj" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9df1cab7-19d4-4f50-9a4d-34f83db6be46" absoluteBounds="18.765, 6.21, 1.9700000000000002, 4.258880615234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1bcbb97-e5b5-4dab-ab0d-1bcb5e0bbae8" absoluteBounds="18.75, 11.75, 2, 3.0997033691406255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/view_ledshow_p" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6635c2e-4078-4d36-9da7-169c97c4e1e8" absoluteBounds="18.765, 12.21, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8d3b464-2a74-4f67-b888-6f937b0d47b0" absoluteBounds="3.75, 6.75, 2, 1.9535852050781255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_LogInfo_Dictionary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a5b5071-a518-4f3b-bd9e-af5eefbac547" absoluteBounds="3.765, 7.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5c20ef7-156d-4fe6-a340-e2df9b36f1d3" absoluteBounds="18.75, 15.75, 2, 4.2458215332031273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_Menu_ControlRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22dbe422-a1f0-409f-9ad9-37e1dd0d7f62" absoluteBounds="18.765, 16.21, 1.9700000000000002, 3.685821533203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a0b6a26-5b5d-4ca9-87da-95f7a82957e0" absoluteBounds="21.75, 0.75, 2, 4.2458215332031246">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_MenuInfoRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4e79a15-e4df-4500-846f-196b09e3d74a" absoluteBounds="21.765, 1.21, 1.9700000000000002, 3.685821533203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ef3077b-db89-41dd-99a1-bb8616d04fcd" absoluteBounds="21.75, 5.75, 2, 3.2907230631510416">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_Packets" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84932071-f3e3-48b0-9e22-cf94cd2881e7" absoluteBounds="21.765, 6.21, 1.9700000000000002, 2.7307230631510415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94269408-44db-4e0c-ab5f-ed631bff6e9d" absoluteBounds="21.75, 9.75, 2, 3.6727624511718755">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_PacketsRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ca892f5-4cef-4f4c-9021-034ef99fa1fc" absoluteBounds="21.765, 10.21, 1.9700000000000002, 3.112762451171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="07b7edf8-6edb-4f8c-81db-5a8356523706" absoluteBounds="3.75, 17.75, 2, 1.9535852050781273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_PresetTare_Dictionary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16d9a8e0-762d-470c-b268-cf5b4bb7a992" absoluteBounds="3.765, 18.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b45b6af-062e-41ff-965a-8525379e91a7" absoluteBounds="24.75, 0.75, 2, 4.0548018391927076">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_QcInfoTongJI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0ebcf27b-d4c6-4c16-82db-419ccaa3f61b" absoluteBounds="24.765, 1.21, 1.9700000000000002, 3.494801839192708" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="190b740c-d211-4b44-bfa1-6763ba779a7c" absoluteBounds="24.75, 5.75, 2, 5.2009200032552076">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_QcInfoTongJI_zj" />
+      <nestedChildShapes>
+        <elementListCompartment Id="665db553-ed06-427f-8b10-e1ab429cd4b0" absoluteBounds="24.765, 6.21, 1.9700000000000002, 4.640920003255208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df53b3cb-b47b-4752-adbf-a44e532d6c79" absoluteBounds="26.75, 11.75, 2, 26.595125732421877">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_QCRecordInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b9b0ce2-08f4-47eb-a089-d242ba92889c" absoluteBounds="26.765, 12.21, 1.9700000000000002, 26.035125732421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d4cf6d8-d9d6-4496-9115-7745d39cb22b" absoluteBounds="29.75, 0.75, 2, 26.213086344401042">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_QCRecordInfo_Update" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98ef6d4e-c5f2-4849-b49a-2c2896f96c80" absoluteBounds="29.765, 1.21, 1.9700000000000002, 25.653086344401039" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="918c1c78-bd0e-462e-9422-e7cf62aa0e1b" absoluteBounds="29.75, 24.75, 2, 16.089042561848963">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_SMSSendUnusual" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49375ed2-e348-4305-8460-5a9ee38c285a" absoluteBounds="29.765, 25.21, 1.9700000000000002, 15.529042561848957" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="073480e6-007b-4e24-a56a-0e97d152096e" absoluteBounds="15.75, 31.75, 2, 2.1446048990885416">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_TestItems_Dictionary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8d8d200-7d82-4c3f-ace5-ac6063fb3ac6" absoluteBounds="15.765, 32.21, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d536820b-f931-443e-ba50-8262e27055e6" absoluteBounds="18.75, 31.75, 2, 4.054801839192713">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_Unusual_SMS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0db3c93f-858b-472a-b506-0c87220e4ae1" absoluteBounds="18.765, 32.21, 1.9700000000000002, 3.494801839192708" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9db1cf2-e69c-438a-a2ce-1080e7bf0e40" absoluteBounds="32.75, 0.75, 2, 5.5829593912760407">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_UnusualHandel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="651d08ff-59a0-4b38-bb35-cfa940b05eec" absoluteBounds="32.765, 1.21, 1.9700000000000002, 5.0229593912760411" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bc5cf93-8dc7-4407-b7a9-0cd6ef2240b6" absoluteBounds="32.75, 6.75, 2, 6.15601847330729">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_UnusualImage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0fa90c0-b30a-48c8-be76-835216a009e3" absoluteBounds="32.765, 7.21, 1.9700000000000002, 5.5960184733072911" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47d80d0f-6968-4c8e-8c15-87d736e1f042" absoluteBounds="32.75, 13.75, 2, 3.0997033691406273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_UpdateTongJI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d795d24-fa99-4038-9f5c-eee60c2ec49c" absoluteBounds="32.765, 14.21, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cda31e6c-e5a8-433b-b356-655cbcd5a910" absoluteBounds="32.75, 17.75, 2, 3.8637821451822951">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_UserInfo_D_R_d" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d2dbaf0-62b8-41b8-9e94-35672d97ab44" absoluteBounds="32.765, 18.21, 1.9700000000000002, 3.3037821451822915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac9ea1de-1db5-4589-b5d0-54633267881e" absoluteBounds="21.75, 32.75, 2, 3.0997033691406273">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_UserInfo2_D_R_d" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dac91bf-4039-44b9-9403-c435f05d15d2" absoluteBounds="21.765, 33.21, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2bcc92fa-320b-4d4e-b1aa-c983e74cf1b8" absoluteBounds="4, 2.25, 2, 1.3805261230468751">
+      <DataClassMoniker Name="/DCQUALITYDataContext/idebarJoinU9" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c3d272e-fd58-4470-9b5f-ab3cbc582200" absoluteBounds="4.015, 2.71, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f676ac18-2950-459f-b775-c1882bb03dca" absoluteBounds="23.75, 14.125, 2, 20.673515218098963">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_QCInfo_InTerface" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8ab7cd3-a0bb-48a3-8635-5390a1196bac" absoluteBounds="23.765, 14.585, 1.9700000000000002, 20.113515218098957" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6ac90e8-7f6f-4ef8-b21f-4db598de01a0" absoluteBounds="18.875, 0.5, 2, 5.9649987792968746">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_CarTongJI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="838ef9b0-b64c-4d0c-bfa5-c6fbd50a773b" absoluteBounds="18.89, 0.96, 1.9700000000000002, 5.404998779296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11ef747e-14cb-4d86-9159-7fea7bbeb9b5" absoluteBounds="0.5, 5.125, 2, 2.9086836751302076">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_ClientInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13e92f44-069d-4dc4-931d-37e420cbf01d" absoluteBounds="0.515, 5.585, 1.9700000000000002, 2.348683675130208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71835a4a-bfa6-4aa5-8dee-ed443a5510f6" absoluteBounds="7.25, 9.875, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/DCQUALITYDataContext/CollectionInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36f7bdf0-3c67-43ff-ba03-a80bd4d124e8" absoluteBounds="7.265, 10.335, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="faae179c-79d7-428b-adf7-677dfe04c52f" absoluteBounds="6.75, 12.5, 2, 2.9086836751302076">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_Collection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9d3a337-790f-4367-8878-ad65794860e8" absoluteBounds="6.765, 12.96, 1.9700000000000002, 2.348683675130208" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4028bb2c-9a25-44e8-8711-046e4892ca98" absoluteBounds="1.375, 8, 2, 6.5380578613281255">
+      <DataClassMoniker Name="/DCQUALITYDataContext/MATERIAL_QC_INTERFACE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa20febb-175f-4bb4-89dc-b00c6378712f" absoluteBounds="1.3900000000000001, 8.46, 1.9700000000000002, 5.978057861328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="501e3618-bcdf-431f-8e1f-e4bc1f4e668c" absoluteBounds="9.875, 11.625, 2, 8.2572351074218773">
+      <DataClassMoniker Name="/DCQUALITYDataContext/DRAW_EXAM_INTERFACE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d65bb6a5-6e14-4e05-9832-f23fc0720648" absoluteBounds="9.89, 12.085, 1.9700000000000002, 7.697235107421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.875 : 19.4411175537109); (12.0416666666667 : 19.4411175537109 : JumpStart); (12.2083333333333 : 19.4411175537109 : JumpEnd); (12.25 : 19.4411175537109)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCQUALITYDataContext/DRAW_EXAM_INTERFACE/DRAW_EXAM_INTERFACE_QCInfo" />
+      <nodes>
+        <classShapeMoniker Id="501e3618-bcdf-431f-8e1f-e4bc1f4e668c" />
+        <classShapeMoniker Id="5f6d943d-67ae-42f0-9e55-95e1033c6649" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d2dec299-15bb-4a69-9a66-ee769cd5cc12" absoluteBounds="21.25, 14.375, 2, 18.572298583984377">
+      <DataClassMoniker Name="/DCQUALITYDataContext/View_QCInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97dba546-800f-4616-9854-6424b9e8e2fd" absoluteBounds="21.265, 14.835, 1.9700000000000002, 18.012298583984375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

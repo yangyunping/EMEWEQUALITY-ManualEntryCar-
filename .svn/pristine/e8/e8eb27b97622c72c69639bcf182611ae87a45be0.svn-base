@@ -1,0 +1,378 @@
+ImageRuntimeVersion: v2.0.50727
+Assembly EMEWEDAL, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly EMEWEEntity, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=None, flags=None
+Assembly System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly EMEWE.Common, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=None, flags=None
+Class EMEWEDAL.TestItemsDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetListWhereTestItemName(String, String): PrivateScope, Public, Static, HideBySig
+    GetTestItemId(String): PrivateScope, Public, Static, HideBySig
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(TestItems): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.DictionaryDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Insert(Dictionary): PrivateScope, Public, Static, HideBySig
+    InsertOneDictionary(Dictionary): PrivateScope, Public, Static, HideBySig
+    Update(Dictionary): PrivateScope, Public, Static, HideBySig
+    UpdateMore(Dictionary): PrivateScope, Public, Static, HideBySig
+    GetListDictionary(): PrivateScope, Public, Static, HideBySig
+    GetValueStateDictionary(String): PrivateScope, Public, Static, HideBySig
+    GetStateDictionary(): PrivateScope, Public, Static, HideBySig
+    GetDictionaryID(String): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    UpdateDictionary(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.RoleInfoDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneRoleInfo(RoleInfo, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    InsertOneRoleInfo(RoleInfo): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Int32): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+    UpdateOneRoleInfo(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.OFFQCRecordDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertOFFQCRecord(OFFQCRecord, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.LinQBaseDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String connectionString : Public, Static, InitOnly
+  Methods:
+    getDate(): PrivateScope, Public, Static, HideBySig
+    ExecuteSql(String): PrivateScope, Public, Static, HideBySig
+    ExecuteDataset(CommandType, String, SqlParameter[]): PrivateScope, Public, Static, HideBySig
+    Query(DataContext): PrivateScope, Public, Static, HideBySig
+    Query(DataContext, Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(DataContext, Action`1): PrivateScope, Public, Static, HideBySig
+    Single(DataContext, Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOne(DataContext, T): PrivateScope, Public, Static, HideBySig
+    InsertToMany(DataContext, IEnumerable`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(DataContext, Expression`1): PrivateScope, Public, Static, HideBySig
+    DeleteToManyByCondition(DataContext, IEnumerable`1): PrivateScope, Public, Static, HideBySig
+    Update(DataContext, Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    ListT(DataContext, Expression`1): PrivateScope, Public, Static, HideBySig
+    DataSorting(IQueryable`1, String, String): PrivateScope, Public, Static, HideBySig
+    DataPaging(IQueryable`1, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    SortingAndPaging(IQueryable`1, String, String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    DetectionConn(String): PrivateScope, Public, Static, HideBySig
+    Query(String): PrivateScope, Public, Static, HideBySig
+    GetSingle(String): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.OCC_MOIST_INTERFACEDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertOneOCC_MOIST_INTERFACE(OCC_MOIST_INTERFACE, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    SetAndInsertOCC_MOIST_INTERFACE(View_QCInfo, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.LogInfoDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    QueryView_LogInfo_Dictionary(): PrivateScope, Public, Static, HideBySig
+    QueryView_LogInfo_Dictionary(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(LogInfo): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+    loginfoadd(String, String, String): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.SmsSendDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(SmsSend, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Insert(SmsSend): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.QCGroupDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.PresetTareDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    GetListPresetTare(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(PresetTare): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.UserInfoDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(UserInfo, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.SMSConfigureDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(SMSConfigure): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.PredicateExtensionses: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    True(): PrivateScope, Public, Static, HideBySig
+    False(): PrivateScope, Public, Static, HideBySig
+    Or(Expression`1, Expression`1): PrivateScope, Public, Static, HideBySig
+    And(Expression`1, Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.PacketsDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(Packets): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.ImageRecordDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(ImageRecord): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.BeondutyDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(Beonduty): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.BaseDao: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Data.Linq.DataContext dc : Public, Static
+  Methods:
+    conStr(): PrivateScope, Public, Static, HideBySig
+    Insert(Object): PrivateScope, Public, Static, HideBySig
+    InsertList(Object): PrivateScope, Public, Static, HideBySig
+    InsertList2(): PrivateScope, Public, Static, HideBySig
+    InsertID(): PrivateScope, Public, Static, HideBySig
+    Update(Object): PrivateScope, Public, Static, HideBySig
+    GetIQueryableObject(): PrivateScope, Public, Static, HideBySig
+    GetListObject(): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.QCInfoDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    GetListQCInfo(Expression`1): PrivateScope, Public, Static, HideBySig
+    GetIntDRAWCount(Int32): PrivateScope, Public, Static, HideBySig
+    addQCInfoDAL(QCInfo): PrivateScope, Public, Static, HideBySig
+    GetQCInfo(Int32): PrivateScope, Public, Static, HideBySig
+    GetQCInfoCarNO(String): PrivateScope, Public, Static, HideBySig
+    UpdateInfo(QCInfo): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    GetBags(Int32): PrivateScope, Public, Static, HideBySig
+    GetQCInfo_RESULT_AVERAGE(Int32, String): PrivateScope, Public, Static, HideBySig
+    GetQCInfo_RESULT_AVG(Expression`1): PrivateScope, Public, Static, HideBySig
+    GetQCInfo_RESULT_SUM(Int32, String): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.WaterTestConfigureSetDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(WaterTestConfigureSet): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.PermissionsInfoDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    QueryView_MenuInfoRole(): PrivateScope, Public, Static, HideBySig
+    QueryView_Menu_ControlRole(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    QueryView_Menu_ControlRole(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(PermissionsInfo): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.ClientDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertOneClientInfo(ClientInfo, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    ISClientInfoName(String): PrivateScope, Public, Static, HideBySig
+    GetClientInfo(Int32): PrivateScope, Public, Static, HideBySig
+    UpdateOneQcRecord(ClientInfo): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.QCRecordDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertOneQCRecord(QCRecord, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    GetQCInfo(Int32): PrivateScope, Public, Static, HideBySig
+    GetQCInfo(Int32, String): PrivateScope, Public, Static, HideBySig
+    UpdateOneQcRecord(QCRecord): PrivateScope, Public, Static, HideBySig
+    GetMaxQCRecordId(): PrivateScope, Public, Static, HideBySig
+    GetQCRecord_RESULT_AVERAGE(Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    GetQCRecord_RESULT_SUM(Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    GetListQCRecord(String, String, Int32): PrivateScope, Public, Static, HideBySig
+    GetListQCRecord(String, String, String): PrivateScope, Public, Static, HideBySig
+    GetListView_QCRecordInfo(Int32&, Int32, Int32, Expression`1): PrivateScope, Public, Static, HideBySig
+    GetListQCRecordWate(Int32, Int32, String, String, String): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    UpdateQcRecordQCInfoID(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+    GetViewQCRecordInfo(Int32): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.UnusualstandardDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(Unusualstandard, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.SMSRecordDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(SMSRecord): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.MenuInfoDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    QueryView_MenuInfoRole(): PrivateScope, Public, Static, HideBySig
+    QueryView_MenuInfoRole(Expression`1): PrivateScope, Public, Static, HideBySig
+    QueryView_Menu_ControlRole(): PrivateScope, Public, Static, HideBySig
+    QueryView_Menu_ControlRole(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(MenuInfo): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+    GetMenuID(String): PrivateScope, Public, Static, HideBySig
+    GetValueState(Int32): PrivateScope, Public, Static, HideBySig
+    InsertMenuInfo(MenuInfo): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.LinqSort: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    OrderBy(IQueryable`1, String): PrivateScope, Public, Static, HideBySig
+    ThenBy(IOrderedQueryable`1, String): PrivateScope, Public, Static, HideBySig
+    DynamicLambda(String): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.CollectionDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(CollectionInfo): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.UnusualDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(Unusual, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Insert(Unusual): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.UserInfo2DAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    GetListWhereUserInfoName(String, String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(UserInfo2, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.MenuTypeDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetItemsForListing(String): PrivateScope, Public, Static, HideBySig
+    Query(): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Single(Expression`1): PrivateScope, Public, Static, HideBySig
+    InsertOneQCRecord(MenuType, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.LEDShowDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetLEDShow(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    UpdateQCRecordISLEDSHOW(Int32): PrivateScope, Public, Static, HideBySig
+    LEDShow(String): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.MATERIAL_QC_INTERFACEDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InsertOneMATERIAL_QC_INTERFACE(MATERIAL_QC_INTERFACE, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig
+    SetAndInsertMATERIAL_QC_INTERFACE(View_QCInfo, Int32&(Out)): PrivateScope, Public, Static, HideBySig
+    DeleteToMany(Expression`1): PrivateScope, Public, Static, HideBySig
+Class EMEWEDAL.DRAW_EXAM_INTERFACEDAL: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Query(Expression`1): PrivateScope, Public, Static, HideBySig
+    Update(Expression`1, Action`1): PrivateScope, Public, Static, HideBySig

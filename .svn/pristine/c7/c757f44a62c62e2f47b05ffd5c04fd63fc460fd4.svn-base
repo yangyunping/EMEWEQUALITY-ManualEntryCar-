@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="EMEWEQUALITY.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <connectionStrings>
+    <add name="EMEWEQCConnectionString" connectionString="Data Source=EMEWE006-PC\EMEWE;Initial Catalog=JXEMEWEQC;Persist Security Info=True;User ID=sa;Password=123456" providerName="System.Data.SqlClient" />
+    <add name="EMEWEQUALITY.Properties.Settings.EMEWEQCConnectionString" connectionString="Data Source=EMEWE006-PC\EMEWE;Initial Catalog=JXEMEWEQC;Persist Security Info=True;User ID=sa;Password=123456" providerName="System.Data.SqlClient" />
+    <add name="Folder" connectionString="Photo\" />
+    <add name="ISLEDShow" connectionString="0" />
+  </connectionStrings>
+  <appSettings>
+    <!--可导出Excel【sheet】的最大数-->
+    <add key="sheetcount" value="10" />
+    <!--<add key="FWpath" value="\\172.19.1.8\unusualImage"/>-->
+    <add key="FWpath" value="D:\unusualImage" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <system.serviceModel>
+    <bindings />
+    <client />
+  </system.serviceModel>
+  <applicationSettings>
+    <EMEWEQUALITY.Properties.Settings>
+      <setting name="EMEWEQUALITY_LWGETWebReference_QualityPaperManagement_v001" serializeAs="String">
+        <value>http://localhost:9966/WastePaperManagement/QualityPaper/QualityPaperManagement/v001</value>
+      </setting>
+      <setting name="EMEWEQUALITY_LWU9WebReference_LooseWastePaperManagement_v001" serializeAs="String">
+        <value>http://localhost:9966/WastePaperManagement/LooseWastePaper/LooseWastePaperManagement/v001</value>
+      </setting>
+    </EMEWEQUALITY.Properties.Settings>
+  </applicationSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

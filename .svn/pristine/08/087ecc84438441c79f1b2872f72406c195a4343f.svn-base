@@ -1,0 +1,83 @@
+﻿
+#include "StdAfx.h"
+using namespace System::Collections::Generic;
+using namespace Microsoft::VisualStudio::TestTools::UnitTesting;
+using namespace EMEWEQUALITY::QCAdmin;
+namespace EMEWEQUALITYTest {
+    using namespace System;
+    ref class FormWeightTest;
+    
+    
+    /// <summary>
+///这是 FormWeightTest 的测试类，旨在
+///包含所有 FormWeightTest 单元测试
+///</summary>
+	[TestClass]
+	public ref class FormWeightTest
+	{
+
+	private: Microsoft::VisualStudio::TestTools::UnitTesting::TestContext^  testContextInstance;
+			 /// <summary>
+			 ///获取或设置测试上下文，上下文提供
+			 ///有关当前测试运行及其功能的信息。
+			 ///</summary>
+	public: property Microsoft::VisualStudio::TestTools::UnitTesting::TestContext^  TestContext
+			{
+				Microsoft::VisualStudio::TestTools::UnitTesting::TestContext^  get()
+				{
+					return testContextInstance;
+				}
+				System::Void set(Microsoft::VisualStudio::TestTools::UnitTesting::TestContext^  value)
+				{
+					testContextInstance = value;
+				}
+			}
+
+#pragma region 附加测试特性
+			// 
+			//编写测试时，还可使用以下特性:
+			//
+			//使用 ClassInitialize 在运行类中的第一个测试前先运行代码
+			//public: [ClassInitialize]
+			//static System::Void MyClassInitialize(TestContext^  testContext)
+			//{
+			//}
+			//
+			//使用 ClassCleanup 在运行完类中的所有测试后再运行代码
+			//public: [ClassCleanup]
+			//static System::Void MyClassCleanup()
+			//{
+			//}
+			//
+			//使用 TestInitialize 在运行每个测试前先运行代码
+			//public: [TestInitialize]
+			//System::Void MyTestInitialize()
+			//{
+			//}
+			//
+			//使用 TestCleanup 在运行完每个测试后运行代码
+			//public: [TestCleanup]
+			//System::Void MyTestCleanup()
+			//{
+			//}
+			//
+#pragma endregion
+			/// <summary>
+			///GetSelectedBags 的测试
+			///</summary>
+	public: [TestMethod]
+			void GetSelectedBagsTest()
+			{
+				//FormWeight^  target = (gcnew FormWeight()); // TODO: 初始化为适当的值
+				//String^  bags = System::String::Empty; // TODO: 初始化为适当的值
+				//List<String^ >^  bagList = nullptr; // TODO: 初始化为适当的值
+				//List<String^ >^  bagListExpected = nullptr; // TODO: 初始化为适当的值
+				//target->GetSelectedBags(bags, bagList);
+				//Assert::AreEqual(bagListExpected, bagList);
+				//Assert::Inconclusive(L"无法验证不返回值的方法。");
+			}
+	};
+}
+namespace EMEWEQUALITYTest {
+    
+}

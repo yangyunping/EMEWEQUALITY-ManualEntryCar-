@@ -1,0 +1,125 @@
+﻿using MoistureDetectionRules;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Windows.Forms;
+using System.Collections.Generic;
+
+
+namespace MoistureDectionRulesTest
+{
+    
+    
+    /// <summary>
+    ///这是 MoistureDetectionRulesCreatorTest 的测试类，旨在
+    ///包含所有 MoistureDetectionRulesCreatorTest 单元测试
+    ///</summary>
+    [TestClass()]
+    public class MoistureDetectionRulesCreatorTest
+    {
+        private TestContext testContextInstance;
+
+        /// <summary>
+        ///获取或设置测试上下文，上下文提供
+        ///有关当前测试运行及其功能的信息。
+        ///</summary>
+        public TestContext TestContext
+        {
+            get
+            {
+                return testContextInstance;
+            }
+            set
+            {
+                testContextInstance = value;
+            }
+        }
+
+        #region 附加测试特性
+        // 
+        //编写测试时，还可使用以下特性:
+        //
+        //使用 ClassInitialize 在运行类中的第一个测试前先运行代码
+        //[ClassInitialize()]
+        //public static void MyClassInitialize(TestContext testContext)
+        //{
+        //}
+        //
+        //使用 ClassCleanup 在运行完类中的所有测试后再运行代码
+        //[ClassCleanup()]
+        //public static void MyClassCleanup()
+        //{
+        //}
+        //
+        //使用 TestInitialize 在运行每个测试前先运行代码
+        //[TestInitialize()]
+        //public void MyTestInitialize()
+        //{
+        //}
+        //
+        //使用 TestCleanup 在运行完每个测试后运行代码
+        //[TestCleanup()]
+        //public void MyTestCleanup()
+        //{
+        //}
+        //
+        #endregion
+
+
+
+        /// <summary>
+        ///GetSumWaterCount 的测试
+        ///</summary>
+        [TestMethod()]
+        public void GetSumWaterCountTest()
+        {
+            MoistureDetectionRulesCreator target = new MoistureDetectionRulesCreator(); // TODO: 初始化为适当的值
+            string company = "重庆理文"; // TODO: 初始化为适当的值
+            string[] testBags = {"11", "5"}; // TODO: 初始化为适当的值
+            int testBagWaterCount = 0; // TODO: 初始化为适当的值
+            int testBagWaterCountExpected = 8; // TODO: 初始化为适当的值
+            int expected = 16; // TODO: 初始化为适当的值
+            int actual;
+            actual = target.GetSumWaterCount(company, testBags, out testBagWaterCount);
+            Assert.AreEqual(testBagWaterCountExpected, testBagWaterCount);
+            Assert.AreEqual(expected, actual);
+
+            company = "江西理文"; // TODO: 初始化为适当的值
+            testBagWaterCount = 0; // TODO: 初始化为适当的值
+            testBagWaterCountExpected = 8; // TODO: 初始化为适当的值
+            expected = 16; // TODO: 初始化为适当的值         
+            actual = target.GetSumWaterCount(company, testBags, out testBagWaterCount);
+            Assert.AreEqual(testBagWaterCountExpected, testBagWaterCount);
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        ///ShowSetupForm 的测试
+        ///</summary>
+        [TestMethod()]
+        public void ShowSetupFormTest()
+        {
+            MoistureDetectionRulesCreator target = new MoistureDetectionRulesCreator(); // TODO: 初始化为适当的值
+            string company = "江西理文"; // TODO: 初始化为适当的值           
+            DialogResult dlgResult = target.ShowSetupForm(company);
+            if (dlgResult == DialogResult.OK)
+            {
+                
+            }
+            Assert.Inconclusive("无法验证不返回值的方法。");
+        }
+
+
+
+        /// <summary>
+        ///LoadMoistureDetectionRuleParams 的测试
+        ///</summary>
+        [TestMethod()]
+        public void LoadMoistureDetectionRuleParamsTest()
+        {
+            MoistureDetectionRulesCreator target = new MoistureDetectionRulesCreator(); // TODO: 初始化为适当的值
+            string company = "江西理文"; // TODO: 初始化为适当的值
+            string cfgPath =  @"G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Debug" + "\\moistureDetectRule.xml"; ; // TODO: 初始化为适当的值
+            target.LoadMoistureDetectionRuleParams(company, cfgPath);    
+        }
+    }
+}

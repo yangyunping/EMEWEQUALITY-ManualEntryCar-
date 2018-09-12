@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="370e63b5-08bd-434c-9c7c-ef2758f75f4e" name="Administrator@USER-20150528QE 2016-04-29 11:48:07" runUser="USER-20150528QE\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="d5def5b1-7f2c-4d39-a9cb-91101859a213">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment userDeploymentRoot="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="Administrator_USER-20150528QE 2016-04-29 11_48_07">
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_yk\6_code\EMEWE.disk.xml\EMEWE.disk.xml\bin\Debug\EMEWE.Disk.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\MoistureDetectionRules\bin\Debug\MoistureDetectionRules.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2016-04-29T11:48:07.1503934+08:00" queuing="2016-04-29T11:48:09.0895043+08:00" start="2016-04-29T11:48:09.4095226+08:00" finish="2016-04-29T11:48:20.7531714+08:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="USER-20150528QE" outcome="Error" timestamp="2016-04-29T11:48:20.7491712+08:00">
+        <Text>测试宿主进程意外退出。</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SaveCfgTest" storage="g:\emewe\emewe_paper_jiangxi\6_code\江西理文\project\20151220\emewequality\moisturedectionrulestest\bin\debug\moisturedectionrulestest.dll" id="e98f089b-9ffa-5bbc-a87c-531aacf52cf1">
+      <Execution id="2a64603f-0f53-471f-9c3f-263dedf1cbdf" />
+      <TestMethod codeBase="G:/EMEWE/emewe_Paper_jiangxi/6_code/江西理文/Project/20151220/EMEWEQUALITY/MoistureDectionRulesTest/bin/Debug/MoistureDectionRulesTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MoistureDectionRulesTest.JiangXiMoistureDetectionRuleTest, MoistureDectionRulesTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveCfgTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="e98f089b-9ffa-5bbc-a87c-531aacf52cf1" executionId="2a64603f-0f53-471f-9c3f-263dedf1cbdf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2a64603f-0f53-471f-9c3f-263dedf1cbdf" testId="e98f089b-9ffa-5bbc-a87c-531aacf52cf1" testName="SaveCfgTest" computerName="USER-20150528QE" duration="00:00:10.9946288" startTime="2016-04-29T11:48:09.7585426+08:00" endTime="2016-04-29T11:48:20.7531714+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a64603f-0f53-471f-9c3f-263dedf1cbdf">
+    </UnitTestResult>
+  </Results>
+</TestRun>

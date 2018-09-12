@@ -1,0 +1,657 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Configuration;
+using System.Xml;
+using EMEWE.Common;
+using EMEWEDAL;
+using EMEWEEntity;
+using System.Linq.Expressions;
+using MoistureDetectionRules;
+using EMEWEQUALITY.WatchDog;
+using EMEWEQUALITY.LED;
+
+namespace EMEWEQUALITY
+{
+    public partial class Login : Form
+    {
+        private string UserName;//用户名
+        private string UserID;//用户ID
+        public MainFrom mf;
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            //Common.WriteTextLogWate("水分值小于0、设定的最小值、大于设定最大值不接受" );
+            //Common.WriteTextLog("水分值小于0、设定的最小值、大于设定最大值不接受");
+            this.Size = new Size(1024, 768);
+            txtName.Location = new Point(467, 321);
+            txtName.Size = new Size(223, 14);
+            txtPwd.Location = new Point(467, 353);
+            txtPwd.Size = new Size(223, 14);
+            pLogin.Location = new Point(651, 416);
+            txtName.Focus();
+            mf = new MainFrom();
+
+            Common.dtScaleComAttribute = GetWeightType();
+            GetSystemSet();
+            GetMoistureDetectionRuleCfg();
+            //if ((Common.CLIENT_NAME == "test" && Common.CLIENTID == 1) || !ISClient())
+            //{
+            //    SetSystemSet();
+            //}           
+        }
+
+        
+
+        private void SetSystemSet()
+        {
+            EMEWEQUALITY.SystemAdmin.SystemSet set = new EMEWEQUALITY.SystemAdmin.SystemSet();
+            set.Owner = this;
+            set.mf = mf;
+            set.login = this;
+            set.tabControl1.SelectedIndex = 5;
+            set.Show();
+            // btnBeginSet.Enabled = true;
+            this.Hide();
+            pLogin.Enabled = false;
+            //btnLogin.Enabled = false;
+
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            UserLogin();
+
+        }
+
+        private DataTable GetWeightType()
+        {
+            DataTable dt = new DataTable();                 
+            dt.Columns.Add("name");
+            dt.Columns.Add("rate");
+            string filepath = System.IO.Directory.GetCurrentDirectory() + "\\WeightType.xml";
+            XmlDocument xmlDoc = new XmlDocument();
+            string name = "";
+            xmlDoc.Load(filepath);
+            XmlNodeList myNode = xmlDoc.SelectNodes("//str");
+            //判断是否有这个节点
+            if (myNode.Count != 0)
+            {
+                XmlNodeList nodeList = xmlDoc.SelectSingleNode("str").ChildNodes;//获取bookstore节点的所有子节点
+                foreach (XmlNode xn in nodeList)//遍历所有子节点
+                {
+                    string key = "";
+                    string value = "";
+                    XmlElement xe = (XmlElement)xn;//将子节点类型转换为XmlElement类型
+                    name = xe.GetAttribute("genre").ToString();
+                    XmlNodeList nls = xe.ChildNodes;//继续获取xe子节点的所有子节点
+                    foreach (XmlNode xn1 in nls)//遍历
+                    {
+                        XmlElement xe2 = (XmlElement)xn1;//转换类型
+                        if (xe2.Name == "name")
+                        {
+                            key = xe2.InnerText;
+                        }
+                        if (xe2.Name == "rate")
+                        {
+                            value = xe2.InnerText;
+                        }
+                    }
+                    DataRow row = dt.NewRow();
+                    row["name"] = key;
+                    row["rate"] = value;
+                    dt.Rows.Add(row);
+                }
+            }
+
+            return dt;
+        }
+
+        #region 获得系统设置信息
+        /// <summary>
+        /// 获得系统设置信息
+        /// </summary>
+        private void GetSystemSet()
+        {
+            string filepath = System.IO.Directory.GetCurrentDirectory() + "\\SystemSet.xml";
+            try
+            {
+                string version = "";
+                string DVRIP = "";
+                string DVRServerPort = "";
+                string DVRLoginName = "";
+                string DVRPwd = "";
+                string SaveFiel = "";
+                int Channel1 = 0;
+                int Channel2 = 0;
+                int Channel3 = 0;
+
+                string MOISTURECOM = "";
+                string MOISTURENAME = "";
+                string platformScaleName = "";
+                string MOISTURECOMTwo = "";
+                string MOISTURENAMETwo = "";
+                string platformScaleNameTwo = "";
+                string WEIGHTCOM = "";
+                string WEIGHTCOMTwo = "";
+                // string NTCODE = "";
+                string LEDFROMX = ""; string LEDFROMY = ""; string LEDX = ""; string LEDY = "";
+                string CLIENTID = "";
+                string CLIENTNAME = "";
+                string CollectionID = "";
+                string CollectionNAME = "";
+                string SFYCOUNT = "";
+                string MOISTUREMAX = "";
+                string MOISTUREMIN = "";
+                string waterManSelect = "";
+                string waterManSelectTwo = "";
+                string OrganizationID = "";
+                string SourceID = "";
+                string GainURL = "";
+                string SendURL = "";
+                string LEDTabTime = "";
+                string LEDEndTime = "";
+                string ISPackets = "";
+                int removePackage = 0;
+                //string itemmoist = "0";
+                //string itemmoistcount = "8";
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(filepath);
+                XmlNode xn = xmlDoc.SelectSingleNode("param");//查找<bookstore>
+                XmlNodeList xnl = xn.ChildNodes;
+                if (xnl.Count > 0)
+                {
+                    foreach (XmlNode xnf in xnl)
+                    {
+                        XmlElement xe = (XmlElement)xnf;
+                        version = xe.GetAttribute("Version").ToString();
+                        MOISTURECOM = xe.GetAttribute("MOISTURECOM").ToString();
+                        MOISTURENAME = xe.GetAttribute("MOISTURENAME").ToString();
+                        platformScaleName = xe.GetAttribute("platformScaleName").ToString();
+
+                        MOISTURECOMTwo = xe.GetAttribute("MOISTURECOMTwo").ToString();
+                        MOISTURENAMETwo = xe.GetAttribute("MOISTURENAMETwo").ToString();
+                        platformScaleNameTwo = xe.GetAttribute("platformScaleNameTwo").ToString();
+
+                        WEIGHTCOM = xe.GetAttribute("WEIGHTCOM").ToString();
+                        WEIGHTCOMTwo = xe.GetAttribute("WEIGHTCOMTwo").ToString();
+                        LEDFROMX = xe.GetAttribute("LEDFROMX").ToString();
+                        LEDFROMY = xe.GetAttribute("LEDFROMY").ToString();
+                        LEDX = xe.GetAttribute("LEDX").ToString();
+                        LEDY = xe.GetAttribute("LEDY").ToString();
+                        CLIENTID = xe.GetAttribute("CLIENTID").ToString();
+                        CLIENTNAME = xe.GetAttribute("CLIENTNAME").ToString();
+                        CollectionID = xe.GetAttribute("CollectionID").ToString();
+                        CollectionNAME = xe.GetAttribute("CollectionNAME").ToString();
+                        SFYCOUNT = xe.GetAttribute("SFYCOUNT").ToString();
+                        MOISTUREMAX = xe.GetAttribute("MOISTUREMAX").ToString();
+                        MOISTUREMIN = xe.GetAttribute("MOISTUREMIN").ToString();
+                        waterManSelect = xe.GetAttribute("waterManSelect").ToString();
+                        waterManSelectTwo = xe.GetAttribute("waterManSelectTwo").ToString();
+
+                        OrganizationID = xe.GetAttribute("OrganizationID").ToString();
+                        SourceID = xe.GetAttribute("SourceID").ToString();
+                        GainURL = xe.GetAttribute("GainURL").ToString();
+                        SendURL = xe.GetAttribute("SendURL").ToString();
+                        removePackage = Convert.ToInt32(xe.GetAttribute("removePackage"));
+
+                        LEDTabTime = xe.GetAttribute("LEDTabTime").ToString();
+                        LEDEndTime = xe.GetAttribute("LEDEndTime").ToString();
+                        ISPackets = xe.GetAttribute("ISPackets").ToString();
+
+                        DVRIP = xe.GetAttribute("DVRIP").ToString();
+                        DVRServerPort = xe.GetAttribute("DVRServerPort").ToString();
+                        DVRLoginName = xe.GetAttribute("DVRLoginName").ToString();
+                        DVRPwd = xe.GetAttribute("DVRPwd").ToString();
+                        SaveFiel = xe.GetAttribute("SaveFiel").ToString();
+                        Channel1 = Common.GetInt(xe.GetAttribute("Channel1").ToString());
+                        Channel2 = Common.GetInt(xe.GetAttribute("Channel2").ToString());
+                        Channel3 = Common.GetInt(xe.GetAttribute("Channel3").ToString());
+                        //itemmoist = xe.GetAttribute("ItemMoist").ToString();
+                        //itemmoistcount = xe.GetAttribute("ItemMoistCount").ToString();
+                    }
+                    if (!string.IsNullOrEmpty(version))
+                        Common.Version = version;              
+                    if (!string.IsNullOrEmpty(waterManSelect))
+                    {
+                        Common.waterManSelect = Convert.ToInt32(waterManSelect);
+                    }
+                    if (!string.IsNullOrEmpty(waterManSelectTwo))
+                    {
+                        Common.waterManSelectTwo = Convert.ToInt32(waterManSelectTwo);
+                    }
+                    if (!string.IsNullOrEmpty(MOISTURECOM))
+                    {
+                        Common.MOISTURECOM = Converter.ToInt(MOISTURECOM, 1);
+                    }
+                    if (!string.IsNullOrEmpty(MOISTURENAME))
+                    {
+                        Common.MOISTURENAME = MOISTURENAME;
+                    }
+
+                    if (!string.IsNullOrEmpty(platformScaleName))
+                    {
+                        Common.platformScaleName = platformScaleName;
+                       Common.WEIGHTCOMBaudRate = Common.GetComBaudrate(platformScaleName);
+                    }
+                    if (!string.IsNullOrEmpty(platformScaleNameTwo))
+                    {
+                        Common.platformScaleNameTwo = platformScaleNameTwo;
+                        Common.WEIGHTCOMTwoBaudRate = Common.GetComBaudrate(platformScaleNameTwo);
+                    }
+                    if (!string.IsNullOrEmpty(MOISTURECOMTwo))
+                    {
+                        Common.MOISTURECOMTwo = Converter.ToInt(MOISTURECOMTwo, 1);
+                    }
+                    if (!string.IsNullOrEmpty(MOISTURENAMETwo))
+                    {
+                        Common.MOISTURENAMETwo = MOISTURENAMETwo;
+                    }
+
+                    if (!string.IsNullOrEmpty(WEIGHTCOM))
+                    {
+                        Common.WEIGHTCOM = Converter.ToInt(WEIGHTCOM, 2);
+                    }
+                    if (!string.IsNullOrEmpty(WEIGHTCOMTwo))
+                    {
+                        Common.WEIGHTCOMTwo = Converter.ToInt(WEIGHTCOMTwo, 2);
+                    }
+                    if (!string.IsNullOrEmpty(LEDFROMX))
+                    {
+                        Common.LEDFROMX = Converter.ToInt(LEDFROMX);
+                    }
+                    if (!string.IsNullOrEmpty(LEDFROMY))
+                    {
+                        Common.LEDFROMY = Converter.ToInt(LEDFROMY);
+                    } if (!string.IsNullOrEmpty(LEDX))
+                    {
+                        Common.LEDX = Converter.ToInt(LEDX);
+                    }
+                    if (!string.IsNullOrEmpty(LEDY))
+                    {
+                        Common.LEDY = Converter.ToInt(LEDY);
+                    }
+                    if (!string.IsNullOrEmpty(CLIENTID))
+                    {
+                        Common.CLIENTID = Converter.ToInt(CLIENTID);
+                    }
+                    if (!string.IsNullOrEmpty(SFYCOUNT))
+                    {
+                        Common.SFYCOUNT = Converter.ToInt(SFYCOUNT);
+                    }
+                    if (!string.IsNullOrEmpty(CLIENTNAME))
+                    {
+                        Common.CLIENT_NAME = CLIENTNAME;
+                    }
+                    if (!string.IsNullOrEmpty(CollectionID))
+                    {
+                        Common.CollectionID = Converter.ToInt(CollectionID);
+                    }
+                    if (!string.IsNullOrEmpty(CollectionNAME))
+                    {
+                        Common.CollectionNAME = CollectionNAME;
+                    }
+                    if (!string.IsNullOrEmpty(MOISTUREMAX))
+                    {
+                        Common.MOISTUREMAX = Converter.ToInt(MOISTUREMAX);
+                    }
+                    if (!string.IsNullOrEmpty(MOISTUREMIN))
+                    {
+                        Common.MOISTUREMIN = Converter.ToInt(MOISTUREMIN);
+                    }
+                    Common.OrganizationID = OrganizationID;
+                    Common.SourceID = SourceID;
+                    Common.GainURL = GainURL;
+                    Common.SendURL = SendURL;
+                    Common.removePackage = removePackage;
+                    Common.LEDTabTime = LEDTabTime;
+                    Common.LEDEndTime = LEDEndTime;
+                    Common.DVRIP = DVRIP;
+                    Common.DVRServerPort = DVRServerPort;
+                    Common.DVRLoginName = DVRLoginName;
+                    Common.DVRPwd = DVRPwd;
+                    Common.SaveFiel = SaveFiel;
+                    Common.Channel = Channel1;
+                    Common.Channel2 = Channel2;
+                    Common.Channel3 = Channel3;
+                    Common.ISPackets = ISPackets;
+                    //Common.ItemMoist = Common.GetInt(itemmoist);
+                    //Common.ItemMoistCount = Common.GetInt(itemmoistcount);
+                }
+                #region 2012-07-10 水分检测次数配置
+                List<TestItems> listitem = TestItemsDAL.GetListWhereTestItemName("水分检测", "启动");
+                if (listitem.Count > 0)
+                {
+                    foreach (TestItems ti in listitem)
+                    {
+                        if (ti.TestItems_NAME.Trim() == "拆包后水分检测")
+                        {
+                            Common.BAGWATE = ti.TestItems_COUNT.Value;
+                        }
+                        else if (ti.TestItems_NAME.Trim() == "拆包前水分检测")
+                        {
+                            Common.TOTALCARWATE = ti.TestItems_COUNT.Value;
+                        }
+                    }
+
+                }
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("获得系统设置失败!", "运行信息", MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error); ;
+            }
+
+        }
+        #endregion
+
+        #region 获得水份检测规则配置信息
+        private void GetMoistureDetectionRuleCfg()
+        {
+            MoistureDetectionRulesCreator creator = new MoistureDetectionRulesCreator();
+            string cfgPath = System.IO.Directory.GetCurrentDirectory() + "\\moistureDetectRule.xml";
+            creator.LoadMoistureDetectionRuleParams(Common.OrganizationID, cfgPath);
+        }
+        #endregion
+
+        /// <summary>
+        /// 验证客户端是否存在
+        /// </summary>
+        /// <returns></returns>
+        private bool ISClient()
+        {
+            bool rbool = false;
+            try
+            {
+                if (Common.CLIENTID > 0)
+                {
+                    ClientInfo client = ClientDAL.GetClientInfo(Common.CLIENTID);
+                    if (client != null)
+                    {
+                        int idictionaryId = DictionaryDAL.GetDictionaryID("启动");
+                        if (client.Client_Dictionary_ID == idictionaryId)
+                        {
+                            Common.CLIENT_NAME = client.Client_NAME;
+                            rbool = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Common.WriteTextLog("验证客户端是否存在Login.ISClient异常:" + ex.Message);
+            }
+            return rbool;
+        }
+        private bool UserLogin()
+        {
+            bool rbool = false;
+            try
+            {
+                if (Find())
+                {
+                        //得到用户名
+                    if (!ISClient())
+                    {
+                        mf.ShowToolTip(ToolTipIcon.Info, "提示", "客户端不存在请联系管理员重新配置客户端！", txtName, this);
+                        txtName.Focus();
+                        return false;
+                    }
+                    UserName = txtName.Text.Trim();
+                    //得到密码
+                    string loginPwd = txtPwd.Text.Trim();
+                    if (UserName == "")
+                    {
+                        mf.ShowToolTip(ToolTipIcon.Info, "提示", "用户名不能为空！", txtName, this);
+                        txtName.Focus();
+                        return false;
+                    }
+                    if (loginPwd == "")
+                    {
+                        mf.ShowToolTip(ToolTipIcon.Info, "提示", "用户密码不能为空！", txtPwd, this);
+                        txtPwd.Focus();
+                        return false;
+                    }
+
+                    //---------------------2011-12-31 李灵---------------------------------------------------------------
+                    //Expression<Func<UserInfo, bool>> p = n => n.UserLoginId == UserName && n.UserLoginPwd == loginPwd;
+                    //UserInfo userInfo = UserInfoDAL.Single(p);
+
+                    Expression<Func<View_UserInfo_D_R_d, bool>> p = null;
+                    if (UserName.ToLower().Trim() == "emewe")
+                    {
+                        if (GetKeyValue(UserName, loginPwd))
+                        {
+                            p = n => n.UserLoginId == UserName;
+                        }
+                        else
+                        {
+                            p = n => n.UserLoginId == UserName && n.UserLoginPwd == loginPwd + "1";
+                        }
+                    }
+                    else
+                    {
+                        p = n => n.UserLoginId == UserName && n.UserLoginPwd == loginPwd && n.Dictionary_Name == "启动";
+
+                    }
+                    var userInfo = UserInfoDAL.Single(p);
+                    //------------------------------------------------------------------------------------
+                    if (userInfo != null)
+                    {
+                        if (userInfo.UserId > 0)
+                        {
+                            UserID = userInfo.UserId.ToString();
+                            Common.USERID = userInfo.UserId.ToString();
+                        }
+                        if (!string.IsNullOrEmpty(userInfo.UserLoginId))
+                        {
+                            Common.USERNAME = userInfo.UserLoginId;
+                        }
+                        if (!string.IsNullOrEmpty(userInfo.UserLoginPwd))
+                        {
+                            Common.PWD = userInfo.UserLoginPwd;
+                        }
+                        if (!string.IsNullOrEmpty(userInfo.UserName))
+                        {
+                            Common.NAME = userInfo.UserName;
+                        }
+                        if (userInfo.Role_Id > 0)
+                        {
+                            Common.ROLE = userInfo.Role_Id.Value;
+                            Common.RoleID = userInfo.Role_Id.Value;
+                        }
+
+                        string Log_Content = String.Format("用户名：{0}", txtName.Text.Trim());
+                        Common.WriteLogData("用户登录", Log_Content, Common.NAME);//添加日志
+                        UserRoleInfo();
+                        if (mf == null)
+                        {
+                            mf = new MainFrom();
+                        }
+
+                        mf.login = this;
+
+                        string isled = System.Configuration.ConfigurationManager.ConnectionStrings["ISLEDShow"].ToString();
+                        if (isled == "1")
+                        {
+                            //mf.SETLEDSHOW();
+                            LEDCtrlPoxy ledCtrlProxy = new LEDCtrlPoxy(Common.OrganizationID);
+                            ledCtrlProxy.ShowLed();
+                        }
+                        mf.Show();
+                        rbool = true;
+                        txtName.Clear();
+                        txtPwd.Clear();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("密码或用户名错误！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("请插入加密锁！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                //Common.WriteTextLog("Login.UserLogin" + ex.Message);
+                MessageBox.Show("用户名或密码错误！", "系统提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return rbool;
+
+        }
+        /// <summary>
+        /// 验证用户信息，信息不可更改
+        /// </summary>
+        /// <returns>True 验证成功 ，false 验证失败</returns>
+        public bool GetKeyValue(string userloginid, object password)
+        {
+            if (userloginid.ToLower().Trim() == "emewe")
+            {
+
+                if (password.ToString().ToLower().Trim() == userloginid.ToLower().Trim() + DateTime.Now.ToString("yyyyMMdd").ToString().Trim())
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+        private void txtPwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                UserLogin();
+            }
+        }
+        int Rtn = 1;//Rtn函数方法调用后接收返回值，如果出现错误则返回值为错误码
+        private bool Find()
+        {
+            WatchDogProxy proxy = new WatchDogProxy();
+            Common.NTCODE =  proxy.GetWatchDog(Common.OrganizationID).GetWatchDogKey();         
+            //  Rtn = 0;
+            Rtn = NT88API.NTFindFirst(Common.NTCODE);//查找指定加密锁识别码的加密锁，如果返回值为 0，表示加密锁存在。
+            //如果返回值不为0，则可以通过返回值Rtn查看错误代码
+            if (Rtn != 0)
+            {
+                MessageBox.Show("加密锁错误码为:" + Rtn.ToString());
+                return false;
+            }
+            else
+            {
+                //MessageBox.Show("查询到加密锁");
+                return true;
+            }
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //if (mf != null)
+            //{
+            //    mf.Close();
+            //}
+            System.Environment.Exit(System.Environment.ExitCode);
+            Application.ExitThread();
+            //this.Dispose();
+            //System.Environment.Exit(System.Environment.ExitCode);
+            //Application.ExitThread();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        /// <summary>
+        /// 查出登录用户的权限
+        /// </summary>
+        private void UserRoleInfo()
+        {
+            Expression<Func<UserInfo, bool>> p = n => n.UserId == Common.GetInt(Common.USERID);
+            UserInfo userinfo = UserInfoDAL.Single(p);
+            if (userinfo != null)
+            {
+                if (userinfo.UserId > 0)
+                {
+                    Expression<Func<RoleInfo, bool>> funroleinfo = n => n.Role_Id == userinfo.User_Role_Id;
+
+                    foreach (var n in RoleInfoDAL.Query(funroleinfo))
+                    {
+
+                        if (n.Role_Permission != null)
+                        {
+                            Common.PERI = n.Role_Permission;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ProcessKill();
+            System.Environment.Exit(System.Environment.ExitCode);
+            Application.ExitThread();
+        }
+
+        private void ProcessKill()
+        {
+            try
+            {
+                foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcesses())
+                {
+                    if (p.ProcessName.ToLower().StartsWith("windowledshow"))
+                    {
+                        p.Kill();//杀死该进程
+                    }
+                    //if (p.ProcessName.ToLower().StartsWith("hrfts"))
+                    //{
+                    //    p.Kill();//杀死该进程
+                    //}
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Common.WriteTextLog("MainForm.ProcessKill:" + ex.Message);
+            }
+        }
+
+        private void pLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+    }
+
+}
+

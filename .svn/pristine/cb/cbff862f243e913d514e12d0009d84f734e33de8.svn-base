@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cfg>
+  <rule company="江西理文">
+    <ItemMoist>每包</ItemMoist>
+    <ItemMoistCount>8</ItemMoistCount>
+  </rule>
+  <rule company="重庆理文">
+  </rule>
+</cfg>

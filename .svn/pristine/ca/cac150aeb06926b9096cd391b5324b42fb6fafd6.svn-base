@@ -1,0 +1,309 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using EMEWEQUALITY.HelpClass;
+using System.Linq.Expressions;
+using EMEWEEntity;
+using System.Data.Linq.SqlClient;
+using EMEWEDAL;
+
+
+namespace EMEWEQUALITY.NewAdd
+{
+    public partial class ClientForm : Form
+    {
+        public ClientForm()
+        {
+            InitializeComponent();
+        }
+
+        public MainFrom mf;//主窗体
+        Expression<Func<View_ClientInfo, bool>> expr =null;
+        /// <summary>
+        /// 分页控件
+        /// </summary>
+        PageControl page = new PageControl();
+
+        int cid = 0;
+        /// <summary>
+        /// 加载数据
+        /// </summary>
+        private void LoadData(string strName)
+        {
+            try
+            {
+                if (expr==null)
+                {
+                     if (expr == null)
+                {
+                    expr = PredicateExtensionses.True<View_ClientInfo>();
+                }
+                }
+                if (txtSName.Text.Trim() != "")
+                {
+                    expr = expr.And(n => SqlMethods.Like(n.Client_NAME, "%" + txtSName.Text.Trim() + "%"));
+                }
+                if (cmbSState.Text != "全部" && cmbSState.Text != "")
+                {
+                    int did = Convert.ToInt32(cmbSState.SelectedValue.ToString());
+                    expr = expr.And(n => (n.Dictionary_ID == did));
+                }
+                this.dgvClient.DataSource = null;
+                page.PageMaxCount = tscbxPageSize2.SelectedItem.ToString();
+                this.dgvClient.AutoGenerateColumns = false;
+                dgvClient.DataSource = page.BindBoundControl<View_ClientInfo>(strName, txtCurrentPage2, lblPageCount2, expr);
+            }
+            catch (Exception ex)
+            {
+                Common.WriteTextLog("客户端管理 LoadData()" + ex.Message.ToString());
+            }
+        }
+
+
+        private void BindState()
+        {
+            cmbState.DataSource = DictionaryDAL.GetValueStateDictionary("状态").Where(n => n.Dictionary_Name != "全部").ToList();
+            this.cmbState.DisplayMember = "Dictionary_Name";
+            cmbState.ValueMember = "Dictionary_ID";
+            if (cmbState.DataSource != null)
+            {
+                cmbState.SelectedIndex = 0;
+            }
+
+            cmbSState.DataSource = DictionaryDAL.GetValueStateDictionary("状态");
+            this.cmbSState.DisplayMember = "Dictionary_Name";
+            cmbSState.ValueMember = "Dictionary_ID";
+            if (cmbSState.DataSource != null)
+            {
+                cmbSState.SelectedIndex = 0;
+            }
+        }
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text.Trim();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show(this, "客户端名称不能为空");
+                return;
+            }
+            if (btnSave.Text == "添加")
+            {
+                if (ClientDAL.ISClientInfoName(name))
+                {
+                    MessageBox.Show(this, "客户端名称已存在");
+                    return;
+                }
+                int id = 0;
+                ClientInfo client = new ClientInfo();
+                client.Client_NAME = name;
+                client.Client_Dictionary_ID = Convert.ToInt32(cmbState.SelectedValue);
+                client.Client_Phone = txtPhone.Text.Trim();
+                client.Client_ADDRESS = txtAddres.Text.Trim();
+                client.Client_REMARK = txtRemark.Text.Trim();
+
+                if (ClientDAL.InsertOneClientInfo(client, out id))
+                {
+                    MessageBox.Show("添加成功！");
+                    Empty();
+                }
+                else
+                {
+                    MessageBox.Show("添加失败！");
+                }
+            }
+            else
+            {
+                if (cid == 0)
+                {
+                    return;
+                }
+                object obj = LinQBaseDao.GetSingle("select count(0) from ClientInfo where Client_ID !=" + cid + " and Client_NAME='" + name + "'");
+                if (Convert.ToInt32( obj.ToString()) >0)
+                {
+                    MessageBox.Show(this, "客户端名称已存在");
+                    return;
+                }
+                Expression<Func<ClientInfo, bool>> exp = n => n.Client_ID == cid;
+                Action<ClientInfo> ap = s =>
+                       {
+                           s.Client_NAME = name;
+                           s.Client_Dictionary_ID = Convert.ToInt32(cmbState.SelectedValue);
+                           s.Client_Phone = txtPhone.Text.Trim();
+                           s.Client_ADDRESS = txtAddres.Text.Trim();
+                           s.Client_REMARK = txtRemark.Text.Trim();
+                       };
+                ClientDAL.Update(exp, ap);
+                Empty();
+            }
+            LoadData("");
+        }
+
+        /// <summary>
+        /// 清空
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCler_Click(object sender, EventArgs e)
+        {
+            Empty();
+        }
+        /// <summary>
+        /// 清空
+        /// </summary>
+        private void Empty()
+        {
+            txtName.Text = "";
+            txtPhone.Text = "";
+            txtAddres.Text = "";
+            txtRemark.Text = "";
+            txtSName.Text = "";
+            btnSave.Text = "添加";
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            LoadData("");
+        }
+
+
+        /// <summary>
+        /// 全选
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tslSelectAll_Click()
+        {
+            for (int i = 0; i < dgvClient.Rows.Count; i++)
+            {
+                dgvClient.Rows[i].Selected = true;
+            }
+        }
+        /// <summary>
+        /// 取消全选
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tslNotSelect_Click()
+        {
+            for (int i = 0; i < this.dgvClient.Rows.Count; i++)
+            {
+                dgvClient.Rows[i].Selected = false;
+            }
+        }
+
+        /// <summary>
+        /// 设置每页显示最大条数事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tscbxPageSize2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            page = new PageControl();
+            page.PageMaxCount = tscbxPageSize2.SelectedItem.ToString();
+            LoadData("");
+        }
+        //分页菜单响应事件
+        private void bdnInfo_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Name == "tslSelectAll") // 全选
+            {
+                tslSelectAll_Click();
+                return;
+            }
+            if (e.ClickedItem.Name == "tslNotSelect") // 取消全选
+            {
+                tslNotSelect_Click();
+                return;
+            }
+           // LoadData(e.ClickedItem.Name);
+        }
+
+        private void ClientForm_Load(object sender, EventArgs e)
+        {
+            BindState();
+            LoadData("");
+        }
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsbtnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvClient.SelectedRows.Count > 0)
+                {
+                    int ID = int.Parse(this.dgvClient.SelectedRows[0].Cells["Client_ID"].Value.ToString());
+                    cid = ID;
+                    Expression<Func<View_ClientInfo, bool>> funviewinto = n => n.Client_ID == ID;
+                    foreach (var n in ClientDAL.Query(funviewinto))
+                    {
+                        if (n.Client_NAME != null)
+                        {
+                            this.txtName.Text = n.Client_NAME;
+                        }
+                        if (n.Client_Dictionary_ID > 0)
+                        {
+                            this.cmbState.SelectedValue = n.Client_Dictionary_ID;
+                        }
+                        if (n.Client_Phone != null)
+                        {
+                            this.txtPhone.Text = n.Client_Phone;
+                        }
+                        if (n.Client_ADDRESS != null)
+                        {
+                            this.txtAddres.Text = n.Client_ADDRESS;
+                        }
+
+                        if (n.Client_REMARK != null)
+                        {
+                            this.txtRemark.Text = n.Client_REMARK;
+                        }
+                        break;
+                    }
+                    btnSave.Text = "修改";
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void tsbtnDel_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (dgvClient.SelectedRows.Count > 0)//选中删除
+            //    {
+            //        if (MessageBox.Show("确定要删除吗？", "系统提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //        {
+
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+        }
+    }
+}

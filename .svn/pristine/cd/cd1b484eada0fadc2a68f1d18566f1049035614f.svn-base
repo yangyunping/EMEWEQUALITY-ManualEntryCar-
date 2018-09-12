@@ -1,0 +1,51 @@
+  MoistureDetectionRules.FormJiangxiMoistureRuleSet.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v2.0.50727
+Assembly MoistureDetectionRules, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly EMEWE.Disk, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=None, flags=None
+Assembly System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Interface MoistureDetectionRules.MoistureDetectionRule: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    LoadCfg(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SaveCfg(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetSumWaterCount(String[], Int32&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class MoistureDetectionRules.MoistureDetectionRulesCreator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    LoadMoistureDetectionRuleParams(String, String): PrivateScope, Public, HideBySig
+    SaveMoistureDetectionParams(String, String): PrivateScope, Public, HideBySig
+    GetSumWaterCount(String, String[], Int32&(Out)): PrivateScope, Public, HideBySig
+    ShowSetupForm(String): PrivateScope, Public, HideBySig
+Class MoistureDetectionRules.ChongQingMoistureDetectionRule: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MoistureDetectionRules.MoistureDetectionRule
+  Methods:
+    LoadCfg(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    SaveCfg(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    GetSumWaterCount(String[], Int32&(Out)): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class MoistureDetectionRules.JiangXiMoistureDetectionRule: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    MoistureDetectionRules.MoistureDetectionRule
+  Fields:
+    System.String ItemMoist : Public, Static
+    Int32 ItemMoistCount : Public, Static
+    Int32 SumWaterCount : Public, Static
+  Methods:
+    LoadCfg(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    SaveCfg(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    GetSumWaterCount(String[], Int32&(Out)): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class MoistureDetectionRules.FormJiangxiMoistureRuleSet: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

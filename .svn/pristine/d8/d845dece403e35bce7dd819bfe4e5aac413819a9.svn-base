@@ -1,0 +1,2 @@
+2016-06-01 14:08:25: QCInfo qc = QCInfoDAL.GetQCInfo(iQcInfoID) executed.
+2016-06-01 14:08:41: bool rbool = QCInfoDAL.UpdateInfo(qc) executed.

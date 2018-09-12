@@ -1,0 +1,600 @@
+  EMEWE.Common.Web.Controls.PageNavigation.bmp - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v2.0.50727
+Assembly EMEWE.Common, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class EMEWE.Common.Data.Transaction.TransactionScope: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(EMEWE.Common.Data.Transaction.TransactionScopeOption): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Boolean Disposable 'get ' : 
+    System.Transactions.CommittableTransaction CurrentTransaction 'get ' : 
+    EMEWE.Common.Data.Transaction.TransactionScopeOption Option 'get ' : 
+    Boolean Completed 'get ' : 
+    System.Collections.Generic.Dictionary`2[EMEWE.Common.Data.Transaction.IConnectionProvider,System.Data.Common.DbConnection] Connections 'get ' : 
+  Methods:
+    get_Disposable(): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTransaction(): PrivateScope, Public, HideBySig, SpecialName
+    get_Option(): PrivateScope, Public, HideBySig, SpecialName
+    get_Completed(): PrivateScope, Public, HideBySig, SpecialName
+    get_Connections(): PrivateScope, Public, HideBySig, SpecialName
+    GetDbProvider(IConnectionProvider): PrivateScope, Public, Static, HideBySig
+    Complete(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Formatter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ToString(Object): PrivateScope, Public, Static, HideBySig
+    ToString(Object, String): PrivateScope, Public, Static, HideBySig
+    FormatFileSize(Int64): PrivateScope, Public, Static, HideBySig
+    FormatFileSize(Int64, UInt16): PrivateScope, Public, Static, HideBySig
+    GetDate(String, String): PrivateScope, Public, Static, HideBySig
+    GetTime(): PrivateScope, Public, Static, HideBySig
+    GetDateTime(): PrivateScope, Public, Static, HideBySig
+    GetDateTime(Int32): PrivateScope, Public, Static, HideBySig
+    GetDateTimeF(): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.IO.FileUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String CurrentDirectory 'get set' : 
+  Methods:
+    get_CurrentDirectory(): PrivateScope, Public, Static, HideBySig, SpecialName
+    set_CurrentDirectory(String): PrivateScope, Public, Static, HideBySig, SpecialName
+    GetCreationTime(String): PrivateScope, Public, Static, HideBySig
+    GetLastWriteTime(String): PrivateScope, Public, Static, HideBySig
+    GetLastAccessTime(String): PrivateScope, Public, Static, HideBySig
+    GetFileSize(String): PrivateScope, Public, Static, HideBySig
+    GetDirectorySize(String): PrivateScope, Public, Static, HideBySig
+    DeleteFile(String): PrivateScope, Public, Static, HideBySig
+    DeleteDirectory(String): PrivateScope, Public, Static, HideBySig
+    DeleteDirectory(String, Boolean): PrivateScope, Public, Static, HideBySig
+    CreateDirectory(String): PrivateScope, Public, Static, HideBySig
+    MoveFile(String, String): PrivateScope, Public, Static, HideBySig
+    CopyFile(String, String): PrivateScope, Public, Static, HideBySig
+    CopyFile(String, String, Boolean): PrivateScope, Public, Static, HideBySig
+    MoveDirectory(String, String): PrivateScope, Public, Static, HideBySig
+    CopyDirectory(String, String): PrivateScope, Public, Static, HideBySig
+    ReadText(String): PrivateScope, Public, Static, HideBySig
+    ReadText(String, Encoding): PrivateScope, Public, Static, HideBySig
+    WriteText(String, String): PrivateScope, Public, Static, HideBySig
+    WriteText(String, String, Encoding): PrivateScope, Public, Static, HideBySig
+    GetExtension(String): PrivateScope, Public, Static, HideBySig
+    GetFileName(String): PrivateScope, Public, Static, HideBySig
+    GetFileNameWithoutExtension(String): PrivateScope, Public, Static, HideBySig
+    GetDirectoryName(String): PrivateScope, Public, Static, HideBySig
+    GetTempFileName(): PrivateScope, Public, Static, HideBySig
+    GetTempPath(): PrivateScope, Public, Static, HideBySig
+    WritePostedFile(HttpPostedFile, String): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.EnumUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetName(Enum): PrivateScope, Public, Static, HideBySig
+    GetDescription(Enum): PrivateScope, Public, Static, HideBySig
+    FillList(ListItemCollection, Type): PrivateScope, Public, Static, HideBySig
+    FillList(ListItemCollection, Type, String, String): PrivateScope, Public, Static, HideBySig
+    GetValueName(Type): PrivateScope, Public, Static, HideBySig
+    GetEnum(String): PrivateScope, Public, Static, HideBySig
+    GetEnum(String, T): PrivateScope, Public, Static, HideBySig
+    HasFlagsAttribute(Type): PrivateScope, Public, Static, HideBySig
+    IsMarked(Enum, Enum): PrivateScope, Public, Static, HideBySig
+    Unite(T[]): PrivateScope, Public, Static, HideBySig
+    GetValues(Enum): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Data.DataReaderWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Data.Common.DbDataReader): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Data.Common.DbDataReader Reader 'get ' : 
+    Int32 FieldCount 'get ' : 
+    Boolean HasRows 'get ' : 
+    Boolean IsClosed 'get ' : 
+    System.Object Item [System.String] 'get ' : 
+    System.Object Item [Int32] 'get ' : 
+  Methods:
+    get_Reader(): PrivateScope, Public, HideBySig, SpecialName
+    get_FieldCount(): PrivateScope, Public, HideBySig, SpecialName
+    get_HasRows(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsClosed(): PrivateScope, Public, HideBySig, SpecialName
+    get_Item(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Item(Int32): PrivateScope, Public, HideBySig, SpecialName
+    Close(): PrivateScope, Public, HideBySig
+    NextResult(): PrivateScope, Public, HideBySig
+    IsDBNull(Int32): PrivateScope, Public, HideBySig
+    IsDBNull(String): PrivateScope, Public, HideBySig
+    Read(): PrivateScope, Public, HideBySig
+    GetBoolean(String): PrivateScope, Public, HideBySig
+    GetBoolean(String, Boolean): PrivateScope, Public, HideBySig
+    GetByte(String): PrivateScope, Public, HideBySig
+    GetByte(String, Byte): PrivateScope, Public, HideBySig
+    GetChar(String): PrivateScope, Public, HideBySig
+    GetChar(String, Char): PrivateScope, Public, HideBySig
+    GetDateTime(String): PrivateScope, Public, HideBySig
+    GetDateTime(String, DateTime): PrivateScope, Public, HideBySig
+    GetDecimal(String): PrivateScope, Public, HideBySig
+    GetDecimal(String, Decimal): PrivateScope, Public, HideBySig
+    GetDouble(String): PrivateScope, Public, HideBySig
+    GetDouble(String, Double): PrivateScope, Public, HideBySig
+    GetFloat(String): PrivateScope, Public, HideBySig
+    GetFloat(String, Single): PrivateScope, Public, HideBySig
+    GetShort(String): PrivateScope, Public, HideBySig
+    GetShort(String, Int16): PrivateScope, Public, HideBySig
+    GetInt(String): PrivateScope, Public, HideBySig
+    GetInt(String, Int32): PrivateScope, Public, HideBySig
+    GetLong(String): PrivateScope, Public, HideBySig
+    GetLong(String, Int64): PrivateScope, Public, HideBySig
+    GetTimestamp(String): PrivateScope, Public, HideBySig
+    GetString(String): PrivateScope, Public, HideBySig
+    Get(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Validate.Validator: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Collections.Generic.List`1[System.String] Error 'get ' : 
+    Boolean HasError 'get ' : 
+  Methods:
+    IsEmail(String): PrivateScope, Public, Static, HideBySig
+    GetEmail(String, String): PrivateScope, Public, HideBySig
+    IsZip(String): PrivateScope, Public, Static, HideBySig
+    GetZip(String, String): PrivateScope, Public, HideBySig
+    IsTel(String): PrivateScope, Public, Static, HideBySig
+    GetTel(String, String): PrivateScope, Public, HideBySig
+    IsMobile(String): PrivateScope, Public, Static, HideBySig
+    GetMobile(String, String): PrivateScope, Public, HideBySig
+    IsIp(String): PrivateScope, Public, Static, HideBySig
+    GetIp(String, String): PrivateScope, Public, HideBySig
+    IsIpv6(String): PrivateScope, Public, Static, HideBySig
+    GetIpv6(String, String): PrivateScope, Public, HideBySig
+    IsUrl(String): PrivateScope, Public, Static, HideBySig
+    GetUrl(String, String): PrivateScope, Public, HideBySig
+    IsBool(String): PrivateScope, Public, Static, HideBySig
+    GetBool(String, String): PrivateScope, Public, HideBySig
+    IsInt(String): PrivateScope, Public, Static, HideBySig
+    IsInt(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetInt(String, String): PrivateScope, Public, HideBySig
+    GetInt(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsLong(String): PrivateScope, Public, Static, HideBySig
+    IsLong(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetLong(String, String): PrivateScope, Public, HideBySig
+    GetLong(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsFloat(String): PrivateScope, Public, Static, HideBySig
+    IsFloat(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetFloat(String, String): PrivateScope, Public, HideBySig
+    GetFloat(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsDouble(String): PrivateScope, Public, Static, HideBySig
+    IsDouble(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetDouble(String, String): PrivateScope, Public, HideBySig
+    GetDouble(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsDecimal(String): PrivateScope, Public, Static, HideBySig
+    IsDecimal(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetDecimal(String, String): PrivateScope, Public, HideBySig
+    GetDecimal(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsDate(String): PrivateScope, Public, Static, HideBySig
+    IsDate(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetDate(String, String): PrivateScope, Public, HideBySig
+    GetNullableDate(String, String): PrivateScope, Public, HideBySig
+    GetDate(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    GetNullableDate(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsDateTime(String): PrivateScope, Public, Static, HideBySig
+    IsDateTime(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    GetDateTime(String, String): PrivateScope, Public, HideBySig
+    GetNullableDateTime(String, String): PrivateScope, Public, HideBySig
+    GetDateTime(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    GetNullableDateTime(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    IsNotNull(String): PrivateScope, Public, Static, HideBySig
+    IsNotNull(String, Validator, String): PrivateScope, Public, Static, HideBySig
+    IsNotNull(String, Boolean): PrivateScope, Public, Static, HideBySig
+    IsNotNull(String, Boolean, Validator, String): PrivateScope, Public, Static, HideBySig
+    GetNotNull(String, String): PrivateScope, Public, HideBySig
+    GetNotNull(String, Boolean, String): PrivateScope, Public, HideBySig
+    IsAccordLength(String, Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+    IsAccordLength(String, Nullable`1, Nullable`1, Boolean): PrivateScope, Public, Static, HideBySig
+    GetAccordLength(String, Nullable`1, Nullable`1, String): PrivateScope, Public, HideBySig
+    GetAccordLength(String, Nullable`1, Nullable`1, Boolean, String): PrivateScope, Public, HideBySig
+    IsMatch(String, String): PrivateScope, Public, Static, HideBySig
+    IsMatch(String, RegexOptions, String): PrivateScope, Public, Static, HideBySig
+    GetMathed(String, String, String): PrivateScope, Public, HideBySig
+    GetMathed(String, RegexOptions, String, String): PrivateScope, Public, HideBySig
+    GetEnum(String, String): PrivateScope, Public, HideBySig
+    IsEnum(String): PrivateScope, Public, Static, HideBySig
+    AddError(String): PrivateScope, Public, HideBySig
+    get_Error(): PrivateScope, Public, HideBySig, SpecialName
+    get_HasError(): PrivateScope, Public, HideBySig, SpecialName
+    Clear(): PrivateScope, Public, HideBySig
+    ToJson(): PrivateScope, Public, HideBySig
+    ToJsonWithHtml(): PrivateScope, Public, HideBySig
+    ToHtml(): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class EMEWE.Common.Web.ReqUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Web.HttpRequest Request 'get ' : 
+  Methods:
+    get_Request(): PrivateScope, Public, Static, HideBySig, SpecialName
+    FormString(String): PrivateScope, Public, Static, HideBySig
+    FormString(String, String): PrivateScope, Public, Static, HideBySig
+    QueryString(String): PrivateScope, Public, Static, HideBySig
+    QueryString(String, String): PrivateScope, Public, Static, HideBySig
+    GetString(String): PrivateScope, Public, Static, HideBySig
+    GetString(String, String): PrivateScope, Public, Static, HideBySig
+    FormStringArray(String): PrivateScope, Public, Static, HideBySig
+    QueryStringArray(String): PrivateScope, Public, Static, HideBySig
+    GetStringArray(String): PrivateScope, Public, Static, HideBySig
+    FormBool(String): PrivateScope, Public, Static, HideBySig
+    FormBool(String, Boolean): PrivateScope, Public, Static, HideBySig
+    QueryBool(String): PrivateScope, Public, Static, HideBySig
+    QueryBool(String, Boolean): PrivateScope, Public, Static, HideBySig
+    FormBoolArray(String): PrivateScope, Public, Static, HideBySig
+    QueryBoolArray(String): PrivateScope, Public, Static, HideBySig
+    FormInt(String): PrivateScope, Public, Static, HideBySig
+    FormInt(String, Int32): PrivateScope, Public, Static, HideBySig
+    QueryInt(String): PrivateScope, Public, Static, HideBySig
+    QueryInt(String, Int32): PrivateScope, Public, Static, HideBySig
+    FormIntArray(String): PrivateScope, Public, Static, HideBySig
+    QueryIntArray(String): PrivateScope, Public, Static, HideBySig
+    FormLong(String): PrivateScope, Public, Static, HideBySig
+    FormLong(String, Int64): PrivateScope, Public, Static, HideBySig
+    QueryLong(String): PrivateScope, Public, Static, HideBySig
+    QueryLong(String, Int64): PrivateScope, Public, Static, HideBySig
+    FormLongArray(String): PrivateScope, Public, Static, HideBySig
+    QueryLongArray(String): PrivateScope, Public, Static, HideBySig
+    FormFloat(String): PrivateScope, Public, Static, HideBySig
+    FormFloat(String, Single): PrivateScope, Public, Static, HideBySig
+    QueryFloat(String): PrivateScope, Public, Static, HideBySig
+    QueryFloat(String, Single): PrivateScope, Public, Static, HideBySig
+    FormFloatArray(String): PrivateScope, Public, Static, HideBySig
+    QueryFloatArray(String): PrivateScope, Public, Static, HideBySig
+    FormDouble(String): PrivateScope, Public, Static, HideBySig
+    FormDouble(String, Double): PrivateScope, Public, Static, HideBySig
+    QueryDouble(String): PrivateScope, Public, Static, HideBySig
+    QueryDouble(String, Double): PrivateScope, Public, Static, HideBySig
+    FormDoubleArray(String): PrivateScope, Public, Static, HideBySig
+    QueryDoubleArray(String): PrivateScope, Public, Static, HideBySig
+    FormDateTime(String): PrivateScope, Public, Static, HideBySig
+    FormDateTime(String, DateTime): PrivateScope, Public, Static, HideBySig
+    QueryDateTime(String): PrivateScope, Public, Static, HideBySig
+    QueryDateTime(String, DateTime): PrivateScope, Public, Static, HideBySig
+    FormDateTimeArray(String): PrivateScope, Public, Static, HideBySig
+    QueryDateTimeArray(String): PrivateScope, Public, Static, HideBySig
+    FormNullableDateTime(String): PrivateScope, Public, Static, HideBySig
+    FormNullableDateTime(String, Nullable`1): PrivateScope, Public, Static, HideBySig
+    QueryNullableDateTime(String): PrivateScope, Public, Static, HideBySig
+    QueryNullableDateTime(String, Nullable`1): PrivateScope, Public, Static, HideBySig
+    FormNullableDateTimeArray(String): PrivateScope, Public, Static, HideBySig
+    QueryNullableDateTimeArray(String): PrivateScope, Public, Static, HideBySig
+    GetPostedFile(String): PrivateScope, Public, Static, HideBySig
+    GetPostedFileArray(String): PrivateScope, Public, Static, HideBySig
+    FormEnum(String): PrivateScope, Public, Static, HideBySig
+    FormEnum(String, T): PrivateScope, Public, Static, HideBySig
+    QueryEnum(String): PrivateScope, Public, Static, HideBySig
+    QueryEnum(String, T): PrivateScope, Public, Static, HideBySig
+    FormEnumArray(String): PrivateScope, Public, Static, HideBySig
+    QueryEnumArray(String): PrivateScope, Public, Static, HideBySig
+    GetIp(): PrivateScope, Public, Static, HideBySig
+    GetHost(): PrivateScope, Public, Static, HideBySig
+    GetUrl(): PrivateScope, Public, Static, HideBySig
+    IsPost(): PrivateScope, Public, Static, HideBySig
+    IsGet(): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Xml.XmlSerializeUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetSerializer(Type): PrivateScope, Public, Static, HideBySig
+    Load(String): PrivateScope, Public, Static, HideBySig
+    Save(Object, String): PrivateScope, Public, Static, HideBySig
+    Serialize(Object): PrivateScope, Public, Static, HideBySig
+    DeSerialize(String): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Web.CookieUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    WriteCookie(String, String): PrivateScope, Public, Static, HideBySig
+    WriteCookie(String, String, String): PrivateScope, Public, Static, HideBySig
+    WriteCookie(String, String, Int32): PrivateScope, Public, Static, HideBySig
+    WriteCookie(String, String, Int32, String): PrivateScope, Public, Static, HideBySig
+    GetCookie(String): PrivateScope, Public, Static, HideBySig
+    GetCookie(String, String): PrivateScope, Public, Static, HideBySig
+    DeleteCookie(String): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.PageList`1[T]: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  Type parameter: T
+  :System.Collections.Generic.List`1[T]
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 PageIndex 'get set' : 
+    Int32 PageSize 'get set' : 
+    Int32 RecordCount 'get set' : 
+  Methods:
+    get_PageIndex(): PrivateScope, Public, HideBySig, SpecialName
+    set_PageIndex(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PageSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_PageSize(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RecordCount(): PrivateScope, Public, HideBySig, SpecialName
+    set_RecordCount(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class EMEWE.Common.Data.ReaderCallBack: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(IDataReader): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(IDataReader, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Data.MsSqlHelper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CreateParameter(String, SqlDbType, Object): PrivateScope, Public, Static, HideBySig
+    CreateParameter(String, SqlDbType, Int32, Object): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Xml.KeyValueMap`2[TKey,TValue]: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  Type parameter: TKey
+  Type parameter: TValue
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.Generic.IEnumerable`1[EMEWE.Common.Xml.KeyValue`2[TKey,TValue]]
+    System.Collections.IEnumerable
+  Properties:
+    TValue Item [TKey] 'get set' : 
+  Methods:
+    Add(Object): PrivateScope, Public, HideBySig
+    Add(TKey, TValue): PrivateScope, Public, HideBySig
+    get_Item(TKey): PrivateScope, Public, HideBySig, SpecialName
+    set_Item(TKey, TValue): PrivateScope, Public, HideBySig, SpecialName
+    Remove(TKey): PrivateScope, Public, HideBySig
+    ContainsKey(TKey): PrivateScope, Public, HideBySig
+    GetEnumerator(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Web.JsonHelper: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Char): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Char DEFAULT_QUOTE : Public, Static, InitOnly
+    System.String True : Public, Static, InitOnly
+    System.String False : Public, Static, InitOnly
+    System.String Null : Public, Static, InitOnly
+    System.String Undefined : Public, Static, InitOnly
+    System.String NaN : Public, Static, InitOnly
+  Properties:
+    Char Quote 'get set' : 
+  Methods:
+    get_Quote(): PrivateScope, Public, HideBySig, SpecialName
+    set_Quote(Char): PrivateScope, Public, HideBySig, SpecialName
+    EncodeBoolean(Boolean): PrivateScope, Public, Static, HideBySig
+    EncodeDateTime(DateTime): PrivateScope, Public, Static, HideBySig
+    EncodeString(String): PrivateScope, Public, Static, HideBySig
+    EncodeString(String, Char): PrivateScope, Public, Static, HideBySig
+    DecodeString(String): PrivateScope, Public, Static, HideBySig
+    DecodeString(String, Char): PrivateScope, Public, Static, HideBySig
+    Encode(Object): PrivateScope, Public, Static, HideBySig
+    Encode(Object, Char): PrivateScope, Public, Static, HideBySig
+    IsJsonPrimitive(Object): PrivateScope, Public, Static, HideBySig
+    ToJson(Object): PrivateScope, Public, Static, HideBySig
+    ToJson(Object, Char): PrivateScope, Public, Static, HideBySig
+    Add(String, Object): PrivateScope, Public, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    ToJson(): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class EMEWE.Common.Web.Controls.PageNavigation: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Web.UI.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Web.UI.IPostBackDataHandler
+    System.Web.UI.IPostBackEventHandler
+  Properties:
+    Int32 PageSize 'get set' : 
+    Int32 PageIndex 'get set' : 
+    Int32 RecordCount 'get set' : 
+    Int32 RecordIndex 'get ' : 
+    Int32 IncrementIndex 'get ' : 
+    System.String Method 'get set' : 
+  Events:
+    System.EventHandler PageIndexChange: 
+  Methods:
+    add_PageIndexChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_PageIndexChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_PageSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_PageSize(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PageIndex(): PrivateScope, Public, HideBySig, SpecialName
+    set_PageIndex(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RecordCount(): PrivateScope, Public, HideBySig, SpecialName
+    set_RecordCount(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RecordIndex(): PrivateScope, Public, HideBySig, SpecialName
+    get_IncrementIndex(): PrivateScope, Public, HideBySig, SpecialName
+    get_Method(): PrivateScope, Public, HideBySig, SpecialName
+    set_Method(String): PrivateScope, Public, HideBySig, SpecialName
+    RaisePostBackEvent(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    LoadPostData(String, NameValueCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    RaisePostDataChangedEvent(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    IsNumeric(String): PrivateScope, Public, HideBySig
+    IsNumeric(Object): PrivateScope, Public, HideBySig
+Class EMEWE.Common.Threading.Semaphore: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AddOne(): PrivateScope, Public, HideBySig
+    WaitOne(): PrivateScope, Public, HideBySig
+    P(): PrivateScope, Public, HideBySig
+    V(): PrivateScope, Public, HideBySig
+    Reset(Int32): PrivateScope, Public, HideBySig
+Class EMEWE.Common.Data.IDGenerator: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Get(): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Data.DalTemplate: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    EMEWE.Common.Data.Transaction.IConnectionProvider ConnectionProvider 'get set' : 
+  Methods:
+    get_ConnectionProvider(): PrivateScope, Public, HideBySig, SpecialName
+    set_ConnectionProvider(IConnectionProvider): PrivateScope, Public, HideBySig, SpecialName
+    ExecuteNonQuery(String, CommandType, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteNonQuery(String, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteReader(ReaderCallBack, String, CommandType, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteReader(ReaderCallBack, String, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteReader(ReaderWrapperCallBack, String, CommandType, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteReader(ReaderWrapperCallBack, String, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecutePager(ReaderCallBack, String, String, String, Int32&(Out), Int32, Int32, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecutePager(ReaderWrapperCallBack, String, String, String, Int32&(Out), Int32, Int32, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteScalar(String, CommandType, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteScalar(String, DbParameter[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ExecuteCommand(CommandCallBack): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Threading.ManagedThreadPool: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 MaxThreads 'get ' : 
+    Int32 ActiveThreads 'get ' : 
+    Int32 WaitingCallbacks 'get ' : 
+  Methods:
+    QueueUserWorkItem(WaitCallback): PrivateScope, Public, Static, HideBySig
+    QueueUserWorkItem(WaitCallback, Object): PrivateScope, Public, Static, HideBySig
+    Reset(): PrivateScope, Public, Static, HideBySig
+    get_MaxThreads(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ActiveThreads(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_WaitingCallbacks(): PrivateScope, Public, Static, HideBySig, SpecialName
+Struct EMEWE.Common.Data.Transaction.TransactionScopeOption: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    EMEWE.Common.Data.Transaction.TransactionScopeOption Required = 0 : Public, Static, Literal, HasDefault
+    EMEWE.Common.Data.Transaction.TransactionScopeOption RequiresNew = 1 : Public, Static, Literal, HasDefault
+    EMEWE.Common.Data.Transaction.TransactionScopeOption Suppress = 2 : Public, Static, Literal, HasDefault
+Class EMEWE.Common.Data.CommandCallBack: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(DbCommand): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(DbCommand, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Xml.CDATA: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Xml.Serialization.IXmlSerializable
+  Properties:
+    System.String Value 'get ' : 
+  Methods:
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    op_Implicit(CDATA): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Implicit(String): PrivateScope, Public, Static, HideBySig, SpecialName
+Class EMEWE.Common.Cryptography.MD5: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    ComputeHash(String): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Converter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ToShort(String): PrivateScope, Public, Static, HideBySig
+    ToShort(String, Int16): PrivateScope, Public, Static, HideBySig
+    ToInt(String): PrivateScope, Public, Static, HideBySig
+    ToInt(String, Int32): PrivateScope, Public, Static, HideBySig
+    ToLong(String): PrivateScope, Public, Static, HideBySig
+    ToLong(String, Int64): PrivateScope, Public, Static, HideBySig
+    ToBool(String): PrivateScope, Public, Static, HideBySig
+    ToBool(String, Boolean): PrivateScope, Public, Static, HideBySig
+    ToChar(String): PrivateScope, Public, Static, HideBySig
+    ToChar(String, Char): PrivateScope, Public, Static, HideBySig
+    ToDateTime(String): PrivateScope, Public, Static, HideBySig
+    ToDateTime(String, DateTime): PrivateScope, Public, Static, HideBySig
+    ToFloat(String): PrivateScope, Public, Static, HideBySig
+    ToFloat(String, Single): PrivateScope, Public, Static, HideBySig
+    ToDouble(String): PrivateScope, Public, Static, HideBySig
+    ToDouble(String, Double): PrivateScope, Public, Static, HideBySig
+    ToDecimal(String): PrivateScope, Public, Static, HideBySig
+    ToDecimal(String, Decimal): PrivateScope, Public, Static, HideBySig
+    ToType(Object): PrivateScope, Public, Static, HideBySig
+    ToType(Object, T): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Web.MessageBox: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Info(String, Page): PrivateScope, Public, Static, HideBySig
+    Info(String, Boolean): PrivateScope, Public, Static, HideBySig
+    Info(String, String): PrivateScope, Public, Static, HideBySig
+    Info(String, Int32): PrivateScope, Public, Static, HideBySig
+    Error(String, Page): PrivateScope, Public, Static, HideBySig
+    Error(String, Boolean): PrivateScope, Public, Static, HideBySig
+    Error(String, String): PrivateScope, Public, Static, HideBySig
+    Error(String, Int32): PrivateScope, Public, Static, HideBySig
+    Error(String, String, Int32): PrivateScope, Public, Static, HideBySig
+    Success(String, Page): PrivateScope, Public, Static, HideBySig
+    Success(String, Boolean): PrivateScope, Public, Static, HideBySig
+    Success(String, String): PrivateScope, Public, Static, HideBySig
+    Success(String, Int32): PrivateScope, Public, Static, HideBySig
+    Confirm(String, String, String): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.StringUtils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Escape(String): PrivateScope, Public, Static, HideBySig
+    Unescape(String): PrivateScope, Public, Static, HideBySig
+    RTrim(String): PrivateScope, Public, Static, HideBySig
+    HtmlEncode(String): PrivateScope, Public, Static, HideBySig
+    HtmlDecode(String): PrivateScope, Public, Static, HideBySig
+    GetSpacesString(Int32): PrivateScope, Public, Static, HideBySig
+    JavaScriptEncode(String): PrivateScope, Public, Static, HideBySig
+    JavaScriptEncode(String, Char): PrivateScope, Public, Static, HideBySig
+    JavaScriptDecode(String): PrivateScope, Public, Static, HideBySig
+    JavaScriptDecode(String, Char): PrivateScope, Public, Static, HideBySig
+    Join(Int32[], String, String): PrivateScope, Public, Static, HideBySig
+    Join(Int64[], String, String): PrivateScope, Public, Static, HideBySig
+    Join(Object[], String, String): PrivateScope, Public, Static, HideBySig
+    Split(String, String): PrivateScope, Public, Static, HideBySig
+    SplitToInt(String, String): PrivateScope, Public, Static, HideBySig
+    GetDBCLength(String): PrivateScope, Public, Static, HideBySig
+    CutString(String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    CutString(String, Int32): PrivateScope, Public, Static, HideBySig
+    CutDBCString(String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    CutDBCString(String, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+Class EMEWE.Common.Data.Transaction.DbProvider: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Boolean, System.Data.Common.DbConnection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Boolean, System.Data.Common.DbConnection, System.Data.Common.DbTransaction): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Boolean Disposable 'get ' : 
+    System.Data.Common.DbConnection Connection 'get ' : 
+    System.Data.Common.DbTransaction Transaction 'get ' : 
+  Methods:
+    get_Disposable(): PrivateScope, Public, HideBySig, SpecialName
+    get_Connection(): PrivateScope, Public, HideBySig, SpecialName
+    get_Transaction(): PrivateScope, Public, HideBySig, SpecialName
+    CreateCommand(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.Data.ReaderWrapperCallBack: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(DataReaderWrapper): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(DataReaderWrapper, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class EMEWE.Common.EnumAttribute: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get set' : 
+    System.String Description 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Description(): PrivateScope, Public, HideBySig, SpecialName
+    set_Description(String): PrivateScope, Public, HideBySig, SpecialName
+Interface EMEWE.Common.Data.Transaction.IConnectionProvider: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    GetConnection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class EMEWE.Common.Xml.KeyValue`2[TKey,TValue]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: TKey
+  Type parameter: TValue
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(TKey, TValue): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    TKey Key   'get set' : 
+    TValue Value 'get set' : 
+  Methods:
+    get_Key(): PrivateScope, Public, HideBySig, SpecialName
+    set_Key(TKey): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(TValue): PrivateScope, Public, HideBySig, SpecialName

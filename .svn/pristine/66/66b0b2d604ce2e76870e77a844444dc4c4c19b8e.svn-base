@@ -1,0 +1,113 @@
+ImageRuntimeVersion: v2.0.50727
+Assembly Interop.EMEWELib, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Interface EMEWELib._IMoistureEvents: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Methods:
+    CommClosed(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ErrorOpenComm(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ReadSth(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RetMoisture(Int32, Single, Single, Single, Single, Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    BTChangedConnection(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class EMEWELib.MoistureClass: AutoLayout, AnsiClass, Class, Public, Import
+  :System.__ComObject
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Interfaces:
+    EMEWELib.IMoisture
+    EMEWELib.Moisture
+    EMEWELib._IMoistureEvents_Event
+  Properties:
+    Int32 nBTConnection 'get ' : 
+  Events:
+    EMEWELib._IMoistureEvents_CommClosedEventHandler CommClosed: 
+    EMEWELib._IMoistureEvents_ErrorOpenCommEventHandler ErrorOpenComm: 
+    EMEWELib._IMoistureEvents_ReadSthEventHandler ReadSth: 
+    EMEWELib._IMoistureEvents_RetMoistureEventHandler RetMoisture: 
+    EMEWELib._IMoistureEvents_BTChangedConnectionEventHandler BTChangedConnection: 
+  Methods:
+    WriteSth(Object&(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    get_nBTConnection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    StartMoisture(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndMoisture(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_CommClosed(_IMoistureEvents_CommClosedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_CommClosed(_IMoistureEvents_CommClosedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_ErrorOpenComm(_IMoistureEvents_ErrorOpenCommEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_ErrorOpenComm(_IMoistureEvents_ErrorOpenCommEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_ReadSth(_IMoistureEvents_ReadSthEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_ReadSth(_IMoistureEvents_ReadSthEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_RetMoisture(_IMoistureEvents_RetMoistureEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_RetMoisture(_IMoistureEvents_RetMoistureEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    add_BTChangedConnection(_IMoistureEvents_BTChangedConnectionEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    remove_BTChangedConnection(_IMoistureEvents_BTChangedConnectionEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Interface EMEWELib._IMoistureEvents_Event: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Events:
+    EMEWELib._IMoistureEvents_CommClosedEventHandler CommClosed: 
+    EMEWELib._IMoistureEvents_ErrorOpenCommEventHandler ErrorOpenComm: 
+    EMEWELib._IMoistureEvents_ReadSthEventHandler ReadSth: 
+    EMEWELib._IMoistureEvents_RetMoistureEventHandler RetMoisture: 
+    EMEWELib._IMoistureEvents_BTChangedConnectionEventHandler BTChangedConnection: 
+  Methods:
+    add_CommClosed(_IMoistureEvents_CommClosedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_CommClosed(_IMoistureEvents_CommClosedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_ErrorOpenComm(_IMoistureEvents_ErrorOpenCommEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_ErrorOpenComm(_IMoistureEvents_ErrorOpenCommEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_ReadSth(_IMoistureEvents_ReadSthEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_ReadSth(_IMoistureEvents_ReadSthEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_RetMoisture(_IMoistureEvents_RetMoistureEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_RetMoisture(_IMoistureEvents_RetMoistureEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    add_BTChangedConnection(_IMoistureEvents_BTChangedConnectionEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    remove_BTChangedConnection(_IMoistureEvents_BTChangedConnectionEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class EMEWELib._IMoistureEvents_CommClosedEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Virtual
+Class EMEWELib._IMoistureEvents_ErrorOpenCommEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Virtual
+Class EMEWELib._IMoistureEvents_ReadSthEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32): PrivateScope, Public, Virtual
+Class EMEWELib._IMoistureEvents_RetMoistureEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32, Single, Single, Single, Single, Single): PrivateScope, Public, Virtual
+Class EMEWELib._IMoistureEvents_BTChangedConnectionEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, UIntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Int32): PrivateScope, Public, Virtual
+Interface EMEWELib.Moisture: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Interfaces:
+    EMEWELib.IMoisture
+    EMEWELib._IMoistureEvents_Event
+Interface EMEWELib.IMoisture: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, Import
+  Properties:
+    Int32 nBTConnection 'get ' : 
+  Methods:
+    WriteSth(Object&(In, HasFieldMarshal)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_nBTConnection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    StartMoisture(Int32(In)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EndMoisture(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class EMEWELib._IMoistureEvents_SinkHelper: AutoLayout, AnsiClass, Class, Public, Sealed
+  Interfaces:
+    EMEWELib._IMoistureEvents
+  Fields:
+    EMEWELib._IMoistureEvents_CommClosedEventHandler m_CommClosedDelegate : Public
+    EMEWELib._IMoistureEvents_ErrorOpenCommEventHandler m_ErrorOpenCommDelegate : Public
+    EMEWELib._IMoistureEvents_ReadSthEventHandler m_ReadSthDelegate : Public
+    EMEWELib._IMoistureEvents_RetMoistureEventHandler m_RetMoistureDelegate : Public
+    EMEWELib._IMoistureEvents_BTChangedConnectionEventHandler m_BTChangedConnectionDelegate : Public
+    Int32 m_dwCookie : Public
+  Methods:
+    CommClosed(): PrivateScope, Public, Virtual
+    ErrorOpenComm(): PrivateScope, Public, Virtual
+    ReadSth(Int32): PrivateScope, Public, Virtual
+    RetMoisture(Int32, Single, Single, Single, Single, Single): PrivateScope, Public, Virtual
+    BTChangedConnection(Int32): PrivateScope, Public, Virtual

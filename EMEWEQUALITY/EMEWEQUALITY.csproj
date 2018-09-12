@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{516AE7D0-F821-44E8-97A4-2EB918453E34}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EMEWEQUALITY</RootNamespace>
+    <AssemblyName>EMEWEQUALITY</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>ZJEMEWELogo.ico</ApplicationIcon>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/EMEWEQUALITY/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.EMEWELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\20130703\EMEWEQUALITY\EMEWEQUALITY\bin\Debug\AxInterop.EMEWELib.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="EMEWE.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Interop.EMEWELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LEDShow, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LEDShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Access, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="office, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\新建文件夹\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeightPrint, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WeightPrint.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="QCAdmin\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetPhoto\CHCNetSDK.cs" />
+    <Compile Include="GetPhoto\SDKCommon.cs" />
+    <Compile Include="HelpClass\BindData.cs" />
+    <Compile Include="HelpClass\CheckRegex.cs" />
+    <Compile Include="HelpClass\Exceldc.cs" />
+    <Compile Include="HelpClass\ImageFile.cs" />
+    <Compile Include="HelpClass\PageControl.cs" />
+    <Compile Include="HelpClass\FenYe.cs" />
+    <Compile Include="HelpClass\GetData.cs" />
+    <Compile Include="HelpClass\PrintDemo.cs" />
+    <Compile Include="HelpClass\PrintDemo2012-08-23.cs" />
+    <Compile Include="HelpClass\PrintDemoFormWeight.cs" />
+    <Compile Include="HelpClass\PrintWeight.cs" />
+    <Compile Include="HelpClass\U9Class.cs" />
+    <Compile Include="HelpClass\WeightSerialPort.cs" />
+    <Compile Include="MainFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrom.Designer.cs">
+      <DependentUpon>MainFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoistureMeter.cs" />
+    <Compile Include="MyControl\CardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\CardControl.Designer.cs">
+      <DependentUpon>CardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\PageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\PageUserControl.Designer.cs">
+      <DependentUpon>PageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\WinWordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\WinWordControl.designer.cs">
+      <DependentUpon>WinWordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\ExceptionHandlingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\ExceptionHandlingForm.Designer.cs">
+      <DependentUpon>ExceptionHandlingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\FormPrintTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\FormPrintTest.Designer.cs">
+      <DependentUpon>FormPrintTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\CollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\CollectionForm.Designer.cs">
+      <DependentUpon>CollectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\PacktsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\PacktsForm.Designer.cs">
+      <DependentUpon>PacktsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\PrintRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\PrintRecordForm.designer.cs">
+      <DependentUpon>PrintRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\RandomNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\RandomNumberForm.Designer.cs">
+      <DependentUpon>RandomNumberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\PrintUploadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\PrintUploadingForm.Designer.cs">
+      <DependentUpon>PrintUploadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\SMSManualSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\SMSManualSendForm.designer.cs">
+      <DependentUpon>SMSManualSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\SMSSendRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\SMSSendRecordForm.designer.cs">
+      <DependentUpon>SMSSendRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\SMSSendSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\SMSSendSetForm.Designer.cs">
+      <DependentUpon>SMSSendSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\UnusualPictureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\UnusualPictureForm.designer.cs">
+      <DependentUpon>UnusualPictureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\UnusualstandardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\UnusualstandardForm.Designer.cs">
+      <DependentUpon>UnusualstandardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdd\VerifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAdd\VerifyForm.Designer.cs">
+      <DependentUpon>VerifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NT88API.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="QCAdmin\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrom.resx">
+      <DependentUpon>MainFrom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\CardControl.resx">
+      <DependentUpon>CardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\PageUserControl.resx">
+      <DependentUpon>PageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\WinWordControl.resx">
+      <DependentUpon>WinWordControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\ExceptionHandlingForm.resx">
+      <DependentUpon>ExceptionHandlingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\FormPrintTest.resx">
+      <DependentUpon>FormPrintTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\CollectionForm.resx">
+      <DependentUpon>CollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\PacktsForm.resx">
+      <DependentUpon>PacktsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\PrintRecordForm.resx">
+      <DependentUpon>PrintRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\RandomNumberForm.resx">
+      <DependentUpon>RandomNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\PrintUploadingForm.resx">
+      <DependentUpon>PrintUploadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\SMSManualSendForm.resx">
+      <DependentUpon>SMSManualSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\SMSSendRecordForm.resx">
+      <DependentUpon>SMSSendRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\SMSSendSetForm.resx">
+      <DependentUpon>SMSSendSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\UnusualPictureForm.resx">
+      <DependentUpon>UnusualPictureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\UnusualstandardForm.resx">
+      <DependentUpon>UnusualstandardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAdd\VerifyForm.resx">
+      <DependentUpon>VerifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\FormManaualEntryCar.resx">
+      <DependentUpon>FormManaualEntryCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\FormWeight.resx">
+      <DependentUpon>FormWeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\FormWate.resx">
+      <DependentUpon>FormWate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\frmQcRecordInfo.resx">
+      <DependentUpon>frmQcRecordInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\frmUpdateQC.resx">
+      <DependentUpon>frmUpdateQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\frmWateTest.resx">
+      <DependentUpon>frmWateTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\frmWeightTest.resx">
+      <DependentUpon>frmWeightTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\InsetfaceFrom.resx">
+      <DependentUpon>InsetfaceFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\OneQCAdmin.resx">
+      <DependentUpon>OneQCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\PicForm.resx">
+      <DependentUpon>PicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\TwoQCAdmin.resx">
+      <DependentUpon>TwoQCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QCAdmin\FormCarRegister.resx">
+      <DependentUpon>FormCarRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\CarDetailsForm.resx">
+      <DependentUpon>CarDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\CarStatisticsForm.resx">
+      <DependentUpon>CarStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\QCDetailsForm.resx">
+      <DependentUpon>QCDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\QCStatisticsForm.resx">
+      <DependentUpon>QCStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ReturnDetailsForm.resx">
+      <DependentUpon>ReturnDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ReturnStillPackForm.resx">
+      <DependentUpon>ReturnStillPackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\UpdateQCDetailsForm.resx">
+      <DependentUpon>UpdateQCDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\UpdateQCStatisticsForm.resx">
+      <DependentUpon>UpdateQCStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\Beonduty_GuanLǐ.resx">
+      <DependentUpon>Beonduty_GuanLǐ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\CutPic.resx">
+      <DependentUpon>CutPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\DictionaryAdmin.resx">
+      <DependentUpon>DictionaryAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\FormQCWateSet.resx">
+      <DependentUpon>FormQCWateSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\FormWeightSet.resx">
+      <DependentUpon>FormWeightSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\Form_Loading.resx">
+      <DependentUpon>Form_Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\InstrumentInfoForm.resx">
+      <DependentUpon>InstrumentInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\MenuInfoADD.resx">
+      <DependentUpon>MenuInfoADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\MenuInfoManager.resx">
+      <DependentUpon>MenuInfoManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\PolicyConfigurationInfoForm.resx">
+      <DependentUpon>PolicyConfigurationInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\PresetTareForm.resx">
+      <DependentUpon>PresetTareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\PrintTemplateSetUpForm.resx">
+      <DependentUpon>PrintTemplateSetUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\SetPassWord.resx">
+      <DependentUpon>SetPassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\SystemOperate.resx">
+      <DependentUpon>SystemOperate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\SystemSet.resx">
+      <DependentUpon>SystemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\TestItemsForm.resx">
+      <DependentUpon>TestItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\UserAdmin.resx">
+      <DependentUpon>UserAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\UserRole.resx">
+      <DependentUpon>UserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\UserRoleADD.resx">
+      <DependentUpon>UserRoleADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdmin\UserAdmin2.resx">
+      <DependentUpon>UserAdmin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\bluetooth1.png" />
+    <None Include="Resources\bluetooth2.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QCAdmin\FormManaualEntryCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\FormManaualEntryCar.Designer.cs">
+      <DependentUpon>FormManaualEntryCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\FormWate_WateAddOpr.cs" />
+    <Compile Include="QCAdmin\FormWeight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\FormWeight.Designer.cs">
+      <DependentUpon>FormWeight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\FormWate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\FormWate.Designer.cs">
+      <DependentUpon>FormWate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\frmQcRecordInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\frmQcRecordInfo.Designer.cs">
+      <DependentUpon>frmQcRecordInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\frmUpdateQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\frmUpdateQC.Designer.cs">
+      <DependentUpon>frmUpdateQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\frmWateTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\frmWateTest.Designer.cs">
+      <DependentUpon>frmWateTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\frmWeightTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\frmWeightTest.Designer.cs">
+      <DependentUpon>frmWeightTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\InsetfaceFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\InsetfaceFrom.Designer.cs">
+      <DependentUpon>InsetfaceFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\OneQCAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\OneQCAdmin.Designer.cs">
+      <DependentUpon>OneQCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\PicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\PicForm.Designer.cs">
+      <DependentUpon>PicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\PrintForm.Designer.cs">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\TwoQCAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\TwoQCAdmin.Designer.cs">
+      <DependentUpon>TwoQCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QCAdmin\FormCarRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCAdmin\FormCarRegister.Designer.cs">
+      <DependentUpon>FormCarRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\CarDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\CarDetailsForm.Designer.cs">
+      <DependentUpon>CarDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\CarStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\CarStatisticsForm.Designer.cs">
+      <DependentUpon>CarStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\QCDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\QCDetailsForm.Designer.cs">
+      <DependentUpon>QCDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\QCStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\QCStatisticsForm.Designer.cs">
+      <DependentUpon>QCStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ReturnDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ReturnDetailsForm.Designer.cs">
+      <DependentUpon>ReturnDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ReturnStillPackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ReturnStillPackForm.Designer.cs">
+      <DependentUpon>ReturnStillPackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\UpdateQCDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\UpdateQCDetailsForm.Designer.cs">
+      <DependentUpon>UpdateQCDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\UpdateQCStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\UpdateQCStatisticsForm.Designer.cs">
+      <DependentUpon>UpdateQCStatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\Beonduty_GuanLǐ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Beonduty_GuanLǐ.Designer.cs">
+      <DependentUpon>Beonduty_GuanLǐ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\CutPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\CutPic.designer.cs">
+      <DependentUpon>CutPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\DictionaryAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\DictionaryAdmin.Designer.cs">
+      <DependentUpon>DictionaryAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\FormQCWateSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\FormQCWateSet.designer.cs">
+      <DependentUpon>FormQCWateSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\FormWeightSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\FormWeightSet.Designer.cs">
+      <DependentUpon>FormWeightSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\Form_Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\Form_Loading.designer.cs">
+      <DependentUpon>Form_Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\InstrumentInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\InstrumentInfoForm.designer.cs">
+      <DependentUpon>InstrumentInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\MenuInfoADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\MenuInfoADD.Designer.cs">
+      <DependentUpon>MenuInfoADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\MenuInfoManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\MenuInfoManager.Designer.cs">
+      <DependentUpon>MenuInfoManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\PolicyConfigurationInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\PolicyConfigurationInfoForm.designer.cs">
+      <DependentUpon>PolicyConfigurationInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\PresetTareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\PresetTareForm.Designer.cs">
+      <DependentUpon>PresetTareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\PrintTemplateSetUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\PrintTemplateSetUpForm.Designer.cs">
+      <DependentUpon>PrintTemplateSetUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SetPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SetPassWord.Designer.cs">
+      <DependentUpon>SetPassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemOperate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemOperate.Designer.cs">
+      <DependentUpon>SystemOperate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\SystemSet.Designer.cs">
+      <DependentUpon>SystemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\TestItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\TestItemsForm.Designer.cs">
+      <DependentUpon>TestItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\UserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\UserAdmin.Designer.cs">
+      <DependentUpon>UserAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\UserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\UserRole.Designer.cs">
+      <DependentUpon>UserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\UserRoleADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\UserRoleADD.Designer.cs">
+      <DependentUpon>UserRoleADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin\UserAdmin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdmin\UserAdmin2.Designer.cs">
+      <DependentUpon>UserAdmin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WatchDog\IWatchDog.cs" />
+    <Compile Include="Web References\LWGETWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LWU9WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WordPringOut.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ZJEMEWELogo.ico" />
+    <None Include="Resources\jlmd_login1.png" />
+    <None Include="Web References\LWGETWebReference\QualityCheckOrderType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LWGETWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LWGETWebReference\ReplyMessageType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LWGETWebReference\Untitled.wsdl" />
+    <None Include="Web References\LWU9WebReference\GetRemainingLoosePaperQuantitiesResponseBatch.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LWU9WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LWU9WebReference\ReplyMessageType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LWU9WebReference\Untitled.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EMEWEDAL\EMEWEDAL.csproj">
+      <Project>{7777B9CA-F03C-46A7-A921-BB69B3139FFE}</Project>
+      <Name>EMEWEDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EMEWEEntity\EMEWEEntity.csproj">
+      <Project>{AEF8A9ED-D1F1-4B45-A4E3-58AFB876B117}</Project>
+      <Name>EMEWEEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoistureDetectionRules\MoistureDetectionRules.csproj">
+      <Project>{AD7996B2-DF1A-47E5-A9AA-DBBF9382B0E8}</Project>
+      <Name>MoistureDetectionRules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ACTIVEXLib">
+      <Guid>{C3C49D08-C0E7-42C6-8E19-C6F629A936F2}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Documents and Settings\Administrator\桌面\理文U9接口\LooseWastePaperManagement_concrete_v001.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LWU9WebReference\</RelPath>
+      <UpdateFromURL>C:\Documents and Settings\Administrator\桌面\理文U9接口\LooseWastePaperManagement_concrete_v001.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EMEWEQUALITY_LWU9WebReference_LooseWastePaperManagement_v001</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Documents and Settings\Administrator\桌面\理文U9接口\QualityPaperManagement_concrete_v001.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LWGETWebReference\</RelPath>
+      <UpdateFromURL>C:\Documents and Settings\Administrator\桌面\理文U9接口\QualityPaperManagement_concrete_v001.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EMEWEQUALITY_LWGETWebReference_QualityPaperManagement_v001</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataStau\" />
+    <Folder Include="ExceptionHand\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

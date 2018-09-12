@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using EMEWEQUALITY.HelpClass;
+
+namespace EMEWEQUALITY
+{
+    public partial class FormTest : Form
+    {
+        public FormTest()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox2.Text += "   "+GetData.GetStringMath(textBox1.Text.Trim(), int.Parse(comboBox1.Text));
+            textBox2.Text += "   " + GetData.GetStringMathAndPercentage(textBox1.Text.Trim(), int.Parse(comboBox1.Text));
+        }
+    }
+}

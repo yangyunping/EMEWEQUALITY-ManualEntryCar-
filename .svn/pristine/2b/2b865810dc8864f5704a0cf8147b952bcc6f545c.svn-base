@@ -1,0 +1,657 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using EMEWEQUALITY.HelpClass;
+using EMEWEEntity;
+using EMEWEDAL;
+using System.Linq.Expressions;
+using System.Data.Linq.SqlClient;
+using System.Drawing.Printing;
+
+namespace EMEWEQUALITY.NewAdd
+{
+    public partial class PacktsForm : Form
+    {
+        public PacktsForm()
+        {
+            InitializeComponent();
+
+        }
+        public MainFrom mf;//主窗体
+
+        Expression<Func<View_PacketsRecord, bool>> expr = null;
+        /// <summary>
+        /// 实例化分页控件
+        /// </summary>
+        PageControl page = new PageControl();
+        /// <summary>
+        /// 排序字段及方式[以空格格开]
+        /// </summary>
+        private string orderbywhere = "Packets_ID desc";
+
+
+
+        private void PacktsForm_Load(object sender, EventArgs e)
+        {
+            this.lvwUserList.AutoGenerateColumns = false;//设置只显示列表控件绑定的列
+
+            //cbxPROD_ID 绑定
+            DataTable DT = LinQBaseDao.Query("select Unusualstandard_PROD from dbo.Unusualstandard").Tables[0];
+            DataRow row = DT.NewRow();
+            row["Unusualstandard_PROD"] = "";
+            DT.Rows.InsertAt(row, 0);
+            cbxPROD_ID.DataSource = DT;
+            cbxPROD_ID.DisplayMember = "Unusualstandard_PROD";
+            cbxPROD_ID.ValueMember = "Unusualstandard_PROD";
+
+            //Time();
+            txtendTime.Value = Convert.ToDateTime(DateTime.Now.AddDays(1));
+            LoadData("");
+            tsprintB.Visible = true;
+            printMenu.Visible = true;
+        }
+        /// <summary>
+        /// 设置默认起始时间 提前一个月
+        /// </summary>
+        private void Time()
+        {
+            DateTime Time = DateTime.Now.AddDays(-1);
+            txtbeginTime.Value = Time;
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadData("");
+        }
+
+        private void LoadData(string clickName)
+        {
+            expr = (Expression<Func<View_PacketsRecord, bool>>)PredicateExtensionses.True<View_PacketsRecord>();
+            if (txtCNTR_NO.Text.Trim() != "")
+            {
+                expr = expr.And(c => SqlMethods.Like(c.CNTR_NO, "%" + txtCNTR_NO.Text.Trim() + "%"));
+
+            }
+
+            if (txtSHIPMENT_NO.Text.Trim() != "")
+            {
+                expr = expr.And(c => SqlMethods.Like(c.SHIPMENT_NO, "%" + txtSHIPMENT_NO.Text.Trim() + "%"));
+            }
+            if (txtPO_NO.Text.Trim() != "")
+            {
+                expr = expr.And(c => SqlMethods.Like(c.PO_NO, "%" + txtPO_NO.Text.Trim() + "%"));
+            }
+
+            if (cbxPROD_ID.Text.Trim() != "")
+            {
+                expr = expr.And(c => SqlMethods.Like(c.PROD_ID, "%" + cbxPROD_ID.Text.Trim() + "%"));
+            }
+            if (comboBox2.Text.Trim() == "是")
+            {
+                expr = expr.And(c => c.Packets_this_Update != "" || c.Packets_this_Update != null);
+            }
+            if (comboBox1.Text.Trim() == "是")
+            {
+                expr = expr = expr.And(n => n.Packets_this.ToString().Replace("+", "").Replace("-", "") == n.Packets_this_Update);
+
+            }
+
+            if (txtbeginTime.Value != null && txtendTime.Value != null)
+            {
+
+                expr = expr.And(c => c.Packets_Time >= Convert.ToDateTime(txtbeginTime.Value.ToString("yyyy-MM-dd")) && c.Packets_Time <= Convert.ToDateTime(txtendTime.Value.ToString("yyyy-MM-dd")));
+            }
+
+            page.PageMaxCount = tscbxPageSize2.SelectedItem.ToString();
+            lvwUserList.DataSource = page.BindBoundControl<View_PacketsRecord>(clickName, txtCurrentPage2, lblPageCount2, expr, orderbywhere);
+        }
+
+        /// <summary>
+        /// 分 页
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bdnInfo_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+
+            // LoadData(e.ClickedItem.Name);
+        }
+
+        /// <summary>
+        /// 设置每页显示信息条数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tscbxPageSize2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            page = new PageControl();
+            page.PageMaxCount = tscbxPageSize2.SelectedItem.ToString();
+            LoadData("");
+        }
+
+        /// <summary>
+        /// 导出文档 -- Ｗｏｒｄ的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tslWord_Click(object sender, EventArgs e)
+        {
+            tslExport_Word();
+        }
+        /// <summary>
+        /// 导出Word 的方法
+        /// </summary>
+        private void tslExport_Word()
+        {
+            SaveFileDialog sfile = new SaveFileDialog();
+            sfile.AddExtension = true;
+            sfile.DefaultExt = ".doc";
+            sfile.Filter = "(*.doc)|*.doc";
+            sfile.FileName = "理文检测系统抽包统计Word报表" + DateTime.Now.ToShortDateString();
+            if (sfile.ShowDialog() == DialogResult.OK)
+            {
+                object path = sfile.FileName;
+                Object none = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                Microsoft.Office.Interop.Word.Document document = wordApp.Documents.Add(ref none, ref none, ref none, ref none);
+                //建立表格
+                Microsoft.Office.Interop.Word.Table table = document.Tables.Add(document.Paragraphs.Last.Range, lvwUserList.Rows.Count + 1, lvwUserList.Columns.Count, ref none, ref none);
+                try
+                {
+                    for (int i = 0; i < lvwUserList.Columns.Count; i++)//设置标题
+                    {
+                        table.Cell(0, i + 1).Range.Text = lvwUserList.Columns[i].HeaderText;
+                    }
+                    for (int i = 1; i < lvwUserList.Rows.Count; i++)//填充数据
+                    {
+                        for (int j = 0; j < lvwUserList.Columns.Count; j++)
+                        {
+                            //table.Cell(i + 1, j + 1).Range.Text = dgvCarStatisticsQC[j, i - 1].Value.ToString();
+                            if (lvwUserList[j, i - 1].Value != null)
+                            {
+                                table.Cell(i + 1, j + 1).Range.Text = lvwUserList[j, i - 1].Value.ToString();
+                            }
+                        }
+                    }
+                    document.SaveAs(ref path, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none, ref none);
+                    document.Close(ref none, ref none, ref none);
+                    MessageBox.Show("导出数据成功！");
+                }
+
+                finally
+                {
+                    wordApp.Quit(ref none, ref none, ref none);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 导出文档 -- Ｅｘｃｅｌ的单击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tslExport_Click(object sender, EventArgs e)
+        {
+            string fileName = "理文检测系统抽包统计Excel报表-" + DateTime.Now.ToShortDateString();
+            tslExport_Excel(fileName, lvwUserList);
+        }
+        /// <summary>
+        /// 导出Excel 的方法
+        /// </summary>
+        private void tslExport_Excel(string fileName, DataGridView myDGV)
+        {
+            string saveFileName = "";
+            //bool fileSaved = false;
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.DefaultExt = "xls";
+            saveDialog.Filter = "Excel文件|*.xls";
+            saveDialog.FileName = fileName;
+            saveDialog.ShowDialog();
+            saveFileName = saveDialog.FileName;
+            if (saveFileName.IndexOf(":") < 0) return; //被点了取消 
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            if (xlApp == null)
+            {
+                MessageBox.Show("无法创建Excel对象，可能您的机子未安装Excel");
+                return;
+            }
+
+            Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
+            Microsoft.Office.Interop.Excel.Workbook workbook = workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];//取得sheet1 
+
+
+            //写入标题
+            for (int i = 1; i < lvwUserList.ColumnCount; i++)
+            {
+                worksheet.Cells[1, i] = myDGV.Columns[i].HeaderText;
+            }
+            //写入数值
+            for (int r = 0; r < lvwUserList.Rows.Count; r++)
+            {
+                for (int i = 1; i < lvwUserList.ColumnCount; i++)
+                {
+                    worksheet.Cells[r + 2, i] = lvwUserList.Rows[r].Cells[i].Value;
+                }
+                System.Windows.Forms.Application.DoEvents();
+            }
+            worksheet.Columns.EntireColumn.AutoFit();//列宽自适应
+            Microsoft.Office.Interop.Excel.Range rang = worksheet.get_Range(worksheet.Cells[2, 1], worksheet.Cells[myDGV.Rows.Count + 2, 2]);
+            rang.NumberFormat = "000000000000";
+
+            if (saveFileName != "")
+            {
+                try
+                {
+                    workbook.Saved = true;
+                    workbook.SaveCopyAs(saveFileName);
+                    //fileSaved = true;
+                }
+                catch (Exception ex)
+                {
+                    //fileSaved = false;
+                    MessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
+                }
+
+            }
+            //else
+            //{
+            //    fileSaved = false;
+            //}
+            xlApp.Quit();
+            GC.Collect();//强行销毁 
+            // if (fileSaved && System.IO.File.Exists(saveFileName)) System.Diagnostics.Process.Start(saveFileName); //打开EXCEL
+            MessageBox.Show(fileName + ",保存成功", "提示", MessageBoxButtons.OK);
+
+        }
+
+
+        /// <summary>
+        /// 单击单元格绑定数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lvwUserList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                DataGridViewRow row = lvwUserList.SelectedRows[0];
+
+                lblCNTR_NO.Text = row.Cells["CNTR_NO"].Value.ToString();
+                lblSHIPMENT_NO.Text = row.Cells["SHIPMENT_NO"].Value.ToString();
+                lblPO_NO.Text = row.Cells["PO_NO"].Value.ToString();
+                lblPROD_ID.Text = row.Cells["PROD_ID"].Value.ToString();
+                lblNO_OF_BALES.Text = row.Cells["NO_OF_BALES"].Value.ToString();
+                lblPackets_DTS.Text = row.Cells["Packets_DTS"].Value.ToString();
+                string[] str = row.Cells["Packets_this"].Value.ToString().Split(',');
+                lblDRAW_EXAM_INTERFACE_ID.Text = row.Cells["DRAW_EXAM_INTERFACE_ID"].Value.ToString();
+                txtPack1.Text = "";
+                txtPack2.Text = "";
+                txtPack3.Text = "";
+                txtPack4.Text = "";
+
+                for (int i = 0; i < str.Length; i++)
+                {
+                    foreach (Control item in groupBox1.Controls)
+                    {
+                        if (item.Name == "txtPack" + (i + 1))
+                        {
+                            if (str[i] != "")
+                            {
+
+                                if (item != null)
+                                {
+                                    item.Text = str[i];
+                                }
+                            }
+                            else
+                            {
+                                item.Text = "";
+                            }
+                        }
+                    }
+
+                }
+
+
+                lblPackets_ID.Text = row.Cells["Packets_ID"].Value.ToString();
+
+
+            }
+            catch
+            {
+
+
+            }
+
+
+
+        }
+
+
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Packets_this = "";
+                if (txtPack1.Text.Trim() != "")
+                {
+                    Packets_this += txtPack1.Text.Trim() + ",";
+                }
+                if (txtPack2.Text.Trim() != "")
+                {
+                    Packets_this += txtPack2.Text.Trim() + ",";
+                }
+                if (txtPack3.Text.Trim() != "")
+                {
+                    Packets_this += txtPack3.Text.Trim() + ",";
+                }
+                if (txtPack4.Text.Trim() != "")
+                {
+                    Packets_this += txtPack4.Text.Trim() + ",";
+                }
+                Packets_this = Packets_this.TrimEnd(',');
+
+                string[] Packets_thisList = Packets_this.Split(',');
+                string[] dtsList = lblPackets_DTS.Text.Split(',');
+
+                foreach (string item in Packets_thisList)
+                {
+                    foreach (string it in dtsList)
+                    {
+                        if (it == item)
+                        {
+                            MessageBox.Show("抽包号码“" + it + "”与DTS重复！");
+                            return;
+                        }
+                    }
+                }
+                DataTable dtq = LinQBaseDao.Query("select QCInfo_ID from QCInfo where QCInfo_DRAW_EXAM_INTERFACE_ID=" + lblDRAW_EXAM_INTERFACE_ID.Text + " order by QCInfo_ID desc ").Tables[0];
+                if (dtq.Rows.Count > 0)
+                {
+                    int moistcount = Convert.ToInt32(LinQBaseDao.GetSingle("select COUNT(0) from QCRecord where QCRecord_QCInfo_ID =" + dtq.Rows[0][0].ToString() + " and QCRecord_TestItems_ID in (1,3,4)"));
+                    if (moistcount > 0)
+                    {
+                        MessageBox.Show(this, "已开始测水，不能再抽包");
+                        return;
+                    }
+                }
+
+                if (lblPackets_ID.Text.Trim() != "")
+                {
+                    Expression<Func<Packets, bool>> fnP = n => n.Packets_ID == Convert.ToInt32(lblPackets_ID.Text.Trim());
+
+                    Action<Packets> a = n =>
+                    {
+                        n.Packets_this = Packets_this;
+                    };
+
+                    if (PacketsDAL.Update(fnP, a))
+                    {
+                        //抽包后修改qcinfo表 抽包总数和总抽包号
+                        string bags = lblPackets_DTS.Text + "," + Packets_this;
+                        if (dtq.Rows.Count > 0)
+                        {
+                            Common.GetSumWaterCount(Convert.ToInt32(dtq.Rows[0][0].ToString()));
+                            LinQBaseDao.Query("update QCInfo set QCInfo_DRAW='" + bags + "',QCInfo_PumpingPackets=" + bags.Split(',').Count() + ",QCInfo_MOIST_Count=" + Common.SumWaterCount + "  where QCInfo_DRAW_EXAM_INTERFACE_ID=" + lblDRAW_EXAM_INTERFACE_ID.Text);
+                        }
+                        else
+                        {
+                            LinQBaseDao.Query("update QCInfo set QCInfo_DRAW='" + bags + "',QCInfo_PumpingPackets=" + bags.Split(',').Count() + " where QCInfo_DRAW_EXAM_INTERFACE_ID=" + lblDRAW_EXAM_INTERFACE_ID.Text);
+                        }
+                        MessageBox.Show("操作成功！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("操作失败！");
+                    }
+
+                    LoadData("");
+
+                }
+
+            }
+            catch
+            {
+
+
+            }
+
+
+
+
+
+
+        }
+
+        private void lvwUserList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = lvwUserList.SelectedRows[0];
+
+                lblCNTR_NO.Text = row.Cells["CNTR_NO"].Value.ToString();
+                lblSHIPMENT_NO.Text = row.Cells["SHIPMENT_NO"].Value.ToString();
+                lblPO_NO.Text = row.Cells["PO_NO"].Value.ToString();
+                lblPROD_ID.Text = row.Cells["PROD_ID"].Value.ToString();
+                lblNO_OF_BALES.Text = row.Cells["NO_OF_BALES"].Value.ToString();
+                lblPackets_DTS.Text = row.Cells["Packets_DTS"].Value.ToString();
+                string[] str = row.Cells["Packets_this"].Value.ToString().Split(',');
+                lblDRAW_EXAM_INTERFACE_ID.Text = row.Cells["DRAW_EXAM_INTERFACE_ID"].Value.ToString();
+
+                txtPack1.Text = "";
+                txtPack2.Text = "";
+                txtPack3.Text = "";
+                txtPack4.Text = "";
+
+                for (int i = 0; i < str.Length; i++)
+                {
+
+
+                    foreach (Control item in groupBox1.Controls)
+                    {
+                        if (item.Name == "txtPack" + (i + 1))
+                        {
+                            if (str[i] != "")
+                            {
+
+                                if (item != null)
+                                {
+                                    item.Text = str[i];
+                                }
+                            }
+                            else
+                            {
+                                item.Text = "";
+                            }
+                        }
+                    }
+
+                }
+                lblPackets_ID.Text = row.Cells["Packets_ID"].Value.ToString();
+
+
+            }
+            catch
+            {
+
+
+            }
+        }
+
+        private PrintDocument printDocument;
+        private PageSetupDialog pageSetupDialog;
+        private PrintPreviewDialog printPreviewDialog;
+        /// <summary>
+        /// 打印包号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsprintB_Click(object sender, EventArgs e)
+        {
+            Print();
+        }
+
+        private void Print()
+        {
+            try
+            {
+                if (lvwUserList.SelectedRows.Count > 0)
+                {
+                    printDocument = new PrintDocument();
+                    printPreviewDialog = new PrintPreviewDialog();
+                    printDocument.PrintPage += new PrintPageEventHandler(this.printDocument_PrintPage);
+                    //printDocument.EndPrint += new PrintEventHandler(printDocument_EndPrint);
+                    printDocument.Print();
+                    printPreviewDialog.Close();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        int count = 0;
+        /// <summary>
+        /// 打印事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                int y = 0;
+                int rowGap = 30;
+                int colGap = 30;
+                int x = 1;
+                Font captionFont = new Font("宋体", 18, FontStyle.Bold);
+                Brush brush = new SolidBrush(Color.Black);
+                for (int i = 0; i < lvwUserList.SelectedRows.Count; i++)
+                {
+                    if (count != 0 && i == 0)
+                    {
+                        i = count + 1;
+                    }
+                    #region 杨敦钦 填充打印内容 和打印
+                    e.Graphics.DrawString("重庆理文造纸有限公司国废质检抽包", captionFont, brush, rowGap, y, StringFormat.GenericDefault);
+                    int id = Convert.ToInt32(lvwUserList.SelectedRows[i].Cells["DRAW_EXAM_INTERFACE_ID"].Value);
+                    string prtSql = "select CNTR_NO,WEIGHT_TICKET_NO,PROD_ID,DRAW_ONE,DRAW_TWO,DRAW_THREE,DRAW_FOUR,DRAW_FIVE,DRAW_SIX,DRAW_7,DRAW_8,DRAW_9,DRAW_10,DRAW_11,DRAW_12,DRAW_13,DRAW_14 from dbo.DRAW_EXAM_INTERFACE  where  DRAW_EXAM_INTERFACE_ID=" + id;
+                    DataTable dtprt = LinQBaseDao.Query(prtSql).Tables[0];
+                    if (dtprt.Rows.Count > 0)
+                    {
+                        y += colGap;//换行
+                        string strattent = dtprt.Rows[0]["CNTR_NO"].ToString();
+                        e.Graphics.DrawString("车牌号：" + strattent, captionFont, brush, rowGap, y, StringFormat.GenericDefault);//添加打印内容
+                        strattent = dtprt.Rows[0]["WEIGHT_TICKET_NO"].ToString();
+                        e.Graphics.DrawString("磅单号：" + strattent, captionFont, brush, 280, y, StringFormat.GenericDefault);//添加打印内容
+                        strattent = dtprt.Rows[0]["PROD_ID"].ToString();
+                        e.Graphics.DrawString("货品：" + strattent, captionFont, brush, 540, y, StringFormat.GenericDefault);//添加打印内容
+
+                        y += colGap;//换行
+                        strattent = "";
+                        string ziduan = "DRAW_ONE,DRAW_TWO,DRAW_THREE,DRAW_FOUR,DRAW_FIVE,DRAW_SIX,DRAW_7,DRAW_8,DRAW_9,DRAW_10,DRAW_11,DRAW_12,DRAW_13,DRAW_14";
+                        string[] danziduan = ziduan.Split(',');
+                        for (int j = 0; j < danziduan.Length; j++)
+                        {
+                            strattent = hbbh(dtprt, strattent, danziduan[j]);
+                        }
+                        if (strattent != "")
+                        {
+                            strattent = strattent.Substring(0, strattent.Length - 1);
+                        }
+                        e.Graphics.DrawString("包号：" + strattent, captionFont, brush, rowGap, y, StringFormat.GenericDefault);//添加打印内容
+                        y += 50;
+                    }
+                    if (x >= 10)
+                    {
+                        e.HasMorePages = true;//分页
+                        x = 1;
+                        count = i;
+                        if (i == lvwUserList.SelectedRows.Count - 1)
+                        {
+                            e.HasMorePages = false;//打印
+                        }
+                        break;
+                    }
+                    if (i == lvwUserList.SelectedRows.Count - 1)
+                    {
+                        e.HasMorePages = false;//打印
+                    }
+                    x++;
+                    #endregion
+                }
+
+            }
+            catch
+            {
+            }
+        }
+
+        /// <summary>
+        /// 合并包号
+        /// </summary>
+        /// <param name="dtprt"></param>
+        /// <param name="strattent"></param>
+        /// <returns></returns>
+        private static string hbbh(DataTable dtprt, string strattent, string ziduan)
+        {
+            if (dtprt.Rows[0][ziduan].ToString() != "" && dtprt.Rows[0][ziduan].ToString() != "0")
+            {
+                strattent = strattent + dtprt.Rows[0][ziduan].ToString() + "，";
+            }
+            return strattent;
+        }
+        private void printMenu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lvwUserList.SelectedRows.Count > 0)
+                {
+                    int id = Convert.ToInt32(lvwUserList.SelectedRows[0].Cells["DRAW_EXAM_INTERFACE_ID"].Value);
+                    Common.intQCInfo_ID = Convert.ToInt32(LinQBaseDao.GetSingle(" select QCInfo_ID from QCInfo where QCInfo_DRAW_EXAM_INTERFACE_ID=" + id).ToString());
+                    DialogResult di=MessageBox.Show("是否预览再打印？", "系统提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
+                    if (di.Equals(DialogResult.Yes))
+                    {
+                        Form1 fr = new Form1();
+                        fr.Show();
+                    }
+                    else if(di.Equals(DialogResult.No))
+                    {
+                        WordPringOut word = new WordPringOut(Common.intQCInfo_ID.ToString(), winWordControl1);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void txtSHIPMENT_NO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals('\r'))
+            {
+                LoadData("");
+            }
+        }
+
+        private void txtPack1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals('\r'))
+            {
+                btnSave_Click(sender, new EventArgs());
+            }
+        }
+    }
+}

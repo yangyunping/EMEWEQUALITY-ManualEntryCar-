@@ -1,0 +1,541 @@
+  Sunisoft.IrisSkin.ImagesMenuControl.bmp - Embedded, ContainedInManifestFile, 
+  Sunisoft.IrisSkin.ImagesPopupMenu.bmp - Embedded, ContainedInManifestFile, 
+  Sunisoft.IrisSkin.CollectionItemIcon.bmp - Embedded, ContainedInManifestFile, 
+  Sunisoft.IrisSkin.MenuControl.bmp - Embedded, ContainedInManifestFile, 
+  Sunisoft.IrisSkin.SkinEngineIcon.bmp - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v2.0.50727
+Assembly IrisSkin2, Version=2006.3.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Sunisoft.IrisSkin.Consts: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Fields:
+    System.String SKIN2_TRANSCOLOR = SKIN2_TRANSCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEFONTCOLOR = SKIN2_TITLEFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_FORMCOLOR = SKIN2_FORMCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_MENUBARSTARTCOLOR = SKIN2_MENUBARSTARTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_MENUBARENDCOLOR = SKIN2_MENUBARENDCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOPSELECTEDMENUCOLOR = SKIN2_TOPSELECTEDMENUCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOPSELECTEDMENUBORDERCOLOR = SKIN2_TOPSELECTEDMENUBORDERCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOPSELECTEDMENUFONTCOLOR = SKIN2_TOPSELECTEDMENUFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOPMENUFONTCOLOR = SKIN2_TOPMENUFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_LEFTBARSTARTCOLOR = SKIN2_LEFTBARSTARTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_LEFTBARENDCOLOR = SKIN2_LEFTBARENDCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_MENUITEMCOLOR = SKIN2_MENUITEMCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_MENUITEMFONTCOLOR = SKIN2_MENUITEMFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SELECTEDMENUCOLOR = SKIN2_SELECTEDMENUCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SELECTEDMENUBORDERCOLOR = SKIN2_SELECTEDMENUBORDERCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SELECTEDMENUFONTCOLOR = SKIN2_SELECTEDMENUFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOOLBARSTARTCOLOR = SKIN2_TOOLBARSTARTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOOLBARENDCOLOR = SKIN2_TOOLBARENDCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOOLBARONCOLOR = SKIN2_TOOLBARONCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOOLBARBORDERCOLOR = SKIN2_TOOLBARBORDERCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOOLBARDOWNCOLOR = SKIN2_TOOLBARDOWNCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_CONTROLCOLOR = SKIN2_CONTROLCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_CONTROLBORDERCOLOR = SKIN2_CONTROLBORDERCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_CONTROLFONTCOLOR = SKIN2_CONTROLFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_BUTTONFONTCOLOR = SKIN2_BUTTONFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SCROLLBARCOLOR = SKIN2_SCROLLBARCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TABCONTROLCOLOR = SKIN2_TABCONTROLCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TABCONTROLBORDERCOLOR = SKIN2_TABCONTROLBORDERCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TABCONTROLACTIVEFONTCOLOR = SKIN2_TABCONTROLACTIVEFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TABCONTROLINACTIVEFONTCOLOR = SKIN2_TABCONTROLINACTIVEFONTCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SIDECHANNELCOLOR = SKIN2_SIDECHANNELCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SIDECHANNELBORDERCOLOR = SKIN2_SIDECHANNELBORDERCOLOR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBAR1 = SKIN2_TITLEBAR1 : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBAR2 = SKIN2_TITLEBAR2 : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBAR3 = SKIN2_TITLEBAR3 : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBAR4 = SKIN2_TITLEBAR4 : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBAR5 = SKIN2_TITLEBAR5 : Public, Static, Literal, HasDefault
+    System.String SKIN2_FORMLEFTBORDER = SKIN2_FORMLEFTBORDER : Public, Static, Literal, HasDefault
+    System.String SKIN2_FORMRIGHTBORDER = SKIN2_FORMRIGHTBORDER : Public, Static, Literal, HasDefault
+    System.String SKIN2_FORMBOTTOMBORDER1 = SKIN2_FORMBOTTOMBORDER1 : Public, Static, Literal, HasDefault
+    System.String SKIN2_FORMBOTTOMBORDER2 = SKIN2_FORMBOTTOMBORDER2 : Public, Static, Literal, HasDefault
+    System.String SKIN2_FORMBOTTOMBORDER3 = SKIN2_FORMBOTTOMBORDER3 : Public, Static, Literal, HasDefault
+    System.String SKIN2_MINIMIZEDTITLE = SKIN2_MINIMIZEDTITLE : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBUTTONS = SKIN2_TITLEBUTTONS : Public, Static, Literal, HasDefault
+    System.String SKIN2_CHECKEDMENUICON = SKIN2_CHECKEDMENUICON : Public, Static, Literal, HasDefault
+    System.String SKIN2_MENUBAR = SKIN2_MENUBAR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TOOLBAR = SKIN2_TOOLBAR : Public, Static, Literal, HasDefault
+    System.String SKIN2_BUTTON = SKIN2_BUTTON : Public, Static, Literal, HasDefault
+    System.String SKIN2_CHECKBOX = SKIN2_CHECKBOX : Public, Static, Literal, HasDefault
+    System.String SKIN2_CHECKBOXLIST = SKIN2_CHECKBOXLIST : Public, Static, Literal, HasDefault
+    System.String SKIN2_RADIOBUTTON = SKIN2_RADIOBUTTON : Public, Static, Literal, HasDefault
+    System.String SKIN2_PROGRESSBAR1 = SKIN2_PROGRESSBAR1 : Public, Static, Literal, HasDefault
+    System.String SKIN2_PROGRESSBAR2 = SKIN2_PROGRESSBAR2 : Public, Static, Literal, HasDefault
+    System.String SKIN2_PROGRESSBAR3 = SKIN2_PROGRESSBAR3 : Public, Static, Literal, HasDefault
+    System.String SKIN2_PROGRESSBAR4 = SKIN2_PROGRESSBAR4 : Public, Static, Literal, HasDefault
+    System.String SKIN2_TRACKBAR = SKIN2_TRACKBAR : Public, Static, Literal, HasDefault
+    System.String SKIN2_TRACKBARSLIDER = SKIN2_TRACKBARSLIDER : Public, Static, Literal, HasDefault
+    System.String SKIN2_TRACKBARVSLIDER = SKIN2_TRACKBARVSLIDER : Public, Static, Literal, HasDefault
+    System.String SKIN2_SCROLLBARUPBUTTON = SKIN2_SCROLLBARUPBUTTON : Public, Static, Literal, HasDefault
+    System.String SKIN2_SCROLLBAR = SKIN2_SCROLLBAR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SCROLLBARDOWNBUTTON = SKIN2_SCROLLBARDOWNBUTTON : Public, Static, Literal, HasDefault
+    System.String SKIN2_TABCONTROL = SKIN2_TABCONTROL : Public, Static, Literal, HasDefault
+    System.String SKIN2_TABCONTROLLINE = SKIN2_TABCONTROLLINE : Public, Static, Literal, HasDefault
+    System.String SKIN2_SIDECHANNELBAR = SKIN2_SIDECHANNELBAR : Public, Static, Literal, HasDefault
+    System.String SKIN2_SIDECHANNELTITLE = SKIN2_SIDECHANNELTITLE : Public, Static, Literal, HasDefault
+    System.String SKIN2_SCROLLBUTTON = SKIN2_SCROLLBUTTON : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARICONPOSX = SKIN2_TITLEBARICONPOSX : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARICONPOSY = SKIN2_TITLEBARICONPOSY : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARCAPTIONTOP = SKIN2_TITLEBARCAPTIONTOP : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARBUTTONPOSX = SKIN2_TITLEBARBUTTONPOSX : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARBUTTONPOSY = SKIN2_TITLEBARBUTTONPOSY : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARREGIONMINY = SKIN2_TITLEBARREGIONMINY : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARREGIONMAXY = SKIN2_TITLEBARREGIONMAXY : Public, Static, Literal, HasDefault
+    System.String SKIN2_BOTTOMREGIONMINY = SKIN2_BOTTOMREGIONMINY : Public, Static, Literal, HasDefault
+    System.String SKIN2_BOTTOMREGIONMAXY = SKIN2_BOTTOMREGIONMAXY : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEFIVESECT = SKIN2_TITLEFIVESECT : Public, Static, Literal, HasDefault
+    System.String SKIN2_BOTTOMBORDERTHREESECT = SKIN2_BOTTOMBORDERTHREESECT : Public, Static, Literal, HasDefault
+    System.String SKIN2_TITLEBARNEEDREGION = SKIN2_TITLEBARNEEDREGION : Public, Static, Literal, HasDefault
+    System.String SKIN2_BOTTOMBORDERNEEDREGION = SKIN2_BOTTOMBORDERNEEDREGION : Public, Static, Literal, HasDefault
+Class Sunisoft.IrisSkin.SkinEngine: AutoLayout, AnsiClass, Class, Public, Serializable
+  :System.ComponentModel.Component
+    Void .ctor(System.ComponentModel.Component, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.Component, System.IO.Stream): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.Component): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Version 'get ' : 
+    Boolean Active 'get set' : 
+    System.String SkinFile 'get set' : 
+    System.String SkinPassword 'get set' : 
+    Boolean BuiltIn 'get set' : 
+    Sunisoft.IrisSkin.SkinCollection AddtionalBuiltInSkins 'get ' : 
+    Int32 DisableTag 'get set' : 
+    Boolean SkinAllForm 'get set' : 
+    Boolean SkinDialogs 'get set' : 
+    Boolean SkinScrollBar 'get set' : 
+    Int32 FormCaptionPosX 'get set' : 
+    Int32 FormCaptionPosY 'get set' : 
+    Boolean Enable3rdControl 'get set' : 
+    System.String SerialNumber 'get set' : 
+    System.String ResSysMenuClose 'get set' : 
+    System.String ResSysMenuMax 'get set' : 
+    System.String ResSysMenuMin 'get set' : 
+    System.Drawing.Font TitleFont 'get set' : 
+    System.Drawing.Font MenuFont 'get set' : 
+    System.String __Build 'get ' : 
+    System.IO.Stream SkinStream 'get set' : 
+    System.IO.Stream SkinStreamMain 'get set' : 
+    System.ComponentModel.Component Owner 'get ' : 
+    Sunisoft.IrisSkin.Res Res 'get ' : 
+  Events:
+    Sunisoft.IrisSkin.SkinChanged CurrentSkinChanged: 
+  Methods:
+    get_Version(): PrivateScope, Public, HideBySig, SpecialName
+    get_Active(): PrivateScope, Public, HideBySig, SpecialName
+    set_Active(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinFile(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinFile(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinPassword(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinPassword(String): PrivateScope, Public, HideBySig, SpecialName
+    get_BuiltIn(): PrivateScope, Public, HideBySig, SpecialName
+    set_BuiltIn(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AddtionalBuiltInSkins(): PrivateScope, Public, HideBySig, SpecialName
+    get_DisableTag(): PrivateScope, Public, HideBySig, SpecialName
+    set_DisableTag(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinAllForm(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinAllForm(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinDialogs(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinDialogs(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinScrollBar(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinScrollBar(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FormCaptionPosX(): PrivateScope, Public, HideBySig, SpecialName
+    set_FormCaptionPosX(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_FormCaptionPosY(): PrivateScope, Public, HideBySig, SpecialName
+    set_FormCaptionPosY(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Enable3rdControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_Enable3rdControl(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_SerialNumber(): PrivateScope, Public, HideBySig, SpecialName
+    set_SerialNumber(String): PrivateScope, Public, HideBySig, SpecialName
+    get_ResSysMenuClose(): PrivateScope, Public, HideBySig, SpecialName
+    set_ResSysMenuClose(String): PrivateScope, Public, HideBySig, SpecialName
+    get_ResSysMenuMax(): PrivateScope, Public, HideBySig, SpecialName
+    set_ResSysMenuMax(String): PrivateScope, Public, HideBySig, SpecialName
+    get_ResSysMenuMin(): PrivateScope, Public, HideBySig, SpecialName
+    set_ResSysMenuMin(String): PrivateScope, Public, HideBySig, SpecialName
+    get_TitleFont(): PrivateScope, Public, HideBySig, SpecialName
+    set_TitleFont(Font): PrivateScope, Public, HideBySig, SpecialName
+    get_MenuFont(): PrivateScope, Public, HideBySig, SpecialName
+    set_MenuFont(Font): PrivateScope, Public, HideBySig, SpecialName
+    get___Build(): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinStream(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinStream(Stream): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinStreamMain(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinStreamMain(Stream): PrivateScope, Public, HideBySig, SpecialName
+    get_Owner(): PrivateScope, Public, HideBySig, SpecialName
+    RemoveForm(Form, Boolean): PrivateScope, Public, HideBySig
+    AddForm(Form): PrivateScope, Public, HideBySig
+    AddControl(Control): PrivateScope, Public, HideBySig
+    AddContextMenu(ContextMenu): PrivateScope, Public, HideBySig
+    ResetMainMenu(Form): PrivateScope, Public, HideBySig
+    AddContextMenuStrip(ContextMenuStrip): PrivateScope, Public, HideBySig
+    ApplyAdditionalBuiltInSkins(Int32): PrivateScope, Public, HideBySig
+    ApplyMainBuiltInSkin(): PrivateScope, Public, HideBySig
+    GetColor(String): PrivateScope, Public, HideBySig
+    GetInt(String): PrivateScope, Public, HideBySig
+    GetBool(String): PrivateScope, Public, HideBySig
+    GetBitmap(String): PrivateScope, Public, HideBySig
+    GetBitmap(String, Int32, Int32): PrivateScope, Public, HideBySig
+    GetBrush(String): PrivateScope, Public, HideBySig
+    SetBrush(String, Brush): PrivateScope, Public, HideBySig
+    get_Res(): PrivateScope, Public, HideBySig, SpecialName
+    add_CurrentSkinChanged(SkinChanged): PrivateScope, Public, HideBySig, SpecialName
+    remove_CurrentSkinChanged(SkinChanged): PrivateScope, Public, HideBySig, SpecialName
+Class Sunisoft.IrisSkin.Res: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Sunisoft.IrisSkin.SkinColors Colors 'get ' : 
+    Sunisoft.IrisSkin.SkinBrushes Brushes 'get ' : 
+    Sunisoft.IrisSkin.SkinInt Integers 'get ' : 
+    Sunisoft.IrisSkin.SkinBools Bools 'get ' : 
+    Sunisoft.IrisSkin.SkinBitmaps Bitmaps 'get ' : 
+    Sunisoft.IrisSkin.SplitBitmaps SplitBitmaps 'get ' : 
+    Sunisoft.IrisSkin.ScrollBarRes ScrollBarRes 'get ' : 
+    Sunisoft.IrisSkin.TabControlRes TabControlRes 'get ' : 
+  Methods:
+    get_Colors(): PrivateScope, Public, HideBySig, SpecialName
+    get_Brushes(): PrivateScope, Public, HideBySig, SpecialName
+    get_Integers(): PrivateScope, Public, HideBySig, SpecialName
+    get_Bools(): PrivateScope, Public, HideBySig, SpecialName
+    get_Bitmaps(): PrivateScope, Public, HideBySig, SpecialName
+    get_SplitBitmaps(): PrivateScope, Public, HideBySig, SpecialName
+    get_ScrollBarRes(): PrivateScope, Public, HideBySig, SpecialName
+    get_TabControlRes(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.ScrollBarRes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Drawing.Brush BackColorBrush 'get ' : 
+    System.Drawing.Bitmap[,] UpButton 'get ' : 
+    System.Drawing.Bitmap[,] DownButton 'get ' : 
+    System.Drawing.Bitmap[,] Slider 'get ' : 
+    Boolean IsMacOS 'get ' : 
+  Methods:
+    get_BackColorBrush(): PrivateScope, Public, HideBySig, SpecialName
+    get_UpButton(): PrivateScope, Public, HideBySig, SpecialName
+    get_DownButton(): PrivateScope, Public, HideBySig, SpecialName
+    get_Slider(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsMacOS(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.SkinBitmaps: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Drawing.Bitmap SKIN2_TITLEBAR1 'get ' : 
+    System.Drawing.Bitmap SKIN2_TITLEBAR2 'get ' : 
+    System.Drawing.Bitmap SKIN2_TITLEBAR3 'get ' : 
+    System.Drawing.Bitmap SKIN2_TITLEBAR4 'get ' : 
+    System.Drawing.Bitmap SKIN2_TITLEBAR5 'get ' : 
+    System.Drawing.Bitmap SKIN2_FORMLEFTBORDER 'get ' : 
+    System.Drawing.Bitmap SKIN2_FORMRIGHTBORDER 'get ' : 
+    System.Drawing.Bitmap SKIN2_FORMBOTTOMBORDER1 'get ' : 
+    System.Drawing.Bitmap SKIN2_FORMBOTTOMBORDER2 'get ' : 
+    System.Drawing.Bitmap SKIN2_FORMBOTTOMBORDER3 'get ' : 
+    System.Drawing.Bitmap SKIN2_MINIMIZEDTITLE 'get ' : 
+    System.Drawing.Bitmap SKIN2_TITLEBUTTONS 'get ' : 
+    System.Drawing.Bitmap SKIN2_CHECKEDMENUICON 'get ' : 
+    System.Drawing.Bitmap SKIN2_MENUBAR 'get ' : 
+    System.Drawing.Bitmap SKIN2_TOOLBAR 'get ' : 
+    System.Drawing.Bitmap SKIN2_BUTTON 'get ' : 
+    System.Drawing.Bitmap SKIN2_CHECKBOX 'get ' : 
+    System.Drawing.Bitmap SKIN2_CHECKBOXLIST 'get ' : 
+    System.Drawing.Bitmap SKIN2_RADIOBUTTON 'get ' : 
+    System.Drawing.Bitmap SKIN2_PROGRESSBAR1 'get ' : 
+    System.Drawing.Bitmap SKIN2_PROGRESSBAR2 'get ' : 
+    System.Drawing.Bitmap SKIN2_PROGRESSBAR3 'get ' : 
+    System.Drawing.Bitmap SKIN2_PROGRESSBAR4 'get ' : 
+    System.Drawing.Bitmap SKIN2_TRACKBAR 'get ' : 
+    System.Drawing.Bitmap SKIN2_TRACKBARSLIDER 'get ' : 
+    System.Drawing.Bitmap SKIN2_TRACKBARSLIDER_180 'get ' : 
+    System.Drawing.Bitmap SKIN2_TRACKBARVSLIDER 'get ' : 
+    System.Drawing.Bitmap SKIN2_SCROLLBARUPBUTTON 'get ' : 
+    System.Drawing.Bitmap SKIN2_SCROLLBAR 'get ' : 
+    System.Drawing.Bitmap SKIN2_SCROLLBARDOWNBUTTON 'get ' : 
+    System.Drawing.Bitmap SKIN2_TABCONTROL 'get ' : 
+    System.Drawing.Bitmap SKIN2_TABCONTROLLINE 'get ' : 
+    System.Drawing.Bitmap SKIN2_SIDECHANNELBAR 'get ' : 
+    System.Drawing.Bitmap SKIN2_SIDECHANNELTITLE 'get ' : 
+    System.Drawing.Bitmap SKIN2_SCROLLBUTTON 'get ' : 
+  Methods:
+    get_SKIN2_TITLEBAR1(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TITLEBAR2(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TITLEBAR3(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TITLEBAR4(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TITLEBAR5(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_FORMLEFTBORDER(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_FORMRIGHTBORDER(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_FORMBOTTOMBORDER1(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_FORMBOTTOMBORDER2(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_FORMBOTTOMBORDER3(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_MINIMIZEDTITLE(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TITLEBUTTONS(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CHECKEDMENUICON(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_MENUBAR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOOLBAR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_BUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CHECKBOX(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CHECKBOXLIST(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_RADIOBUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_PROGRESSBAR1(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_PROGRESSBAR2(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_PROGRESSBAR3(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_PROGRESSBAR4(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TRACKBAR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TRACKBARSLIDER(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TRACKBARSLIDER_180(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TRACKBARVSLIDER(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SCROLLBARUPBUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SCROLLBAR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SCROLLBARDOWNBUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TABCONTROL(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TABCONTROLLINE(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SIDECHANNELBAR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SIDECHANNELTITLE(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SCROLLBUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class x293b01486f981425.x1110bdd110cdcea4: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    _d574bb1a8f3e9cbc(String, Int32): PrivateScope, Public, Static, HideBySig
+Class Sunisoft.IrisSkin.SkinCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Collections.CollectionBase
+  Properties:
+    Sunisoft.IrisSkin.SkinCollectionItem Item [Int32] 'get ' : 
+  Methods:
+    Add(SkinCollectionItem): PrivateScope, Public, HideBySig
+    Remove(SkinCollectionItem): PrivateScope, Public, HideBySig
+    Remove(Int32): PrivateScope, Public, HideBySig
+    get_Item(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Sunisoft.IrisSkin.SkinChanged: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, SkinChangedEventArgs): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, SkinChangedEventArgs, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.SkinCollectionItem: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String SkinFile 'get set' : 
+    System.String SkinPassword 'get set' : 
+    System.IO.MemoryStream SkinSteam 'get set' : 
+  Methods:
+    get_SkinFile(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinFile(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinPassword(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinPassword(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SkinSteam(): PrivateScope, Public, HideBySig, SpecialName
+    set_SkinSteam(MemoryStream): PrivateScope, Public, HideBySig, SpecialName
+Class Sunisoft.IrisSkin.SkinBools: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Boolean SKIN2_TITLEFIVESECT : Public
+    Boolean SKIN2_BOTTOMBORDERTHREESECT : Public
+    Boolean SKIN2_TITLEBARNEEDREGION : Public
+    Boolean SKIN2_BOTTOMBORDERNEEDREGION : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.SkinInt: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Int32 SKIN2_TITLEBARICONPOSX : Public
+    Int32 SKIN2_TITLEBARICONPOSY : Public
+    Int32 SKIN2_TITLEBARCAPTIONTOP : Public
+    Int32 SKIN2_TITLEBARBUTTONPOSX : Public
+    Int32 SKIN2_TITLEBARBUTTONPOSY : Public
+    Int32 SKIN2_TITLEBARREGIONMINY : Public
+    Int32 SKIN2_TITLEBARREGIONMAXY : Public
+    Int32 SKIN2_BOTTOMREGIONMINY : Public
+    Int32 SKIN2_BOTTOMREGIONMAXY : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.SkinChangedEventArgs: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean RealActive 'get set' : 
+  Methods:
+    get_RealActive(): PrivateScope, Public, HideBySig, SpecialName
+    set_RealActive(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Sunisoft.IrisSkin.SkinColors: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    System.Drawing.Color SKIN2_TRANSCOLOR : Public
+    System.Drawing.Color SKIN2_TITLEFONTCOLOR : Public
+    System.Drawing.Color SKIN2_FORMCOLOR : Public
+    System.Drawing.Color SKIN2_MENUBARSTARTCOLOR : Public
+    System.Drawing.Color SKIN2_MENUBARENDCOLOR : Public
+    System.Drawing.Color SKIN2_TOPSELECTEDMENUCOLOR : Public
+    System.Drawing.Color SKIN2_TOPSELECTEDMENUBORDERCOLOR : Public
+    System.Drawing.Color SKIN2_TOPSELECTEDMENUFONTCOLOR : Public
+    System.Drawing.Color SKIN2_TOPMENUFONTCOLOR : Public
+    System.Drawing.Color SKIN2_LEFTBARSTARTCOLOR : Public
+    System.Drawing.Color SKIN2_LEFTBARENDCOLOR : Public
+    System.Drawing.Color SKIN2_MENUITEMCOLOR : Public
+    System.Drawing.Color SKIN2_MENUITEMFONTCOLOR : Public
+    System.Drawing.Color SKIN2_SELECTEDMENUCOLOR : Public
+    System.Drawing.Color SKIN2_SELECTEDMENUBORDERCOLOR : Public
+    System.Drawing.Color SKIN2_SELECTEDMENUFONTCOLOR : Public
+    System.Drawing.Color SKIN2_TOOLBARSTARTCOLOR : Public
+    System.Drawing.Color SKIN2_TOOLBARENDCOLOR : Public
+    System.Drawing.Color SKIN2_TOOLBARONCOLOR : Public
+    System.Drawing.Color SKIN2_TOOLBARBORDERCOLOR : Public
+    System.Drawing.Color SKIN2_TOOLBARDOWNCOLOR : Public
+    System.Drawing.Color SKIN2_CONTROLCOLOR : Public
+    System.Drawing.Color SKIN2_CONTROLBORDERCOLOR : Public
+    System.Drawing.Color SKIN2_CONTROLFONTCOLOR : Public
+    System.Drawing.Color SKIN2_BUTTONFONTCOLOR : Public
+    System.Drawing.Color SKIN2_SCROLLBARCOLOR : Public
+    System.Drawing.Color SKIN2_TABCONTROLCOLOR : Public
+    System.Drawing.Color SKIN2_TABCONTROLBORDERCOLOR : Public
+    System.Drawing.Color SKIN2_TABCONTROLACTIVEFONTCOLOR : Public
+    System.Drawing.Color SKIN2_TABCONTROLINACTIVEFONTCOLOR : Public
+    System.Drawing.Color SKIN2_SIDECHANNELCOLOR : Public
+    System.Drawing.Color SKIN2_SIDECHANNELBORDERCOLOR : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.SkinBrushes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Drawing.Brush SKIN2_TRANSCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TITLEFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_FORMCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_MENUBARSTARTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_MENUBARENDCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOPSELECTEDMENUCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOPSELECTEDMENUBORDERCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOPSELECTEDMENUFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOPMENUFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_LEFTBARSTARTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_LEFTBARENDCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_MENUITEMCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_MENUITEMFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_SELECTEDMENUCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_SELECTEDMENUBORDERCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_SELECTEDMENUFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOOLBARSTARTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOOLBARENDCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOOLBARONCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOOLBARBORDERCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TOOLBARDOWNCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_CONTROLCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_CONTROLBORDERCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_CONTROLFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_BUTTONFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_SCROLLBARCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TABCONTROLCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TABCONTROLBORDERCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TABCONTROLACTIVEFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_TABCONTROLINACTIVEFONTCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_SIDECHANNELCOLOR 'get ' : 
+    System.Drawing.Brush SKIN2_SIDECHANNELBORDERCOLOR 'get ' : 
+  Methods:
+    get_SKIN2_TRANSCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TITLEFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_FORMCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_MENUBARSTARTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_MENUBARENDCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOPSELECTEDMENUCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOPSELECTEDMENUBORDERCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOPSELECTEDMENUFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOPMENUFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_LEFTBARSTARTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_LEFTBARENDCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_MENUITEMCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_MENUITEMFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SELECTEDMENUCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SELECTEDMENUBORDERCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SELECTEDMENUFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOOLBARSTARTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOOLBARENDCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOOLBARONCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOOLBARBORDERCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TOOLBARDOWNCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CONTROLCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CONTROLBORDERCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CONTROLFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_BUTTONFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SCROLLBARCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TABCONTROLCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TABCONTROLBORDERCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TABCONTROLACTIVEFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_TABCONTROLINACTIVEFONTCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SIDECHANNELCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_SIDECHANNELBORDERCOLOR(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.SplitBitmaps: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Drawing.Bitmap[] SKIN2_TITLEBUTTONS 'get ' : 
+    System.Drawing.Bitmap[] SKIN2_CHECKBOX 'get ' : 
+    System.Drawing.Bitmap[] SKIN2_RADIOBUTTON 'get ' : 
+    System.Drawing.Bitmap[] SKIN2_BUTTON 'get ' : 
+  Methods:
+    get_SKIN2_TITLEBUTTONS(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_CHECKBOX(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_RADIOBUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    get_SKIN2_BUTTON(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.TabControlRes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Drawing.Bitmap[,] TabImage 'get ' : 
+    System.Drawing.Bitmap TabLine 'get ' : 
+    System.Drawing.Brush BackColorBrush 'get ' : 
+    System.Drawing.Pen BorderPen 'get ' : 
+  Methods:
+    get_TabImage(): PrivateScope, Public, HideBySig, SpecialName
+    get_TabLine(): PrivateScope, Public, HideBySig, SpecialName
+    get_BackColorBrush(): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderPen(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Sunisoft.IrisSkin.Design.x2f6133cd59233dfd: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Design.Serialization.CodeDomSerializer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Deserialize(IDesignerSerializationManager, Object): PrivateScope, Public, Virtual, HideBySig
+    Serialize(IDesignerSerializationManager, Object): PrivateScope, Public, Virtual, HideBySig
+Class Sunisoft.IrisSkin.Design.xf4009cb7cc23b91e: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Design.CollectionEditor
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Sunisoft.IrisSkin.Design.x1cc8dd3ebd3495cd: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Design.FileNameEditor
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Sunisoft.IrisSkin.Skin3rdControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.NativeWindow
+    Void .ctor(System.Windows.Forms.Control, Sunisoft.IrisSkin.SkinEngine): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask

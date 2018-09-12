@@ -1,0 +1,6 @@
+namespace EMEWEEntity
+{
+    partial class DCQUALITYDataContext
+    {
+    }
+}

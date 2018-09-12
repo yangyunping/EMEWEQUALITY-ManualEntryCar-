@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.leemanpaper.com/wsdl/wastePaperManagement/qualityPaper/QualityPaperManagement/v001/concrete" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:ns1="http://www.leemanpaper.com/schema/technology/framework/Common/v001" xmlns:ns2="http://www.leemanpaper.com/schema/common/LeeManCommon/v001" xmlns:ns4="http://www.leemanpaper.com/schema/wastePaperManagement/qualityPaper/QualityPaperManagement/v001" xmlns:ns3="http://www.leemanpaper.com/schema/wastePaperManagement/common/WastePaperCommon/v001" xmlns:ns0="http://www.leemanpaper.com/wsdl/wastePaperManagement/qualityPaper/QualityPaperManagement/v001" name="Untitled" targetNamespace="http://www.leemanpaper.com/wsdl/wastePaperManagement/qualityPaper/QualityPaperManagement/v001/concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.leemanpaper.com/wsdl/wastePaperManagement/qualityPaper/QualityPaperManagement/v001" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.leemanpaper.com/schema/common/LeeManCommon/v001" />
+      <xs:import namespace="http://www.leemanpaper.com/schema/wastePaperManagement/qualityPaper/QualityPaperManagement/v001" />
+      <xs:import namespace="http://www.leemanpaper.com/schema/technology/framework/Common/v001" />
+      <xs:element name="GetBinForDeliveryNote">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="OrganizationID" type="ns2:OrganizationIDType" />
+            <xs:element form="unqualified" name="DeliveryNoteID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBinForDeliveryNoteFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="Error" type="ns1:ErrorType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBinForDeliveryNoteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="DepartmentID" type="ns2:DepartmentIDType" />
+            <xs:element form="unqualified" name="DepartmentName" type="xs:string" />
+            <xs:element form="unqualified" name="BinID" type="ns2:BinIDType" />
+            <xs:element form="unqualified" name="BinName" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetQualityCheckOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="OrganizationID" type="ns2:OrganizationIDType" />
+            <xs:element form="unqualified" name="QCorderID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetQualityCheckOrderFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="Error" type="ns1:ErrorType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetQualityCheckOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="ns4:QualityCheckOrder" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateNumberOfBale">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="OrganizationID" type="ns2:OrganizationIDType" />
+            <xs:element form="unqualified" name="QCorderID" type="xs:string" />
+            <xs:element form="unqualified" name="NumberOfBale" type="xs:float" />
+            <xs:element form="unqualified" name="UpdateBy" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateNumberOfBaleFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="Error" type="ns1:ErrorType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateNumberOfBaleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns1:ReplyMessage">
+              <xs:annotation>
+                <xs:documentation>
+				         			ReplyMessage.ResultCode: Success or Fail;
+				         		</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <schema xmlns:tns="http://www.leemanpaper.com/schema/technology/framework/Common/v001" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.leemanpaper.com/schema/technology/framework/Common/v001" version="001.3" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="ErrorType">
+        <sequence>
+          <element name="ErrorCode" type="string" />
+          <element minOccurs="0" name="ErrorMessage" type="string" />
+          <element minOccurs="0" name="Timestamp" type="dateTime" />
+          <element minOccurs="0" name="Transaction" type="string" />
+        </sequence>
+      </complexType>
+      <simpleType name="EventUpdateActionType">
+        <restriction base="string">
+          <enumeration value="New" />
+          <enumeration value="Update" />
+          <enumeration value="Delete" />
+          <enumeration value="Enable" />
+          <enumeration value="Disable" />
+        </restriction>
+      </simpleType>
+      <complexType name="EventUpdateHeaderType">
+        <sequence>
+          <element minOccurs="0" name="SequenceID" type="long" />
+          <element name="Action" type="tns:EventUpdateActionType" />
+          <element name="ActionEffectiveDateTime" type="dateTime" />
+        </sequence>
+      </complexType>
+      <complexType name="PropertyType">
+        <simpleContent>
+          <extension base="string">
+            <attribute name="Name" type="string" use="required" />
+          </extension>
+        </simpleContent>
+      </complexType>
+      <complexType name="ReplyMessageType">
+        <sequence>
+          <element name="ResultCode" type="string" />
+          <element minOccurs="0" name="ReplyMessage" type="string" />
+        </sequence>
+      </complexType>
+      <complexType name="RequestHeaderType">
+        <sequence>
+          <element minOccurs="0" name="TransactionID" type="string" />
+          <element minOccurs="0" name="CorrelationID" type="string" />
+          <element name="SourceID" type="string">
+            <annotation>
+              <documentation>
+          SourceID is the only mandatory field
+          </documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="SourceIDTrail" type="string" />
+        </sequence>
+        <anyAttribute namespace="##any" processContents="skip" />
+      </complexType>
+      <element name="Error" type="tns:ErrorType" />
+      <element name="EventUpdateAction" type="tns:EventUpdateActionType" />
+      <element name="EventUpdateHeader" type="tns:EventUpdateHeaderType" />
+      <element name="Property" type="tns:PropertyType" />
+      <element name="ReplyMessage" type="tns:ReplyMessageType" />
+      <element name="RequestHeader" type="tns:RequestHeaderType" />
+    </schema>
+    <schema xmlns:tns="http://www.leemanpaper.com/schema/common/LeeManCommon/v001" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.leemanpaper.com/schema/common/LeeManCommon/v001" version="001.7" xmlns="http://www.w3.org/2001/XMLSchema">
+      <simpleType name="BinIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="ContainerIDType">
+        <annotation>
+          <documentation>ISO 6346 conformed container number</documentation>
+        </annotation>
+        <restriction base="string" />
+      </simpleType>
+      <complexType name="ContainerQtyType">
+        <simpleContent>
+          <extension base="int">
+            <attribute name="Size" type="tns:ContainerSizeType" use="required" />
+          </extension>
+        </simpleContent>
+      </complexType>
+      <complexType name="ContainerQuantitiesType">
+        <sequence>
+          <element maxOccurs="2" name="Quantity" type="tns:ContainerQtyType" />
+        </sequence>
+      </complexType>
+      <simpleType name="ContainerSealNumberType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="ContainerSizeType">
+        <restriction base="string">
+          <enumeration value="40ft" />
+          <enumeration value="20ft" />
+        </restriction>
+      </simpleType>
+      <simpleType name="ContainerTypeType">
+        <restriction base="string">
+          <enumeration value="40" />
+          <enumeration value="40HC">
+            <annotation>
+              <documentation>High-cube</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40HT">
+            <annotation>
+              <documentation>Hard-top</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40OT">
+            <annotation>
+              <documentation>Open-top</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40FR">
+            <annotation>
+              <documentation>Flatracks</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40PF">
+            <annotation>
+              <documentation>Platforms (plats)</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40VL">
+            <annotation>
+              <documentation>Ventilated </documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40IL">
+            <annotation>
+              <documentation>Insulated</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="BB">
+            <annotation>
+              <documentation>Break Bulk</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40TK">
+            <annotation>
+              <documentation>Tank</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40CFR">
+            <annotation>
+              <documentation>Collapsible Flat Rack</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40RF">
+            <annotation>
+              <documentation>Reefer</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40RHC">
+            <annotation>
+              <documentation>Reefer High Cube</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="40SD">
+            <annotation>
+              <documentation>Standard Dry</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="FR">
+            <annotation>
+              <documentation>FR</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="20" />
+          <enumeration value="42" />
+          <enumeration value="45" />
+          <enumeration value="20HC" />
+          <enumeration value="20HT" />
+          <enumeration value="20OT" />
+          <enumeration value="20FR" />
+          <enumeration value="20PF" />
+          <enumeration value="20VL" />
+          <enumeration value="20IL" />
+          <enumeration value="20TK" />
+        </restriction>
+      </simpleType>
+      <simpleType name="CurrencyType">
+        <annotation>
+          <documentation>Currency codes according to ISO 4217</documentation>
+        </annotation>
+        <restriction base="string">
+          <enumeration value="AED" />
+          <enumeration value="AFN" />
+          <enumeration value="ALL" />
+          <enumeration value="AMD" />
+          <enumeration value="ANG" />
+          <enumeration value="AOA" />
+          <enumeration value="ARS" />
+          <enumeration value="AUD" />
+          <enumeration value="AWG" />
+          <enumeration value="AZN" />
+          <enumeration value="BAM" />
+          <enumeration value="BBD" />
+          <enumeration value="BDT" />
+          <enumeration value="BGN" />
+          <enumeration value="BHD" />
+          <enumeration value="BIF" />
+          <enumeration value="BMD" />
+          <enumeration value="BND" />
+          <enumeration value="BOB" />
+          <enumeration value="BRL" />
+          <enumeration value="BSD" />
+          <enumeration value="BTN" />
+          <enumeration value="BWP" />
+          <enumeration value="BYR" />
+          <enumeration value="BZD" />
+          <enumeration value="CAD" />
+          <enumeration value="CDF" />
+          <enumeration value="CHF" />
+          <enumeration value="CLP" />
+          <enumeration value="CNY" />
+          <enumeration value="COP" />
+          <enumeration value="CRC" />
+          <enumeration value="CUC" />
+          <enumeration value="CUP" />
+          <enumeration value="CVE" />
+          <enumeration value="CZK" />
+          <enumeration value="DJF" />
+          <enumeration value="DKK" />
+          <enumeration value="DOP" />
+          <enumeration value="DZD" />
+          <enumeration value="EGP" />
+          <enumeration value="ERN" />
+          <enumeration value="ETB" />
+          <enumeration value="EUR" />
+          <enumeration value="FJD" />
+          <enumeration value="FKP" />
+          <enumeration value="GBP" />
+          <enumeration value="GEL" />
+          <enumeration value="GGP" />
+          <enumeration value="GHS" />
+          <enumeration value="GIP" />
+          <enumeration value="GMD" />
+          <enumeration value="GNF" />
+          <enumeration value="GTQ" />
+          <enumeration value="GYD" />
+          <enumeration value="HKD" />
+          <enumeration value="HNL" />
+          <enumeration value="HRK" />
+          <enumeration value="HTG" />
+          <enumeration value="HUF" />
+          <enumeration value="IDR" />
+          <enumeration value="ILS" />
+          <enumeration value="IMP" />
+          <enumeration value="INR" />
+          <enumeration value="IQD" />
+          <enumeration value="IRR" />
+          <enumeration value="ISK" />
+          <enumeration value="JEP" />
+          <enumeration value="JMD" />
+          <enumeration value="JOD" />
+          <enumeration value="JPY" />
+          <enumeration value="KES" />
+          <enumeration value="KGS" />
+          <enumeration value="KHR" />
+          <enumeration value="KMF" />
+          <enumeration value="KPW" />
+          <enumeration value="KRW" />
+          <enumeration value="KWD" />
+          <enumeration value="KYD" />
+          <enumeration value="KZT" />
+          <enumeration value="LAK" />
+          <enumeration value="LBP" />
+          <enumeration value="LKR" />
+          <enumeration value="LRD" />
+          <enumeration value="LSL" />
+          <enumeration value="LTL" />
+          <enumeration value="LVL" />
+          <enumeration value="LYD" />
+          <enumeration value="MAD" />
+          <enumeration value="MDL" />
+          <enumeration value="MGA" />
+          <enumeration value="MKD" />
+          <enumeration value="MMK" />
+          <enumeration value="MNT" />
+          <enumeration value="MOP" />
+          <enumeration value="MRO" />
+          <enumeration value="MUR" />
+          <enumeration value="MVR" />
+          <enumeration value="MWK" />
+          <enumeration value="MXN" />
+          <enumeration value="MYR" />
+          <enumeration value="MZN" />
+          <enumeration value="NAD" />
+          <enumeration value="NGN" />
+          <enumeration value="NIO" />
+          <enumeration value="NOK" />
+          <enumeration value="NPR" />
+          <enumeration value="NZD" />
+          <enumeration value="OMR" />
+          <enumeration value="PAB" />
+          <enumeration value="PEN" />
+          <enumeration value="PGK" />
+          <enumeration value="PHP" />
+          <enumeration value="PKR" />
+          <enumeration value="PLN" />
+          <enumeration value="PYG" />
+          <enumeration value="QAR" />
+          <enumeration value="RON" />
+          <enumeration value="RSD" />
+          <enumeration value="RUB" />
+          <enumeration value="RWF" />
+          <enumeration value="SAR" />
+          <enumeration value="SBD" />
+          <enumeration value="SCR" />
+          <enumeration value="SDG" />
+          <enumeration value="SEK" />
+          <enumeration value="SGD" />
+          <enumeration value="SHP" />
+          <enumeration value="SLL" />
+          <enumeration value="SOS" />
+          <enumeration value="SPL" />
+          <enumeration value="SRD" />
+          <enumeration value="STD" />
+          <enumeration value="SVC" />
+          <enumeration value="SYP" />
+          <enumeration value="SZL" />
+          <enumeration value="THB" />
+          <enumeration value="TJS" />
+          <enumeration value="TMT" />
+          <enumeration value="TND" />
+          <enumeration value="TOP" />
+          <enumeration value="TRY" />
+          <enumeration value="TTD" />
+          <enumeration value="TVD" />
+          <enumeration value="TWD" />
+          <enumeration value="TZS" />
+          <enumeration value="UAH" />
+          <enumeration value="UGX" />
+          <enumeration value="USD" />
+          <enumeration value="UYU" />
+          <enumeration value="UZS" />
+          <enumeration value="VEF" />
+          <enumeration value="VND" />
+          <enumeration value="VUV" />
+          <enumeration value="WST" />
+          <enumeration value="XAF" />
+          <enumeration value="XCD" />
+          <enumeration value="XDR" />
+          <enumeration value="XOF" />
+          <enumeration value="XPF" />
+          <enumeration value="YER" />
+          <enumeration value="ZAR" />
+          <enumeration value="ZMK" />
+          <enumeration value="ZWD" />
+        </restriction>
+      </simpleType>
+      <simpleType name="DepartmentIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="EmailAddressType">
+        <restriction base="string">
+          <pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+        </restriction>
+      </simpleType>
+      <simpleType name="EventActionType">
+        <restriction base="string">
+          <enumeration value="Create" />
+          <enumeration value="Update" />
+          <enumeration value="Delete" />
+          <enumeration value="Invalidate" />
+        </restriction>
+      </simpleType>
+      <simpleType name="FactoryLocationType">
+        <restriction base="string">
+          <enumeration value="GuangDong" />
+          <enumeration value="DongGuan" />
+          <enumeration value="ChongQing" />
+          <enumeration value="JiangSu" />
+          <enumeration value="JiangXi" />
+        </restriction>
+      </simpleType>
+      <simpleType name="GoodsDeliveryModeType">
+        <restriction base="string">
+          <enumeration value="SelfPickUp">
+            <annotation>
+              <documentation>自提</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="Delivered">
+            <annotation>
+              <documentation>送貨</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="LanguageCodeType">
+        <restriction base="string">
+          <pattern value="([a-zA-Z]{2}|[iI]-[a-zA-Z]+|[xX]-[a-zA-Z]{1,8})(-[a-zA-Z]{1,8})*" />
+        </restriction>
+      </simpleType>
+      <simpleType name="LeeManCompanyIDType">
+        <annotation>
+          <documentation>Deprecated. Should use OrganizationIDType</documentation>
+        </annotation>
+        <restriction base="string" />
+      </simpleType>
+      <complexType name="MonetaryValueType">
+        <simpleContent>
+          <extension base="decimal">
+            <attribute name="Currency" type="tns:CurrencyType" use="required" />
+          </extension>
+        </simpleContent>
+      </complexType>
+      <simpleType name="OrganizationIDType">
+        <restriction base="string">
+          <pattern value="[a-zA-Z]+" />
+        </restriction>
+      </simpleType>
+      <complexType name="PurposesType">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="Purpose" type="string" />
+        </sequence>
+      </complexType>
+      <simpleType name="ShipmentNumberType">
+        <restriction base="string">
+          <pattern value="[A-Z]{3}\d{7}" />
+        </restriction>
+      </simpleType>
+      <complexType name="SimpleContactPersonType">
+        <sequence>
+          <element name="Name" type="string" />
+          <element name="MobileNumber" type="string" />
+        </sequence>
+      </complexType>
+      <simpleType name="SystemOrgCodeType">
+        <annotation>
+          <documentation>Organization Code as used in systems like U9 and ETS. Refers to the various LeeMan organization. Like GuangDong LeeMan, DongGuan LeeMan and etc</documentation>
+        </annotation>
+        <restriction base="string">
+          <pattern value="\d+" />
+        </restriction>
+      </simpleType>
+      <simpleType name="ThreeLetterCountryCodeType">
+        <annotation>
+          <documentation>3 letter country code defined in ISO 3166</documentation>
+        </annotation>
+        <restriction base="string">
+          <enumeration value="ALA" />
+          <enumeration value="AFG" />
+          <enumeration value="ALB" />
+          <enumeration value="DZA" />
+          <enumeration value="ASM" />
+          <enumeration value="AND" />
+          <enumeration value="AGO" />
+          <enumeration value="AIA" />
+          <enumeration value="ATA" />
+          <enumeration value="ATG" />
+          <enumeration value="ARG" />
+          <enumeration value="ARM" />
+          <enumeration value="ABW" />
+          <enumeration value="AUS" />
+          <enumeration value="AUT" />
+          <enumeration value="AZE" />
+          <enumeration value="BHS" />
+          <enumeration value="BHR" />
+          <enumeration value="BGD" />
+          <enumeration value="BRB" />
+          <enumeration value="BLR" />
+          <enumeration value="BEL" />
+          <enumeration value="BLZ" />
+          <enumeration value="BEN" />
+          <enumeration value="BMU" />
+          <enumeration value="BTN" />
+          <enumeration value="BOL" />
+          <enumeration value="BIH" />
+          <enumeration value="BWA" />
+          <enumeration value="BVT" />
+          <enumeration value="BRA" />
+          <enumeration value="IOT" />
+          <enumeration value="BRN" />
+          <enumeration value="BGR" />
+          <enumeration value="BFA" />
+          <enumeration value="BDI" />
+          <enumeration value="KHM" />
+          <enumeration value="CMR" />
+          <enumeration value="CAN" />
+          <enumeration value="CPV" />
+          <enumeration value="CYM" />
+          <enumeration value="CAF" />
+          <enumeration value="TCD" />
+          <enumeration value="CHL" />
+          <enumeration value="CHN" />
+          <enumeration value="CXR" />
+          <enumeration value="CCK" />
+          <enumeration value="COL" />
+          <enumeration value="COM" />
+          <enumeration value="COD" />
+          <enumeration value="COG" />
+          <enumeration value="COK" />
+          <enumeration value="CRI" />
+          <enumeration value="CIV" />
+          <enumeration value="HRV" />
+          <enumeration value="CUB" />
+          <enumeration value="CYP" />
+          <enumeration value="CZE" />
+          <enumeration value="DNK" />
+          <enumeration value="DJI" />
+          <enumeration value="DMA" />
+          <enumeration value="DOM" />
+          <enumeration value="ECU" />
+          <enumeration value="EGY" />
+          <enumeration value="SLV" />
+          <enumeration value="GNQ" />
+          <enumeration value="ERI" />
+          <enumeration value="EST" />
+          <enumeration value="ETH" />
+          <enumeration value="FLK" />
+          <enumeration value="FRO" />
+          <enumeration value="FJI" />
+          <enumeration value="FIN" />
+          <enumeration value="FRA" />
+          <enumeration value="GUF" />
+          <enumeration value="PYF" />
+          <enumeration value="ATF" />
+          <enumeration value="GAB" />
+          <enumeration value="GMB" />
+          <enumeration value="GEO" />
+          <enumeration value="DEU" />
+          <enumeration value="GHA" />
+          <enumeration value="GIB" />
+          <enumeration value="GRC" />
+          <enumeration value="GRL" />
+          <enumeration value="GRD" />
+          <enumeration value="GLP" />
+          <enumeration value="GUM" />
+          <enumeration value="GTM" />
+          <enumeration value="GIN" />
+          <enumeration value="GNB" />
+          <enumeration value="GUY" />
+          <enumeration value="HTI" />
+          <enumeration value="HMD" />
+          <enumeration value="HND" />
+          <enumeration value="HKG" />
+          <enumeration value="HUN" />
+          <enumeration value="ISL" />
+          <enumeration value="IND" />
+          <enumeration value="IDN" />
+          <enumeration value="IRN" />
+          <enumeration value="IRQ" />
+          <enumeration value="IRL" />
+          <enumeration value="ISR" />
+          <enumeration value="ITA" />
+          <enumeration value="JAM" />
+          <enumeration value="JPN" />
+          <enumeration value="JOR" />
+          <enumeration value="KAZ" />
+          <enumeration value="KEN" />
+          <enumeration value="KIR" />
+          <enumeration value="PRK" />
+          <enumeration value="KOR" />
+          <enumeration value="KWT" />
+          <enumeration value="KGZ" />
+          <enumeration value="LAO" />
+          <enumeration value="LVA" />
+          <enumeration value="LBN" />
+          <enumeration value="LSO" />
+          <enumeration value="LBR" />
+          <enumeration value="LBY" />
+          <enumeration value="LIE" />
+          <enumeration value="LTU" />
+          <enumeration value="LUX" />
+          <enumeration value="MAC" />
+          <enumeration value="MKD" />
+          <enumeration value="MDG" />
+          <enumeration value="MWI" />
+          <enumeration value="MYS" />
+          <enumeration value="MDV" />
+          <enumeration value="MLI" />
+          <enumeration value="MLT" />
+          <enumeration value="MHL" />
+          <enumeration value="MTQ" />
+          <enumeration value="MRT" />
+          <enumeration value="MUS" />
+          <enumeration value="MYT" />
+          <enumeration value="MEX" />
+          <enumeration value="FSM" />
+          <enumeration value="MDA" />
+          <enumeration value="MCO" />
+          <enumeration value="MNG" />
+          <enumeration value="MSR" />
+          <enumeration value="MAR" />
+          <enumeration value="MOZ" />
+          <enumeration value="MMR" />
+          <enumeration value="NAM" />
+          <enumeration value="NRU" />
+          <enumeration value="NPL" />
+          <enumeration value="NLD" />
+          <enumeration value="ANT" />
+          <enumeration value="NCL" />
+          <enumeration value="NZL" />
+          <enumeration value="NIC" />
+          <enumeration value="NER" />
+          <enumeration value="NGA" />
+          <enumeration value="NIU" />
+          <enumeration value="NFK" />
+          <enumeration value="MNP" />
+          <enumeration value="NOR" />
+          <enumeration value="OMN" />
+          <enumeration value="PAK" />
+          <enumeration value="PLW" />
+          <enumeration value="PSE" />
+          <enumeration value="PAN" />
+          <enumeration value="PNG" />
+          <enumeration value="PRY" />
+          <enumeration value="PER" />
+          <enumeration value="PHL" />
+          <enumeration value="PCN" />
+          <enumeration value="POL" />
+          <enumeration value="PRT" />
+          <enumeration value="PRI" />
+          <enumeration value="QAT" />
+          <enumeration value="REU" />
+          <enumeration value="ROU" />
+          <enumeration value="RUS" />
+          <enumeration value="RWA" />
+          <enumeration value="SHN" />
+          <enumeration value="KNA" />
+          <enumeration value="LCA" />
+          <enumeration value="SPM" />
+          <enumeration value="VCT" />
+          <enumeration value="WSM" />
+          <enumeration value="SMR" />
+          <enumeration value="STP" />
+          <enumeration value="SAU" />
+          <enumeration value="SEN" />
+          <enumeration value="SCG" />
+          <enumeration value="SYC" />
+          <enumeration value="SLE" />
+          <enumeration value="SGP" />
+          <enumeration value="SVK" />
+          <enumeration value="SVN" />
+          <enumeration value="SLB" />
+          <enumeration value="SOM" />
+          <enumeration value="ZAF" />
+          <enumeration value="SGS" />
+          <enumeration value="ESP" />
+          <enumeration value="LKA" />
+          <enumeration value="SDN" />
+          <enumeration value="SUR" />
+          <enumeration value="SJM" />
+          <enumeration value="SWZ" />
+          <enumeration value="SWE" />
+          <enumeration value="CHE" />
+          <enumeration value="SYR" />
+          <enumeration value="TWN" />
+          <enumeration value="TJK" />
+          <enumeration value="TZA" />
+          <enumeration value="THA" />
+          <enumeration value="TLS" />
+          <enumeration value="TGO" />
+          <enumeration value="TKL" />
+          <enumeration value="TON" />
+          <enumeration value="TTO" />
+          <enumeration value="TUN" />
+          <enumeration value="TUR" />
+          <enumeration value="TKM" />
+          <enumeration value="TCA" />
+          <enumeration value="TUV" />
+          <enumeration value="UGA" />
+          <enumeration value="UKR" />
+          <enumeration value="ARE" />
+          <enumeration value="GBR" />
+          <enumeration value="USA" />
+          <enumeration value="UMI" />
+          <enumeration value="URY" />
+          <enumeration value="UZB" />
+          <enumeration value="VUT" />
+          <enumeration value="VAT" />
+          <enumeration value="VEN" />
+          <enumeration value="VNM" />
+          <enumeration value="VGB" />
+          <enumeration value="VIR" />
+          <enumeration value="WLF" />
+          <enumeration value="ESH" />
+          <enumeration value="YEM" />
+          <enumeration value="ZMB" />
+          <enumeration value="ZWE" />
+        </restriction>
+      </simpleType>
+      <simpleType name="TransportationModeType">
+        <restriction base="string">
+          <enumeration value="Sea" />
+          <enumeration value="Land" />
+        </restriction>
+      </simpleType>
+      <simpleType name="TwoLetterCountryCodeType">
+        <annotation>
+          <documentation>2 letter country code defined in ISO 3166</documentation>
+        </annotation>
+        <restriction base="string">
+          <enumeration value="AX" />
+          <enumeration value="AF" />
+          <enumeration value="AL" />
+          <enumeration value="DZ" />
+          <enumeration value="AS" />
+          <enumeration value="AD" />
+          <enumeration value="AO" />
+          <enumeration value="AI" />
+          <enumeration value="AQ" />
+          <enumeration value="AG" />
+          <enumeration value="AR" />
+          <enumeration value="AM" />
+          <enumeration value="AW" />
+          <enumeration value="AU" />
+          <enumeration value="AT" />
+          <enumeration value="AZ" />
+          <enumeration value="BS" />
+          <enumeration value="BH" />
+          <enumeration value="BD" />
+          <enumeration value="BB" />
+          <enumeration value="BY" />
+          <enumeration value="BE" />
+          <enumeration value="BZ" />
+          <enumeration value="BJ" />
+          <enumeration value="BM" />
+          <enumeration value="BT" />
+          <enumeration value="BO" />
+          <enumeration value="BA" />
+          <enumeration value="BW" />
+          <enumeration value="BV" />
+          <enumeration value="BR" />
+          <enumeration value="IO" />
+          <enumeration value="BN" />
+          <enumeration value="BG" />
+          <enumeration value="BF" />
+          <enumeration value="BI" />
+          <enumeration value="KH" />
+          <enumeration value="CM" />
+          <enumeration value="CA" />
+          <enumeration value="CV" />
+          <enumeration value="KY" />
+          <enumeration value="CF" />
+          <enumeration value="TD" />
+          <enumeration value="CL" />
+          <enumeration value="CN" />
+          <enumeration value="CX" />
+          <enumeration value="CC" />
+          <enumeration value="CO" />
+          <enumeration value="KM" />
+          <enumeration value="CD" />
+          <enumeration value="CG" />
+          <enumeration value="CK" />
+          <enumeration value="CR" />
+          <enumeration value="CI" />
+          <enumeration value="HR" />
+          <enumeration value="CU" />
+          <enumeration value="CY" />
+          <enumeration value="CZ" />
+          <enumeration value="DK" />
+          <enumeration value="DJ" />
+          <enumeration value="DM" />
+          <enumeration value="DO" />
+          <enumeration value="EC" />
+          <enumeration value="EG" />
+          <enumeration value="SV" />
+          <enumeration value="GQ" />
+          <enumeration value="ER" />
+          <enumeration value="EE" />
+          <enumeration value="ET" />
+          <enumeration value="FK" />
+          <enumeration value="FO" />
+          <enumeration value="FJ" />
+          <enumeration value="FI" />
+          <enumeration value="FR" />
+          <enumeration value="GF" />
+          <enumeration value="PF" />
+          <enumeration value="TF" />
+          <enumeration value="GA" />
+          <enumeration value="GM" />
+          <enumeration value="GE" />
+          <enumeration value="DE" />
+          <enumeration value="GH" />
+          <enumeration value="GI" />
+          <enumeration value="GR" />
+          <enumeration value="GL" />
+          <enumeration value="GD" />
+          <enumeration value="GP" />
+          <enumeration value="GU" />
+          <enumeration value="GT" />
+          <enumeration value="GN" />
+          <enumeration value="GW" />
+          <enumeration value="GY" />
+          <enumeration value="HT" />
+          <enumeration value="HM" />
+          <enumeration value="HN" />
+          <enumeration value="HK" />
+          <enumeration value="HU" />
+          <enumeration value="IS" />
+          <enumeration value="IN" />
+          <enumeration value="ID" />
+          <enumeration value="IR" />
+          <enumeration value="IQ" />
+          <enumeration value="IE" />
+          <enumeration value="IL" />
+          <enumeration value="IT" />
+          <enumeration value="JM" />
+          <enumeration value="JP" />
+          <enumeration value="JO" />
+          <enumeration value="KZ" />
+          <enumeration value="KE" />
+          <enumeration value="KI" />
+          <enumeration value="KP" />
+          <enumeration value="KR" />
+          <enumeration value="KW" />
+          <enumeration value="KG" />
+          <enumeration value="LA" />
+          <enumeration value="LV" />
+          <enumeration value="LB" />
+          <enumeration value="LS" />
+          <enumeration value="LR" />
+          <enumeration value="LY" />
+          <enumeration value="LI" />
+          <enumeration value="LT" />
+          <enumeration value="LU" />
+          <enumeration value="MO" />
+          <enumeration value="MK" />
+          <enumeration value="MG" />
+          <enumeration value="MW" />
+          <enumeration value="MY" />
+          <enumeration value="MV" />
+          <enumeration value="ML" />
+          <enumeration value="MT" />
+          <enumeration value="MH" />
+          <enumeration value="MQ" />
+          <enumeration value="MR" />
+          <enumeration value="MU" />
+          <enumeration value="YT" />
+          <enumeration value="MX" />
+          <enumeration value="FM" />
+          <enumeration value="MD" />
+          <enumeration value="MC" />
+          <enumeration value="MN" />
+          <enumeration value="MS" />
+          <enumeration value="MA" />
+          <enumeration value="MZ" />
+          <enumeration value="MM" />
+          <enumeration value="NA" />
+          <enumeration value="NR" />
+          <enumeration value="NP" />
+          <enumeration value="NL" />
+          <enumeration value="AN" />
+          <enumeration value="NC" />
+          <enumeration value="NZ" />
+          <enumeration value="NI" />
+          <enumeration value="NE" />
+          <enumeration value="NG" />
+          <enumeration value="NU" />
+          <enumeration value="NF" />
+          <enumeration value="MP" />
+          <enumeration value="NO" />
+          <enumeration value="OM" />
+          <enumeration value="PK" />
+          <enumeration value="PW" />
+          <enumeration value="PS" />
+          <enumeration value="PA" />
+          <enumeration value="PG" />
+          <enumeration value="PY" />
+          <enumeration value="PE" />
+          <enumeration value="PH" />
+          <enumeration value="PN" />
+          <enumeration value="PL" />
+          <enumeration value="PT" />
+          <enumeration value="PR" />
+          <enumeration value="QA" />
+          <enumeration value="RE" />
+          <enumeration value="RO" />
+          <enumeration value="RU" />
+          <enumeration value="RW" />
+          <enumeration value="SH" />
+          <enumeration value="KN" />
+          <enumeration value="LC" />
+          <enumeration value="PM" />
+          <enumeration value="VC" />
+          <enumeration value="WS" />
+          <enumeration value="SM" />
+          <enumeration value="ST" />
+          <enumeration value="SA" />
+          <enumeration value="SN" />
+          <enumeration value="CS" />
+          <enumeration value="SC" />
+          <enumeration value="SL" />
+          <enumeration value="SG" />
+          <enumeration value="SK" />
+          <enumeration value="SI" />
+          <enumeration value="SB" />
+          <enumeration value="SO" />
+          <enumeration value="ZA" />
+          <enumeration value="GS" />
+          <enumeration value="ES" />
+          <enumeration value="LK" />
+          <enumeration value="SD" />
+          <enumeration value="SR" />
+          <enumeration value="SJ" />
+          <enumeration value="SZ" />
+          <enumeration value="SE" />
+          <enumeration value="CH" />
+          <enumeration value="SY" />
+          <enumeration value="TW" />
+          <enumeration value="TJ" />
+          <enumeration value="TZ" />
+          <enumeration value="TH" />
+          <enumeration value="TL" />
+          <enumeration value="TG" />
+          <enumeration value="TK" />
+          <enumeration value="TO" />
+          <enumeration value="TT" />
+          <enumeration value="TN" />
+          <enumeration value="TR" />
+          <enumeration value="TM" />
+          <enumeration value="TC" />
+          <enumeration value="TV" />
+          <enumeration value="UG" />
+          <enumeration value="UA" />
+          <enumeration value="AE" />
+          <enumeration value="GB" />
+          <enumeration value="US" />
+          <enumeration value="UM" />
+          <enumeration value="UY" />
+          <enumeration value="UZ" />
+          <enumeration value="VU" />
+          <enumeration value="VA" />
+          <enumeration value="VE" />
+          <enumeration value="VN" />
+          <enumeration value="VG" />
+          <enumeration value="VI" />
+          <enumeration value="WF" />
+          <enumeration value="EH" />
+          <enumeration value="YE" />
+          <enumeration value="ZM" />
+          <enumeration value="ZW" />
+        </restriction>
+      </simpleType>
+      <simpleType name="TypeOfTradeType">
+        <restriction base="string">
+          <enumeration value="OrdinaryTrade">
+            <annotation>
+              <documentation>一般貿易</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ProcessingTrade">
+            <annotation>
+              <documentation>加工貿易</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="TypeOfWeighedWastePaperType">
+        <restriction base="string">
+          <enumeration value="BaleForeign" />
+          <enumeration value="BaleLocal" />
+          <enumeration value="LoosenedAtContainer" />
+          <enumeration value="LoosenedAtBin" />
+        </restriction>
+      </simpleType>
+      <complexType name="UserActionTimeStampType">
+        <sequence>
+          <element name="UserID" type="string" />
+          <element name="TimeStamp" type="dateTime" />
+        </sequence>
+      </complexType>
+      <simpleType name="UserIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="VehicleLicensePlateType">
+        <restriction base="string">
+          <minLength value="5" />
+          <maxLength value="15" />
+        </restriction>
+      </simpleType>
+      <simpleType name="WarehouseCheckInRecordIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="WarehouseCheckOutRecordIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="WarehouseIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="WarehouseTransferRecordIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="WastPaperYardLocationIDType">
+        <restriction base="string" />
+      </simpleType>
+      <simpleType name="WastePaperSourceType">
+        <restriction base="string">
+          <enumeration value="Foreign" />
+          <enumeration value="Local" />
+        </restriction>
+      </simpleType>
+      <simpleType name="WastePaperTypeType">
+        <annotation>
+          <documentation>F:正常,L:散紙,I:質檢紙</documentation>
+        </annotation>
+        <restriction base="string">
+          <enumeration value="F" />
+          <enumeration value="L" />
+          <enumeration value="I" />
+        </restriction>
+      </simpleType>
+      <complexType name="WastePaperYardLocationType">
+        <simpleContent>
+          <extension base="string">
+            <attribute name="ID" type="tns:WastPaperYardLocationIDType" use="required" />
+            <attribute name="LangCode" type="tns:LanguageCodeType" use="required" />
+          </extension>
+        </simpleContent>
+      </complexType>
+      <complexType name="WeightType">
+        <simpleContent>
+          <extension base="decimal">
+            <attribute name="Unit" type="tns:WeightUnitType" use="required" />
+          </extension>
+        </simpleContent>
+      </complexType>
+      <simpleType name="WeightUnitType">
+        <restriction base="string">
+          <enumeration value="kg" />
+          <enumeration value="g" />
+          <enumeration value="mg" />
+          <enumeration value="lb" />
+          <enumeration value="mt" />
+          <enumeration value="t" />
+          <enumeration value="oz" />
+        </restriction>
+      </simpleType>
+      <element name="BinID" type="tns:BinIDType" />
+      <element name="ContainerID" type="tns:ContainerIDType" />
+      <element name="ContainerQty" type="tns:ContainerQtyType" />
+      <element name="ContainerQuantities" type="tns:ContainerQuantitiesType" />
+      <element name="ContainerSealNumber" type="tns:ContainerSealNumberType" />
+      <element name="Currency" type="tns:CurrencyType" />
+      <element name="DepartmentID" type="tns:DepartmentIDType" />
+      <element name="EmailAddress" type="tns:EmailAddressType" />
+      <element name="EventAction" type="tns:EventActionType" />
+      <element name="FactoryLocation" type="tns:FactoryLocationType" />
+      <element name="GoodsDeliveryMode" type="tns:GoodsDeliveryModeType" />
+      <element name="LanguageCode" type="tns:LanguageCodeType" />
+      <element name="MonetaryValue" type="tns:MonetaryValueType" />
+      <element name="OrganizationID" type="tns:OrganizationIDType" />
+      <element name="ShipmentNumber" type="tns:ShipmentNumberType" />
+      <element name="SimpleContactPerson" type="tns:SimpleContactPersonType" />
+      <element name="SystemOrgCode" type="tns:SystemOrgCodeType" />
+      <element name="TransportationMode" type="tns:TransportationModeType" />
+      <element name="TypeOfTrade" type="tns:TypeOfTradeType" />
+      <element name="TypeOfWeighedWastePaper" type="tns:TypeOfWeighedWastePaperType" />
+      <element name="UserActionTimeStamp" type="tns:UserActionTimeStampType" />
+      <element name="UserID" type="tns:UserIDType" />
+      <element name="VehicleLicensePlate" type="tns:VehicleLicensePlateType" />
+      <element name="WarehouseCheckInRecordID" type="tns:WarehouseCheckInRecordIDType" />
+      <element name="WarehouseCheckOutRecordID" type="tns:WarehouseCheckOutRecordIDType" />
+      <element name="WarehouseID" type="tns:WarehouseIDType" />
+      <element name="WarehouseTransferRecordID" type="tns:WarehouseTransferRecordIDType" />
+      <element name="WastePaperSource" type="tns:WastePaperSourceType" />
+      <element name="WastePaperType" type="tns:WastePaperTypeType" />
+      <element name="WastePaperYardLocation" type="tns:WastePaperYardLocationType" />
+    </schema>
+    <schema xmlns:tns="http://www.leemanpaper.com/schema/wastePaperManagement/common/WastePaperCommon/v001" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.leemanpaper.com/schema/wastePaperManagement/common/WastePaperCommon/v001" version="001.1" xmlns="http://www.w3.org/2001/XMLSchema">
+      <simpleType name="TypeOfClaimRecordType">
+        <restriction base="string">
+          <enumeration value="Claim" />
+          <enumeration value="Deposit" />
+          <enumeration value="Penalty" />
+        </restriction>
+      </simpleType>
+      <simpleType name="TypeOfStockedWastePaperType">
+        <restriction base="string">
+          <enumeration value="NormalBaled" />
+          <enumeration value="QC" />
+          <enumeration value="Loosened" />
+        </restriction>
+      </simpleType>
+    </schema>
+    <schema xmlns:tns="http://www.leemanpaper.com/schema/wastePaperManagement/qualityPaper/QualityPaperManagement/v001" xmlns:wpcommon="http://www.leemanpaper.com/schema/wastePaperManagement/common/WastePaperCommon/v001" xmlns:lmcommon="http://www.leemanpaper.com/schema/common/LeeManCommon/v001" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.leemanpaper.com/schema/wastePaperManagement/qualityPaper/QualityPaperManagement/v001" version="001.0" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.leemanpaper.com/schema/wastePaperManagement/common/WastePaperCommon/v001" />
+      <import namespace="http://www.leemanpaper.com/schema/common/LeeManCommon/v001" />
+      <complexType name="QCOrderItemType">
+        <sequence>
+          <element name="BatchID" type="string" />
+          <element name="QualityType" type="string" />
+          <element minOccurs="0" name="WarehouseID" type="string" />
+          <element name="BinID" type="string" />
+          <element name="Weight" type="lmcommon:WeightType" />
+          <element name="NumberOfBale" type="float" />
+          <element name="ScaleRecordID" type="string" />
+        </sequence>
+      </complexType>
+      <complexType name="QualityCheckOrderType">
+        <sequence>
+          <element name="OrganizationID" type="lmcommon:OrganizationIDType" />
+          <element minOccurs="0" name="QCOrderID" type="string" />
+          <element minOccurs="0" name="CreatedDate" type="dateTime" />
+          <element minOccurs="0" name="CreatedBy" type="string" />
+          <element minOccurs="0" name="QCOrderItems">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="QCOrderItem" type="tns:QCOrderItemType" />
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="QualityCheckOrder" type="tns:QualityCheckOrderType" />
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="GetBinForDeliveryNoteRequest">
+    <wsdl:part name="parameters" element="ns0:GetBinForDeliveryNote" />
+    <wsdl:part name="request_header" element="ns1:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetBinForDeliveryNoteResponse">
+    <wsdl:part name="parameters" element="ns0:GetBinForDeliveryNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBinForDeliveryNoteFault">
+    <wsdl:part name="parameters" element="ns0:GetBinForDeliveryNoteFault" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNumberOfBaleRequest">
+    <wsdl:part name="parameters" element="ns0:UpdateNumberOfBale" />
+    <wsdl:part name="request_header" element="ns1:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNumberOfBaleResponse">
+    <wsdl:part name="parameters" element="ns0:UpdateNumberOfBaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNumberOfBaleFault">
+    <wsdl:part name="parameters" element="ns0:UpdateNumberOfBaleFault" />
+  </wsdl:message>
+  <wsdl:message name="GetQualityCheckOrderRequest">
+    <wsdl:part name="parameters" element="ns0:GetQualityCheckOrder" />
+    <wsdl:part name="request_header" element="ns1:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetQualityCheckOrderResponse">
+    <wsdl:part name="parameters" element="ns0:GetQualityCheckOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQualityCheckOrderFault">
+    <wsdl:part name="parameters" element="ns0:GetQualityCheckOrderFault" />
+  </wsdl:message>
+  <wsdl:portType name="QualityPaperManagement">
+    <wsdl:operation name="GetBinForDeliveryNote">
+      <wsdl:input message="tns:GetBinForDeliveryNoteRequest" />
+      <wsdl:output message="tns:GetBinForDeliveryNoteResponse" />
+      <wsdl:fault name="fault" message="tns:GetBinForDeliveryNoteFault" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNumberOfBale">
+      <wsdl:input message="tns:UpdateNumberOfBaleRequest" />
+      <wsdl:output message="tns:UpdateNumberOfBaleResponse" />
+      <wsdl:fault name="fault" message="tns:UpdateNumberOfBaleFault" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQualityCheckOrder">
+      <wsdl:input message="tns:GetQualityCheckOrderRequest" />
+      <wsdl:output message="tns:GetQualityCheckOrderResponse" />
+      <wsdl:fault name="fault" message="tns:GetQualityCheckOrderFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QualityPaperManagementHTTPEndpointBinding" type="tns:QualityPaperManagement">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBinForDeliveryNote">
+      <soap:operation soapAction="/WastePaperManagement/QualityPaper/QualityPaperManagement/v001/GetBinForDeliveryNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:GetBinForDeliveryNoteRequest" part="request_header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNumberOfBale">
+      <soap:operation soapAction="/WastePaperManagement/QualityPaper/QualityPaperManagement/v001/UpdateNumberOfBale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:UpdateNumberOfBaleRequest" part="request_header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQualityCheckOrder">
+      <soap:operation soapAction="/WastePaperManagement/QualityPaper/QualityPaperManagement/v001/GetQualityCheckOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+        <soap:header message="tns:GetQualityCheckOrderRequest" part="request_header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QualityPaperManagement_v001">
+    <wsdl:port name="QualityPaperManagementHTTPEndpoint" binding="tns:QualityPaperManagementHTTPEndpointBinding">
+      <soap:address location="http://localhost:9966/WastePaperManagement/QualityPaper/QualityPaperManagement/v001" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

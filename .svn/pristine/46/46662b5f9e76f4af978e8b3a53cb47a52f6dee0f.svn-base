@@ -1,0 +1,85 @@
+ImageRuntimeVersion: v2.0.50727
+Assembly AxInterop.EMEWELib, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Interop.EMEWELib, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class AxEMEWELib.AxMoisture: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.AxHost
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 nBTConnection 'get ' : 
+  Events:
+    System.EventHandler CommClosed: 
+    System.EventHandler ErrorOpenComm: 
+    AxEMEWELib._IMoistureEvents_ReadSthEventHandler ReadSth: 
+    AxEMEWELib._IMoistureEvents_RetMoistureEventHandler RetMoisture: 
+    AxEMEWELib._IMoistureEvents_BTChangedConnectionEventHandler BTChangedConnection: 
+  Methods:
+    get_nBTConnection(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_CommClosed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_CommClosed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ErrorOpenComm(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ErrorOpenComm(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_ReadSth(_IMoistureEvents_ReadSthEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ReadSth(_IMoistureEvents_ReadSthEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RetMoisture(_IMoistureEvents_RetMoistureEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RetMoisture(_IMoistureEvents_RetMoistureEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_BTChangedConnection(_IMoistureEvents_BTChangedConnectionEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_BTChangedConnection(_IMoistureEvents_BTChangedConnectionEventHandler): PrivateScope, Public, HideBySig, SpecialName
+    WriteSth(Object&): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    StartMoisture(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndMoisture(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class AxEMEWELib._IMoistureEvents_ReadSthEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, _IMoistureEvents_ReadSthEvent): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, _IMoistureEvents_ReadSthEvent, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class AxEMEWELib._IMoistureEvents_ReadSthEvent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 nSize : Public
+Class AxEMEWELib._IMoistureEvents_RetMoistureEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, _IMoistureEvents_RetMoistureEvent): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, _IMoistureEvents_RetMoistureEvent, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class AxEMEWELib._IMoistureEvents_RetMoistureEvent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 sampleNo : Public
+    Single iniWeight : Public
+    Single finWeight : Public
+    Single fineTemperature : Public
+    Single alyTime : Public
+    Single fResult : Public
+Class AxEMEWELib._IMoistureEvents_BTChangedConnectionEventHandler: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Object, _IMoistureEvents_BTChangedConnectionEvent): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Object, _IMoistureEvents_BTChangedConnectionEvent, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class AxEMEWELib._IMoistureEvents_BTChangedConnectionEvent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 nBTStatus : Public
+Class AxEMEWELib.AxMoistureEventMulticaster: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(AxEMEWELib.AxMoisture): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    EMEWELib._IMoistureEvents
+  Methods:
+    CommClosed(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ErrorOpenComm(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ReadSth(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    RetMoisture(Int32, Single, Single, Single, Single, Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BTChangedConnection(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask

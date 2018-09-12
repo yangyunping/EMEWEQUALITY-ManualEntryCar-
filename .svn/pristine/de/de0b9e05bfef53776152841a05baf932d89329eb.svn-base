@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6773e107-03cc-460c-b72e-5f021b5fe613" name="Administrator@USER-20150528QE 2016-05-16 09:58:31" runUser="USER-20150528QE\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="d5def5b1-7f2c-4d39-a9cb-91101859a213">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment userDeploymentRoot="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="Administrator_USER-20150528QE 2016-05-16 09_58_31">
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Debug\EMEWEQUALITY.exe" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Debug\IrisSkin2.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Debug\AxInterop.EMEWELib.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Debug\EMEWE.Common.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\MoistureDetectionRules\bin\Debug\MoistureDetectionRules.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_yk\6_code\EMEWE.disk.xml\EMEWE.disk.xml\bin\Debug\EMEWE.Disk.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEDAL\bin\Debug\EMEWEDAL.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Debug\LEDShow.dll" />
+      <DeploymentItem filename="G:\EMEWE\emewe_Paper_jiangxi\6_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEEntity\bin\Debug\EMEWEEntity.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2016-05-16T09:58:31.4236187+08:00" queuing="2016-05-16T09:58:33.8817593+08:00" start="2016-05-16T09:58:34.1807764+08:00" finish="2016-05-16T09:58:39.7500949+08:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="USER-20150528QE" outcome="Warning" timestamp="2016-05-16T09:58:31.4986230+08:00">
+        <Text>当前已禁用部署。未部署测试“MoistureDectionRulesTest.FormWeightTest.GetSelectedBagsTest”中的部署项“EMEWEQUALITY.exe”。</Text>
+      </RunInfo>
+      <RunInfo computerName="USER-20150528QE" outcome="Error" timestamp="2016-05-16T09:58:39.7490949+08:00">
+        <Text>测试宿主进程意外退出。</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetSelectedBagsTest" storage="g:\emewe\emewe_paper_jiangxi\6_code\江西理文\project\20151220\emewequality\moisturedectionrulestest\bin\debug\moisturedectionrulestest.dll" id="6906742b-47a3-b948-0bfd-56c7bd6a3f9b">
+      <DeploymentItems>
+        <DeploymentItem filename="EMEWEQUALITY.exe" />
+      </DeploymentItems>
+      <Execution id="184eba80-5926-4652-8170-bf6839e390a3" />
+      <TestMethod codeBase="G:/EMEWE/emewe_Paper_jiangxi/6_code/江西理文/Project/20151220/EMEWEQUALITY/MoistureDectionRulesTest/bin/Debug/MoistureDectionRulesTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MoistureDectionRulesTest.FormWeightTest, MoistureDectionRulesTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetSelectedBagsTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="6906742b-47a3-b948-0bfd-56c7bd6a3f9b" executionId="184eba80-5926-4652-8170-bf6839e390a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="184eba80-5926-4652-8170-bf6839e390a3" testId="6906742b-47a3-b948-0bfd-56c7bd6a3f9b" testName="GetSelectedBagsTest" computerName="USER-20150528QE" duration="00:00:05.3103037" startTime="2016-05-16T09:58:34.4397912+08:00" endTime="2016-05-16T09:58:39.7500949+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="184eba80-5926-4652-8170-bf6839e390a3">
+    </UnitTestResult>
+  </Results>
+</TestRun>

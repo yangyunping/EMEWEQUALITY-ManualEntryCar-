@@ -1,0 +1,33 @@
+﻿生成启动时间为 2016-07-08 10:59:44。
+     1>项目“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITYTest\EMEWEQUALITYTest.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release\EMEWEQUALITYTest.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       GenerateTargetFrameworkMonikerAttribute:
+       正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+       ClCompile:
+         所有输出均为最新。
+         所有输出均为最新。
+         所有输出均为最新。
+       ResourceCompile:
+         所有输出均为最新。
+       Link:
+         所有输出均为最新。
+         EMEWEQUALITYTest.vcxproj -> G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\DefaultTest.dll
+       MetaGen:
+       正在跳过目标“MetaGen”，因为所有输出文件相对于输入文件而言都是最新的。
+       _CopyFilesMarkedCopyLocal:
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEDAL\bin\Release\EMEWEDAL.dll”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEDAL.dll”。
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEEntity\bin\Release\EMEWEEntity.dll”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEEntity.dll”。
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Release\EMEWEQUALITY.exe”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEQUALITY.exe”。
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEDAL\bin\Release\EMEWEDAL.pdb”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEDAL.pdb”。
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEEntity\bin\Release\EMEWEEntity.pdb”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEEntity.pdb”。
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Release\EMEWEQUALITY.pdb”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEQUALITY.pdb”。
+         正在将文件从“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITY\bin\Release\EMEWEQUALITY.XmlSerializers.dll”复制到“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\Release\EMEWEQUALITY.XmlSerializers.dll”。
+       FinalizeBuildStatus:
+         正在删除文件“Release\EMEWEQUALITYTest.unsuccessfulbuild”。
+         正在对“Release\EMEWEQUALITYTest.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“G:\EMEWE\emewe_Paper_jiangxi\5_code\江西理文\Project\20151220\EMEWEQUALITY\EMEWEQUALITYTest\EMEWEQUALITYTest.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.82

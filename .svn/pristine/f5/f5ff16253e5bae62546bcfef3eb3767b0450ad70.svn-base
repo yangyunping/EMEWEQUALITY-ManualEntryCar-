@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<param>
+  <query LEDFROMX="700" LEDFROMY="0" LEDX="20" LEDY="50" LEDDetectingTime="1000" LEDDetectedTime="5000" LEDFormWidth="224" LEDFormHeight="48" />
+</param>

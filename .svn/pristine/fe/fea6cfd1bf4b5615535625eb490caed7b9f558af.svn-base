@@ -1,0 +1,138 @@
+2016-06-07 11:01:14: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:14: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=0
+2016-06-07 11:01:15: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:15: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=1
+2016-06-07 11:01:15: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:15: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=1
+2016-06-07 11:01:15: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:16: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=2
+2016-06-07 11:01:16: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:16: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=2
+2016-06-07 11:01:16: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:16: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=2
+2016-06-07 11:01:16: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:17: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=3
+2016-06-07 11:01:17: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:17: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=3
+2016-06-07 11:01:17: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:17: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=5
+2016-06-07 11:01:17: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:17: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=5
+2016-06-07 11:01:18: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:18: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=5
+2016-06-07 11:01:18: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:18: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=6
+2016-06-07 11:01:18: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:18: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=6
+2016-06-07 11:01:18: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:18: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=6
+2016-06-07 11:01:19: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:19: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=7
+2016-06-07 11:01:19: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:19: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=7
+2016-06-07 11:01:20: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:20: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=7
+2016-06-07 11:01:20: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:20: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=8
+2016-06-07 11:01:20: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:20: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=8
+2016-06-07 11:01:22: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:22: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=8
+2016-06-07 11:01:22: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:22: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=9
+2016-06-07 11:01:22: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:23: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=9
+2016-06-07 11:01:23: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:23: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=9
+2016-06-07 11:01:23: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:23: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=10
+2016-06-07 11:01:23: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:23: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=10
+2016-06-07 11:01:24: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:24: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=10
+2016-06-07 11:01:24: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:24: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=11
+2016-06-07 11:01:24: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:24: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=11
+2016-06-07 11:01:25: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:25: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=11
+2016-06-07 11:01:25: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:25: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=12
+2016-06-07 11:01:25: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:25: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=12
+2016-06-07 11:01:25: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:25: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=12
+2016-06-07 11:01:26: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:26: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=14
+2016-06-07 11:01:26: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:26: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=14
+2016-06-07 11:01:27: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:27: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=15
+2016-06-07 11:01:27: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:27: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=15
+2016-06-07 11:01:30: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:30: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=15
+2016-06-07 11:01:30: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:31: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=16
+2016-06-07 11:01:31: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:31: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=16
+2016-06-07 11:01:31: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:31: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=17
+2016-06-07 11:01:31: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:31: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=17
+2016-06-07 11:01:31: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:31: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=17
+2016-06-07 11:01:32: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:32: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=18
+2016-06-07 11:01:32: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:32: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=18
+2016-06-07 11:01:32: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:32: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=19
+2016-06-07 11:01:32: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:32: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=19
+2016-06-07 11:01:34: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:34: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=19
+2016-06-07 11:01:35: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:35: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=20
+2016-06-07 11:01:35: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:35: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=20
+2016-06-07 11:01:35: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:35: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=21
+2016-06-07 11:01:35: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:35: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=21
+2016-06-07 11:01:38: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:38: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=21
+2016-06-07 11:01:39: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:39: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=22
+2016-06-07 11:01:39: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:39: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=22
+2016-06-07 11:01:39: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:39: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=22
+2016-06-07 11:01:39: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:40: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=23
+2016-06-07 11:01:40: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:40: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=23
+2016-06-07 11:01:43: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:43: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=23
+2016-06-07 11:01:43: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:43: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 11:01:44: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:44: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 11:01:44: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:44: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 11:01:44: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:44: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 11:01:44: QCRecordDAL.GetQCRecord_RESULT_AVERAGE started.
+2016-06-07 11:01:44: QCRecordDAL.GetQCRecord_RESULT_AVERAGE executed.
+2016-06-07 11:01:44: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:44: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 11:01:44: QCRecordDAL.GetQCRecord_RESULT_AVERAGE started.
+2016-06-07 11:01:45: QCRecordDAL.GetQCRecord_RESULT_AVERAGE executed.
+2016-06-07 11:01:45: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:45: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 11:01:45: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 11:01:45: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 16:46:03: started： object obj = LinQBaseDao.GetSingle(select  COUNT(1).
+2016-06-07 16:46:03: executed： object obj = LinQBaseDao.GetSingle(select  COUNT(1) . curRowCount=24
+2016-06-07 16:46:10: QCRecordDAL.GetQCRecord_RESULT_AVERAGE started.
+2016-06-07 16:46:10: QCRecordDAL.GetQCRecord_RESULT_AVERAGE executed.

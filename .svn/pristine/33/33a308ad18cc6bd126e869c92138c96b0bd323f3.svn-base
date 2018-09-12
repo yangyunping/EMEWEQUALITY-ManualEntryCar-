@@ -1,0 +1,126 @@
+  EMEWEQUALITY.LED.FormLEDChongQingSetup.resources - Embedded, ContainedInManifestFile, 
+  EMEWEQUALITY.LED.LEDJiangXiSHOWB.resources - Embedded, ContainedInManifestFile, 
+  EMEWEQUALITY.LED.LEDSHOWB.resources - Embedded, ContainedInManifestFile, 
+  EMEWEQUALITY.LED.FormLEDJiangXiSetup.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v2.0.50727
+Assembly LEDShow, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly EMEWEDAL, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=None, flags=None
+Assembly System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly MoistureDetectionRules, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=None, flags=None
+Class EMEWEQUALITY.LED.LEDChongqingDbDataOpr: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetQcids(): PrivateScope, Public, HideBySig
+    GetQcInfoDT(String): PrivateScope, Public, HideBySig
+    GetRowInfor(DataTable, Int32, String&(Out), String&(Out), String&(Out), String&(Out), String&(Out), String&(Out), String&(Out), String&(Out)): PrivateScope, Public, HideBySig
+Class EMEWEQUALITY.LED.FormLEDJiangXiSetup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form _ledShow : Public
+  Methods:
+    SetLEDShow(): PrivateScope, Public, HideBySig
+    CloseLEDShow(): PrivateScope, Public, HideBySig
+    ShowLED(): PrivateScope, Public, HideBySig
+Class EMEWEQUALITY.LED.LEDCreator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetFormLEDSetup(String): PrivateScope, Public, HideBySig
+    GetFormLED(String): PrivateScope, Public, HideBySig
+Class EMEWEQUALITY.LED.LEDJiangXiDbDataOpr: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetWateDetectingInfor(): PrivateScope, Public, HideBySig
+    GetWateDetectedInfor(): PrivateScope, Public, HideBySig
+    GetShowingFinishedWateInfor(DataTable, Int32): PrivateScope, Public, HideBySig
+Class EMEWEQUALITY.LED.LEDJiangXiSHOWB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Struct EMEWEQUALITY.LED.LEDJiangXiSHOWB+ShowContentType: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ShowContentType ShowDetectingInfor = 0 : Public, Static, Literal, HasDefault
+    ShowContentType ShowRecordInfor = 1 : Public, Static, Literal, HasDefault
+    ShowContentType Error = 2 : Public, Static, Literal, HasDefault
+Class EMEWEQUALITY.LED.LEDSHOWB: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Setfont(): PrivateScope, Public, HideBySig
+Class EMEWEQUALITY.LED.FormLEDChongQingSetup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form _ledShow : Public
+  Methods:
+    SetLEDShow(): PrivateScope, Public, HideBySig
+    CloseLEDShow(): PrivateScope, Public, HideBySig
+    ShowLED(): PrivateScope, Public, HideBySig
+Class EMEWEQUALITY.LED.CommonChongQing: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String LEDTabTime : Public, Static
+    System.String LEDEndTime : Public, Static
+    Int32 LEDFormWidth : Public, Static
+    Int32 LEDFormHeight : Public, Static
+    Int32 LEDFROMX : Public, Static
+    Int32 LEDFROMY : Public, Static
+    Int32 LEDX : Public, Static
+    Int32 LEDY : Public, Static
+  Methods:
+    GetServersTime(): PrivateScope, Public, Static, HideBySig
+    WriteTextLog(String): PrivateScope, Public, Static, HideBySig
+Class EMEWEQUALITY.LED.CommonJiangXi: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String LEDDetectingTime : Public, Static
+    System.String LEDDetectedTime : Public, Static
+    Int32 LEDFormWidth : Public, Static
+    Int32 LEDFormHeight : Public, Static
+    Int32 LEDFROMX : Public, Static
+    Int32 LEDFROMY : Public, Static
+    Int32 LEDX : Public, Static
+    Int32 LEDY : Public, Static
+  Methods:
+    GetServersTime(): PrivateScope, Public, Static, HideBySig
+    WriteTextLog(String): PrivateScope, Public, Static, HideBySig
+Interface EMEWEQUALITY.LED.ILEDCtrl: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    ShowLed(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class EMEWEQUALITY.LED.LEDCtrlPoxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    EMEWEQUALITY.LED.ILEDCtrl
+  Methods:
+    ShowLed(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class EMEWEQUALITY.LED.LEDJiangXiCtrl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    EMEWEQUALITY.LED.ILEDCtrl
+  Methods:
+    ShowLed(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class EMEWEQUALITY.LED.LEDChongQingCtrl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    EMEWEQUALITY.LED.ILEDCtrl
+  Methods:
+    ShowLed(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask

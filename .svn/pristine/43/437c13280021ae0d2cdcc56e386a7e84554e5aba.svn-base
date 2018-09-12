@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<str>
+  <table genre="type">
+    <name>江苏理文</name>
+    <rate>1200</rate>
+  </table>
+  <table genre="type">
+    <name>ind221</name>
+    <rate>1200</rate>
+  </table>
+  <table genre="type">
+    <name>jlerqi</name>
+    <rate>1200</rate>
+  </table>
+  <table genre="type">
+    <name>LP7510</name>
+    <rate>9600</rate>
+  </table>
+  <table genre="type">
+    <name>D2002E</name>
+    <rate>9600</rate>
+  </table>
+  <table genre="type">
+    <name>Kejie-ORMT-J2000DA+</name>
+    <rate>9600</rate>
+  </table>
+ <table genre="type">
+    <name>Kejie-ORMT-J2000B</name>
+    <rate>4800</rate>
+  </table>
+<table genre="type">
+    <name>Kejie-XK3198-B</name>
+    <rate>4800</rate>
+  </table>
+</str>

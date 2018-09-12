@@ -1,0 +1,1722 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="JXEMEWEQC" Class="DCQUALITYDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=EMEWE006-PC\EMEWE;Initial Catalog=JXEMEWEQC;User ID=sa" SettingsObjectName="EMEWEEntity.Properties.Settings" SettingsPropertyName="JXEMEWEQCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Auditing" Member="Auditing">
+    <Type Name="Auditing">
+      <Column Name="Auditing_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auditing_QCInfo_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Auditing_AuditingAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Auditing_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Auditing_UserInfo_Userinfo_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Auditing_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WeightSet" Member="WeightSet">
+    <Type Name="WeightSet">
+      <Column Name="WeightSet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WeightSet_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WeightSet_weightNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Beonduty" Member="Beonduty">
+    <Type Name="Beonduty">
+      <Column Name="Beonduty_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Beonduty_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Beonduty_BeginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Beonduty_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Beonduty_Remake" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Dictionary_Beonduty" Member="Dictionary" ThisKey="Beonduty_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCGroup_Beonduty" Member="QCGroup" ThisKey="QCGroup_ID" OtherKey="QCGroup_ID" Type="QCGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClientInfo" Member="ClientInfo">
+    <Type Name="ClientInfo">
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Client_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_ADDRESS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Client_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="ClientInfo_ParityInfo" Member="ParityInfo" ThisKey="Client_ID" OtherKey="Client_ID" Type="ParityInfo" />
+      <Association Name="ClientInfo_QCInfo" Member="QCInfo" ThisKey="Client_ID" OtherKey="QCInfo_Client_ID" Type="QCInfo" />
+      <Association Name="ClientInfo_QCRecord" Member="QCRecord" ThisKey="Client_ID" OtherKey="QCRecord_Client_ID" Type="QCRecord" />
+      <Association Name="ClientInfo_SystemSet" Member="SystemSet" ThisKey="Client_ID" OtherKey="Client_ID" Type="SystemSet" />
+      <Association Name="Dictionary_ClientInfo" Member="Dictionary" ThisKey="Client_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="TestItems_ClientInfo" Member="TestItems" ThisKey="Client_TestItems_ID" OtherKey="TestItems_ID" Type="TestItems" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetectionRules" Member="DetectionRules">
+    <Type Name="DetectionRules">
+      <Column Name="DetectionRules_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DetectionRules_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetectionRules_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetectionRules_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetectionRules_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetectionRules_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetectionRules_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DetectionRules_ISRETEST" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DetectionRules_Retest_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Dictionary_DetectionRules" Member="Dictionary" ThisKey="DetectionRules_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCInfo_DetectionRules" Member="QCInfo" ThisKey="DetectionRules_QCInfo_ID" OtherKey="QCInfo_ID" Type="QCInfo" IsForeignKey="true" />
+      <Association Name="TestItems_DetectionRules" Member="TestItems" ThisKey="DetectionRules_TestItems_ID" OtherKey="TestItems_ID" Type="TestItems" IsForeignKey="true" />
+      <Association Name="UserInfo_DetectionRules" Member="UserInfo" ThisKey="DetectionRules_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dictionary" Member="Dictionary">
+    <Type Name="Dictionary">
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_State" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ISLower" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Dictionary_Beonduty" Member="Beonduty" ThisKey="Dictionary_ID" OtherKey="Beonduty_Dictionary_ID" Type="Beonduty" />
+      <Association Name="Dictionary_ClientInfo" Member="ClientInfo" ThisKey="Dictionary_ID" OtherKey="Client_Dictionary_ID" Type="ClientInfo" />
+      <Association Name="Dictionary_DetectionRules" Member="DetectionRules" ThisKey="Dictionary_ID" OtherKey="DetectionRules_Dictionary_ID" Type="DetectionRules" />
+      <Association Name="Dictionary_LogInfo" Member="LogInfo" ThisKey="Dictionary_ID" OtherKey="Log_Dictionary_ID" Type="LogInfo" />
+      <Association Name="Dictionary_MenuInfo" Member="MenuInfo" ThisKey="Dictionary_ID" OtherKey="Menu_Dictionary_ID" Type="MenuInfo" />
+      <Association Name="Dictionary_MenuType" Member="MenuType" ThisKey="Dictionary_ID" OtherKey="MenuType_Dictionary_ID" Type="MenuType" />
+      <Association Name="Dictionary_OFFQCRecord" Member="OFFQCRecord" ThisKey="Dictionary_ID" OtherKey="OFFQCRecord_Dictionary_ID" Type="OFFQCRecord" />
+      <Association Name="Dictionary_PermissionsInfo" Member="PermissionsInfo" ThisKey="Dictionary_ID" OtherKey="Permissions_Dictionary_ID" Type="PermissionsInfo" />
+      <Association Name="Dictionary_PresetTare" Member="PresetTare" ThisKey="Dictionary_ID" OtherKey="PresetTare_Dictionary_ID" Type="PresetTare" />
+      <Association Name="Dictionary_PunchProject" Member="PunchProject" ThisKey="Dictionary_ID" OtherKey="Dictionary_ID" Type="PunchProject" />
+      <Association Name="Dictionary_QCGroup" Member="QCGroup" ThisKey="Dictionary_ID" OtherKey="QCGroup_Dictionary_ID" Type="QCGroup" />
+      <Association Name="Dictionary_QCGroupMember" Member="QCGroupMember" ThisKey="Dictionary_ID" OtherKey="QCGroupMember_Dictionary_ID" Type="QCGroupMember" />
+      <Association Name="Dictionary_QCInfo" Member="QCInfo" ThisKey="Dictionary_ID" OtherKey="QCInfo_Dictionary_ID" Type="QCInfo" />
+      <Association Name="Dictionary_QCRecord" Member="QCRecord" ThisKey="Dictionary_ID" OtherKey="QCRecord_Dictionary_ID" Type="QCRecord" />
+      <Association Name="Dictionary_QCRetest" Member="QCRetest" ThisKey="Dictionary_ID" OtherKey="QCRetest_Dictionary_ID" Type="QCRetest" />
+      <Association Name="Dictionary_TestItems" Member="TestItems" ThisKey="Dictionary_ID" OtherKey="TestItems_Dictionary_ID" Type="TestItems" />
+      <Association Name="Dictionary_UserInfo" Member="UserInfo" ThisKey="Dictionary_ID" OtherKey="User_Dictionary_ID" Type="UserInfo" />
+      <Association Name="Dictionary_UserInfo2" Member="UserInfo2" ThisKey="Dictionary_ID" OtherKey="User_Dictionary_ID" Type="UserInfo2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DutyInfo" Member="DutyInfo">
+    <Type Name="DutyInfo">
+      <Column Name="Duty_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Duty_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Duty_Describe" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="DutyInfo_UserInfo" Member="UserInfo" ThisKey="Duty_ID" OtherKey="User_Duty_ID" Type="UserInfo" />
+      <Association Name="DutyInfo_UserInfo2" Member="UserInfo2" ThisKey="Duty_ID" OtherKey="User_Duty_ID" Type="UserInfo2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExtractPack" Member="ExtractPack">
+    <Type Name="ExtractPack">
+      <Column Name="ExtractPack_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExtractPack_QCInfo_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExtractPack_WaterTestPackNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ImageRecord" Member="ImageRecord">
+    <Type Name="ImageRecord">
+      <Column Name="ImageRecord_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ImageRecord_QCRecord_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageRecord_Unusual_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageRecord_ImageName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ImageRecord_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ImageRecord_Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogInfo" Member="LogInfo">
+    <Type Name="LogInfo">
+      <Column Name="Log_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Log_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Log_Content" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Log_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Log_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Dictionary_LogInfo" Member="Dictionary" ThisKey="Log_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogInfo$" Member="LogInfo_">
+    <Type Name="LogInfo_">
+      <Column Name="Log_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Log_Dictionary_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Log_Content" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Log_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Log_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuInfo" Member="MenuInfo">
+    <Type Name="MenuInfo">
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Menu_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_MenuType_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_ControlType" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Menu_ControlText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_ControlName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_FromText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_FromName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Menu_Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Menu_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Dictionary_MenuInfo" Member="Dictionary" ThisKey="Menu_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="MenuType_MenuInfo" Member="MenuType" ThisKey="Menu_MenuType_ID" OtherKey="MenuType_ID" Type="MenuType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuType" Member="MenuType">
+    <Type Name="MenuType">
+      <Column Name="MenuType_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuType_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuType_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MenuType_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="MenuType_MenuInfo" Member="MenuInfo" ThisKey="MenuType_ID" OtherKey="Menu_MenuType_ID" Type="MenuInfo" />
+      <Association Name="Dictionary_MenuType" Member="Dictionary" ThisKey="MenuType_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OCC_MOIST_INTERFACE" Member="OCC_MOIST_INTERFACE">
+    <Type Name="OCC_MOIST_INTERFACE">
+      <Column Name="OCC_MOIST_INTERFACE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ITEM_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUPPLIER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QC_RPT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TTL_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TTL_SAMPLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRE_DRY_WT" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="POST_DRY_WT" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MOIST_EXAMINER" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="VERSION_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OFFQCRecord" Member="OFFQCRecord">
+    <Type Name="OFFQCRecord">
+      <Column Name="OFFQCRecord_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OFFQCRecord_QCRecord_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OFFQCRecord_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OFFQCRecord_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OFFQCRecord_APPROVAL_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="OFFQCRecord_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OFFQCRecord_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Dictionary_OFFQCRecord" Member="Dictionary" ThisKey="OFFQCRecord_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCRecord_OFFQCRecord" Member="QCRecord" ThisKey="OFFQCRecord_QCRecord_ID" OtherKey="QCRecord_ID" Type="QCRecord" IsForeignKey="true" />
+      <Association Name="UserInfo_OFFQCRecord" Member="UserInfo" ThisKey="OFFQCRecord_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Packets" Member="Packets">
+    <Type Name="Packets">
+      <Column Name="Packets_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Packets_DTS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_this" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_this_Update" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Packets_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ParityInfo" Member="ParityInfo">
+    <Type Name="ParityInfo">
+      <Column Name="Parity_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Parity_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Parity_NameNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Parity_Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Parity_BaudRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Parity_DataBit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Parity_StopBit" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Parity_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="ClientInfo_ParityInfo" Member="ClientInfo" ThisKey="Client_ID" OtherKey="Client_ID" Type="ClientInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PermissionsInfo" Member="PermissionsInfo">
+    <Type Name="PermissionsInfo">
+      <Column Name="Permissions_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Permissions_Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Permissions_Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Dictionary_PermissionsInfo" Member="Dictionary" ThisKey="Permissions_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="UserInfo_PermissionsInfo" Member="UserInfo" ThisKey="Permissions_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PresetTare" Member="PresetTare">
+    <Type Name="PresetTare">
+      <Column Name="PresetTare_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PresetTare_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PresetTare_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PresetTare_WEIGH" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="PresetTare_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Dictionary_PresetTare" Member="Dictionary" ThisKey="PresetTare_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrintData" Member="PrintData">
+    <Type Name="PrintData">
+      <Column Name="Print_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Print_Date" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Print_Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Print_Checkexplain" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PunchProject" Member="PunchProject">
+    <Type Name="PunchProject">
+      <Column Name="PunchProject_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PunchProject_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PunchProject_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Dictionary_PunchProject" Member="Dictionary" ThisKey="Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCGroup" Member="QCGroup">
+    <Type Name="QCGroup">
+      <Column Name="QCGroup_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QCGroup_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="QCGroup_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCGroup_State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="QCGroup_Beonduty" Member="Beonduty" ThisKey="QCGroup_ID" OtherKey="QCGroup_ID" Type="Beonduty" />
+      <Association Name="QCGroup_QCGroupMember" Member="QCGroupMember" ThisKey="QCGroup_ID" OtherKey="QCGroupMember_QCGroup_ID" Type="QCGroupMember" />
+      <Association Name="QCGroup_QCInfo" Member="QCInfo" ThisKey="QCGroup_ID" OtherKey="QCInfo_QCGroup_ID" Type="QCInfo" />
+      <Association Name="Dictionary_QCGroup" Member="Dictionary" ThisKey="QCGroup_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCGroupMember" Member="QCGroupMember">
+    <Type Name="QCGroupMember">
+      <Column Name="QCGroupMember_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QCGroupMember_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroupMember_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroupMember_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroupMember_ISLeader" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Dictionary_QCGroupMember" Member="Dictionary" ThisKey="QCGroupMember_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCGroup_QCGroupMember" Member="QCGroup" ThisKey="QCGroupMember_QCGroup_ID" OtherKey="QCGroup_ID" Type="QCGroup" IsForeignKey="true" />
+      <Association Name="UserInfo_QCGroupMember" Member="UserInfo" ThisKey="QCGroupMember_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCInfo" Member="QCInfo">
+    <Type Name="QCInfo">
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_STATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DEGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_BAD_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_BAD_CSALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_EXPLAIN" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QC_PRINTNUM" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_WEIGH" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_EXAMINER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_ISSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIALWeightWay" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPERWeightWay" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="QCInfo_DetectionRules" Member="DetectionRules" ThisKey="QCInfo_ID" OtherKey="DetectionRules_QCInfo_ID" Type="DetectionRules" />
+      <Association Name="QCInfo_QCRecord" Member="QCRecord" ThisKey="QCInfo_ID" OtherKey="QCRecord_QCInfo_ID" Type="QCRecord" />
+      <Association Name="QCInfo_QCRetest" Member="QCRetest" ThisKey="QCInfo_ID" OtherKey="QCRetest_QCInfo_ID" Type="QCRetest" />
+      <Association Name="ClientInfo_QCInfo" Member="ClientInfo" ThisKey="QCInfo_Client_ID" OtherKey="Client_ID" Type="ClientInfo" IsForeignKey="true" />
+      <Association Name="Dictionary_QCInfo" Member="Dictionary" ThisKey="QCInfo_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCGroup_QCInfo" Member="QCGroup" ThisKey="QCInfo_QCGroup_ID" OtherKey="QCGroup_ID" Type="QCGroup" IsForeignKey="true" />
+      <Association Name="UserInfo_QCInfo" Member="UserInfo" ThisKey="QCInfo_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+      <Association Name="DRAW_EXAM_INTERFACE_QCInfo" Member="DRAW_EXAM_INTERFACE" ThisKey="QCInfo_DRAW_EXAM_INTERFACE_ID" OtherKey="DRAW_EXAM_INTERFACE_ID" Type="DRAW_EXAM_INTERFACE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCRecord" Member="QCRecord">
+    <Type Name="QCRecord">
+      <Column Name="QCRecord_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QCRecord_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_QCRetest_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_ISRETEST" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_DRAW" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="QCRecord_QCCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_NUMBER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_RESULT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCRecord_COUNT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_TARE" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="QCRecord_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_UserId_UpdateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCRecord_OFF_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCRecord_UpdateCardUserName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCRecord_TestUserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="QCRecord_OFFQCRecord" Member="OFFQCRecord" ThisKey="QCRecord_ID" OtherKey="OFFQCRecord_QCRecord_ID" Type="OFFQCRecord" />
+      <Association Name="ClientInfo_QCRecord" Member="ClientInfo" ThisKey="QCRecord_Client_ID" OtherKey="Client_ID" Type="ClientInfo" IsForeignKey="true" />
+      <Association Name="Dictionary_QCRecord" Member="Dictionary" ThisKey="QCRecord_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCInfo_QCRecord" Member="QCInfo" ThisKey="QCRecord_QCInfo_ID" OtherKey="QCInfo_ID" Type="QCInfo" IsForeignKey="true" />
+      <Association Name="QCRetest_QCRecord" Member="QCRetest" ThisKey="QCRecord_QCRetest_ID" OtherKey="QCRetest_ID" Type="QCRetest" IsForeignKey="true" />
+      <Association Name="TestItems_QCRecord" Member="TestItems" ThisKey="QCRecord_TestItems_ID" OtherKey="TestItems_ID" Type="TestItems" IsForeignKey="true" />
+      <Association Name="UserInfo_QCRecord" Member="UserInfo" ThisKey="QCRecord_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCRetest" Member="QCRetest">
+    <Type Name="QCRetest">
+      <Column Name="QCRetest_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QCRetest_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRetest_Name" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRetest_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRetest_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRetest_ApplyTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRetest_ApplyReason" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="QCRetest_ExamineName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRetest_ExamineTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRetest_ExamineReaSon" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="QCRetest_Remark" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Association Name="QCRetest_QCRecord" Member="QCRecord" ThisKey="QCRetest_ID" OtherKey="QCRecord_QCRetest_ID" Type="QCRecord" />
+      <Association Name="Dictionary_QCRetest" Member="Dictionary" ThisKey="QCRetest_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="QCInfo_QCRetest" Member="QCInfo" ThisKey="QCRetest_QCInfo_ID" OtherKey="QCInfo_ID" Type="QCInfo" IsForeignKey="true" />
+      <Association Name="UserInfo_QCRetest" Member="UserInfo" ThisKey="QCRetest_UserId" OtherKey="UserId" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegisterLoosePaperDistribution" Member="RegisterLoosePaperDistribution">
+    <Type Name="RegisterLoosePaperDistribution">
+      <Column Name="RegisterLoosePaperDistribution_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SourceID" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="OrganizationID" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DepartmentCode" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="BusinessDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExtensionField2" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ExtensionField3" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TypeOfWeighedWastePaper" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ShipmentNumber" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="R_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="issend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoleInfo" Member="RoleInfo">
+    <Type Name="RoleInfo">
+      <Column Name="Role_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Role_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Role_Permission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Role_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSConfigure" Member="SMSConfigure">
+    <Type Name="SMSConfigure">
+      <Column Name="SMSConfigure_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SMSConfigure_Receive" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMSConfigure_ReceivePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMSConfigure_SendContentText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SMSConfigure_SendContent" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SMSConfigure_UnusualType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMSConfigure_Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SMSConfigure_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSHandleSendInfo" Member="SMSHandleSendInfo">
+    <Type Name="SMSHandleSendInfo">
+      <Column Name="SMSHandleSendInfo_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SMSHandleSendInfo_UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMSHandleSendInfo_Text" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SMSHandleSendInfo_ToPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMSRecord" Member="SMSRecord">
+    <Type Name="SMSRecord">
+      <Column Name="SMSRecord_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SMSRecord_UserInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMSRecord_Receive" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMSRecord_ReceivePhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMSRecord_SendContent" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SMSRecord_Unusual_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMSRecord_DRAW_EXAM_INTERFACE_CNTR_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMSRecord_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SMSRecord_Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SmsSend" Member="SmsSend">
+    <Type Name="SmsSend">
+      <Column Name="SmsSend_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SmsSend_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SmsSend_Text" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="SmsSend_userName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SmsSend_IsSend" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="SmsSend_Unusunal_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SystemSet" Member="SystemSet">
+    <Type Name="SystemSet">
+      <Column Name="SystemSetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemSetUpdateQCTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemSetLEDX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemSetLEDY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemSetLEDLeftX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemSetLEDY2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemSetIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="ClientInfo_SystemSet" Member="ClientInfo" ThisKey="Client_ID" OtherKey="Client_ID" Type="ClientInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TestItems" Member="TestItems">
+    <Type Name="TestItems">
+      <Column Name="TestItems_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestItems_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tes_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TestItems_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="TestItems_ClientInfo" Member="ClientInfo" ThisKey="TestItems_ID" OtherKey="Client_TestItems_ID" Type="ClientInfo" />
+      <Association Name="TestItems_DetectionRules" Member="DetectionRules" ThisKey="TestItems_ID" OtherKey="DetectionRules_TestItems_ID" Type="DetectionRules" />
+      <Association Name="TestItems_QCRecord" Member="QCRecord" ThisKey="TestItems_ID" OtherKey="QCRecord_TestItems_ID" Type="QCRecord" />
+      <Association Name="TestItems_TestItems" Member="TestItems2" ThisKey="TestItems_ID" OtherKey="Tes_TestItems_ID" Type="TestItems" />
+      <Association Name="Dictionary_TestItems" Member="Dictionary" ThisKey="TestItems_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="TestItems_TestItems" Member="TestItems1" ThisKey="Tes_TestItems_ID" OtherKey="TestItems_ID" Type="TestItems" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TestItems$" Member="TestItems_">
+    <Type Name="TestItems_">
+      <Column Name="TestItems_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TestItems_Dictionary_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Tes_TestItems_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TestItems_COUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TestItems_REMARK" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Unusual" Member="Unusual">
+    <Type Name="Unusual">
+      <Column Name="Unusual_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Unusual_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_UnusualType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_content" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_handle_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_ISSMSSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Unusual_handle_Result" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_Remork" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Unusualstandard" Member="Unusualstandard">
+    <Type Name="Unusualstandard">
+      <Column Name="Unusualstandard_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Unusualstandard_PROD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusualstandard_DEGRADE_MOISTURE_PERCT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusualstandard_DEGRADE_MATERIAL_PERCT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusualstandard_MOISTUREMIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusualstandard_MOISTUREMAX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnusualType" Member="UnusualType">
+    <Type Name="UnusualType">
+      <Column Name="UnusualType_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnusualType_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnusualType_Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UnusualType_State" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfo" Member="UserInfo">
+    <Type Name="UserInfo">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserLoginId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserLoginPwd" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddress" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCarId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserCreateName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="User_Duty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="UserInfo_DetectionRules" Member="DetectionRules" ThisKey="UserId" OtherKey="DetectionRules_UserId" Type="DetectionRules" />
+      <Association Name="UserInfo_OFFQCRecord" Member="OFFQCRecord" ThisKey="UserId" OtherKey="OFFQCRecord_UserId" Type="OFFQCRecord" />
+      <Association Name="UserInfo_PermissionsInfo" Member="PermissionsInfo" ThisKey="UserId" OtherKey="Permissions_UserId" Type="PermissionsInfo" />
+      <Association Name="UserInfo_QCGroupMember" Member="QCGroupMember" ThisKey="UserId" OtherKey="QCGroupMember_UserId" Type="QCGroupMember" />
+      <Association Name="UserInfo_QCInfo" Member="QCInfo" ThisKey="UserId" OtherKey="QCInfo_UserId" Type="QCInfo" />
+      <Association Name="UserInfo_QCRecord" Member="QCRecord" ThisKey="UserId" OtherKey="QCRecord_UserId" Type="QCRecord" />
+      <Association Name="UserInfo_QCRetest" Member="QCRetest" ThisKey="UserId" OtherKey="QCRetest_UserId" Type="QCRetest" />
+      <Association Name="Dictionary_UserInfo" Member="Dictionary" ThisKey="User_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="DutyInfo_UserInfo" Member="DutyInfo" ThisKey="User_Duty_ID" OtherKey="Duty_ID" Type="DutyInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfo2" Member="UserInfo2">
+    <Type Name="UserInfo2">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddress" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCarId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserCreateName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="User_Duty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Dictionary_UserInfo2" Member="Dictionary" ThisKey="User_Dictionary_ID" OtherKey="Dictionary_ID" Type="Dictionary" IsForeignKey="true" />
+      <Association Name="DutyInfo_UserInfo2" Member="DutyInfo" ThisKey="User_Duty_ID" OtherKey="Duty_ID" Type="DutyInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WaterTestConfigure" Member="WaterTestConfigure">
+    <Type Name="WaterTestConfigure">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WaterTestConfigure_frequency" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WaterTestConfigure_TestItems_TestItems_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WaterTestConfigure_Project" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WaterTestConfigure_PackCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WaterTestConfigure_NeedleCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WaterTestConfigureSet" Member="WaterTestConfigureSet">
+    <Type Name="WaterTestConfigureSet">
+      <Column Name="WaterTestConfigureSet_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WaterTestConfigureSet_frequency" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaterTestConfigureSet_TestItems_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaterTestConfigureSet_Project" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaterTestConfigureSet_PackCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaterTestConfigureSet_NeedleCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WaterTestPersonConfigure" Member="WaterTestPersonConfigure">
+    <Type Name="WaterTestPersonConfigure">
+      <Column Name="WaterTestPersonConfigure_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WaterTestPersonConfigure_MoistureMeterName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WaterTestPersonConfigure_UserInfo2_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaterTestPersonConfigure_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WaterTestPersonConfigure_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WaterTestPersonConfigure_Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Beonduty_D_Q" Member="View_Beonduty_D_Q">
+    <Type Name="View_Beonduty_D_Q">
+      <Column Name="Beonduty_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Beonduty_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Beonduty_BeginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Beonduty_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Beonduty_Remake" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_State" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ISLower" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="QCGroup_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCGroup_State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Expr2" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Expr3" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_WeightSet" Member="View_WeightSet">
+    <Type Name="View_WeightSet">
+      <Column Name="WeightSet_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WeightSet_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WeightSet_weightNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestItems_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tes_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TestItems_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_CarTongJI_zj" Member="View_CarTongJI_zj">
+    <Type Name="View_CarTongJI_zj">
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_No_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ST" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.view_ledshow_p" Member="view_ledshow_p">
+    <Type Name="view_ledshow_p">
+      <Column Name="QCRecord_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="QCRecord_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCRecord_QCCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_RESULT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCRecord_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_LogInfo_Dictionary" Member="View_LogInfo_Dictionary">
+    <Type Name="View_LogInfo_Dictionary">
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Log_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Log_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Log_Content" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Log_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Log_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Menu_ControlRole" Member="View_Menu_ControlRole">
+    <Type Name="View_Menu_ControlRole">
+      <Column Name="Permissions_Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Permissions_Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Menu_ControlText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MenuType_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_FromName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_FromText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_ControlName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_ControlType" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Menu_MenuType_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_MenuInfoRole" Member="View_MenuInfoRole">
+    <Type Name="View_MenuInfoRole">
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="MenuType_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Permissions_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Permissions_Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Permissions_Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Permissions_Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_MenuType_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_ControlType" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Menu_ControlText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_ControlName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_FromText" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_FromName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Menu_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Menu_Visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Menu_Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Packets" Member="View_Packets">
+    <Type Name="View_Packets">
+      <Column Name="Packets_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Packets_DTS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_this" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_this_Update" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Packets_QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PacketsRecord" Member="View_PacketsRecord">
+    <Type Name="View_PacketsRecord">
+      <Column Name="Packets_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Packets_DTS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_this" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Packets_this_Update" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Packets_QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Packets_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PresetTare_Dictionary" Member="View_PresetTare_Dictionary">
+    <Type Name="View_PresetTare_Dictionary">
+      <Column Name="PresetTare_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PresetTare_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PresetTare_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PresetTare_WEIGH" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="PresetTare_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_QcInfoTongJI" Member="View_QcInfoTongJI">
+    <Type Name="View_QcInfoTongJI">
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_No_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="sRECV_RMA_METHOD" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_QcInfoTongJI_zj" Member="View_QcInfoTongJI_zj">
+    <Type Name="View_QcInfoTongJI_zj">
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_No_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECV_RMA_METHOD" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="ST" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_QCRecordInfo" Member="View_QCRecordInfo">
+    <Type Name="View_QCRecordInfo">
+      <Column Name="isfc" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="QCRecord_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QCRecord_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_QCRetest_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_ISRETEST" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_DRAW" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="QCRecord_QCCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_NUMBER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_RESULT" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
+      <Column Name="QCRecord_COUNT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_TARE" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="QCRecord_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_UserId_UpdateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCRecord_OFF_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_State" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ISLower" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserLoginId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserLoginPwd" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddress" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCarId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserCreateName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="User_Duty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tes_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TestItems_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_STATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DEGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_BAD_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_BAD_CSALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_EXPLAIN" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QC_PRINTNUM" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_WEIGH" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_EXAMINER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_ISSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_ONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_TWO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_THREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_SIX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_FINISHED" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISHED_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FINISHED_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECV_RMA_METHOD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEGRADE_MOISTURE_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_MATERIAL_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IS_DengJi" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_ADDRESS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Client_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QCRecord_TestUserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QCRecord_UpdateCardUserName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_QCRecordInfo_Update" Member="View_QCRecordInfo_Update">
+    <Type Name="View_QCRecordInfo_Update">
+      <Column Name="isfc" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="QCRecord_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QCRecord_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_QCRetest_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_ISRETEST" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_DRAW" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="QCRecord_QCCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_NUMBER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_RESULT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCRecord_COUNT" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCRecord_TARE" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="QCRecord_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_UserId_UpdateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCRecord_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCRecord_OFF_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCRecord_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCRecord_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_State" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ISLower" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserLoginId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserLoginPwd" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddress" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCarId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserCreateName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="User_Duty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="User_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tes_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TestItems_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_STATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DEGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_BAD_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_BAD_CSALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_EXPLAIN" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QC_PRINTNUM" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_WEIGH" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_EXAMINER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_ISSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_ONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_TWO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_THREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_SIX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_FINISHED" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISHED_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FINISHED_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECV_RMA_METHOD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEGRADE_MOISTURE_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_MATERIAL_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IS_DengJi" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_ADDRESS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Client_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCRecord_UpdateCardUserName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_SMSSendUnusual" Member="View_SMSSendUnusual">
+    <Type Name="View_SMSSendUnusual">
+      <Column Name="Unusual_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unusual_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_UnusualType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_content" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_handle_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_ISSMSSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_STATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DEGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_BAD_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_BAD_CSALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_EXPLAIN" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QC_PRINTNUM" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_WEIGH" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_EXAMINER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_ISSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_ONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_TWO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_THREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_SIX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_FINISHED" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISHED_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FINISHED_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECV_RMA_METHOD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEGRADE_MOISTURE_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_MATERIAL_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IS_DengJi" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_TestItems_Dictionary" Member="View_TestItems_Dictionary">
+    <Type Name="View_TestItems_Dictionary">
+      <Column Name="TestItems_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestItems_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tes_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TestItems_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TestItems_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Unusual_SMS" Member="View_Unusual_SMS">
+    <Type Name="View_Unusual_SMS">
+      <Column Name="Unusual_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Unusual_content" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_handle_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unusual_ISSMSSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Unusual_handle_Result" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TestItems_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_UnusualHandel" Member="View_UnusualHandel">
+    <Type Name="View_UnusualHandel">
+      <Column Name="Unusual_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_content" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_handle_Result" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Unusual_ISSMSSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Unusual_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Unusual_Remork" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Unusual_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_UnusualImage" Member="View_UnusualImage">
+    <Type Name="View_UnusualImage">
+      <Column Name="Unusual_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TestItems_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_content" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Unusual_handle_Result" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Unusual_ISSMSSend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Unusual_State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ImageRecord_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImageRecord_Unusual_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageRecord_ImageName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ImageRecord_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ImageRecord_Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_UpdateTongJI" Member="View_UpdateTongJI">
+    <Type Name="View_UpdateTongJI">
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_UserInfo_D_R_d" Member="View_UserInfo_D_R_d">
+    <Type Name="View_UserInfo_D_R_d">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserLoginId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserLoginPwd" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddress" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCarId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserCreateName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Duty_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Role_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Role_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_UserInfo2_D_R_d" Member="View_UserInfo2_D_R_d">
+    <Type Name="View_UserInfo2_D_R_d">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddress" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserIdentification" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCarId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserCreateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserCreateName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Duty_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.idebarJoinU9" Member="idebarJoinU9">
+    <Type Name="idebarJoinU9">
+      <Column Name="idebarJoinU9_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idebarJoinU9_PROD_ID" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="idebarJoinU9_remark" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_QCInfo_InTerface" Member="View_QCInfo_InTerface">
+    <Type Name="View_QCInfo_InTerface">
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_State" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ISLower" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_ONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_TWO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_THREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_SIX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_FINISHED" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISHED_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FINISHED_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECV_RMA_METHOD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEGRADE_MOISTURE_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_MATERIAL_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IS_DengJi" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_STATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DEGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_BAD_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_BAD_CSALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_EXPLAIN" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QC_PRINTNUM" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Name" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="QCGroup_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCGroup_State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCGroup_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_WEIGH" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_EXAMINER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_ISSend" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_TIMETWO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ST" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RegisterLoosePaperDistribution_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SourceID" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="OrganizationID" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DepartmentCode" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="BusinessDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExtensionField2" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ExtensionField3" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TypeOfWeighedWastePaper" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ShipmentNumber" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="issend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="R_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_CarTongJI" Member="View_CarTongJI">
+    <Type Name="View_CarTongJI">
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="avg_QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="sum_No_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sum_QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ST" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExtensionField2" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_ClientInfo" Member="View_ClientInfo">
+    <Type Name="View_ClientInfo">
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Client_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_ADDRESS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Client_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dictionary_Value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dictionary_OtherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CollectionInfo" Member="CollectionInfo">
+    <Type Name="CollectionInfo">
+      <Column Name="Collection_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Collection_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Collection_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Collection_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Collection" Member="View_Collection">
+    <Type Name="View_Collection">
+      <Column Name="Collection_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Collection_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Collection_Name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Collection_Remark" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Client_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_TestItems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_ADDRESS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Client_Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Client_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MATERIAL_QC_INTERFACE" Member="MATERIAL_QC_INTERFACE">
+    <Type Name="MATERIAL_QC_INTERFACE">
+      <Column Name="MATERIAL_QC_INTERFACE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUPPLIER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ITEM_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QC_RPT_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NET_WEIGHT" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="NET_WEIGHT_UOM" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TTL_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TTL_SAMPLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROD_EXAMINER" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="VERSION_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WEIGHT" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="SINGLE_WAXED_PAPER" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="DOUBLE_WAXED_PAPER" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ALUMINIUM_FOIL" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="BITUMEN_PAPER" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="GRAY_PAPER" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="OTHER_OUTTHROW" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="OTHER_MATERIAL" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DRAW_EXAM_INTERFACE" Member="DRAW_EXAM_INTERFACE">
+    <Type Name="DRAW_EXAM_INTERFACE">
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_ONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_TWO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_THREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_SIX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_FINISHED" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISHED_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FINISHED_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECV_RMA_METHOD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEGRADE_MOISTURE_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_MATERIAL_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IS_DengJi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="DRAW_7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="supplyName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="DRAW_EXAM_INTERFACE_QCInfo" Member="QCInfo" ThisKey="DRAW_EXAM_INTERFACE_ID" OtherKey="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="QCInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_QCInfo" Member="View_QCInfo">
+    <Type Name="View_QCInfo">
+      <Column Name="QCInfo_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QCInfo_Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_STATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_QCGroup_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_DEGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_PER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBefore_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UnpackBack_MOIST_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_EXAMINER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_WEIGHT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MOIST_BAD_PER_SAMPLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PAPER_BAD_SCALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_MATERIAL_BAD_CSALE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_EXPLAIN" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_UPDATE_REASON" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_ISLEDSHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QC_PRINTNUM" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_REMARK" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="QCInfo_BAGWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_PumpingPackets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCIInfo_EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_WEIGH" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_EXAMINER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="QCInfo_RETURNBAG_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_ISSend" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="QCInfo_SendTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCInfo_RECV_RMA_METHOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMPANY_ID" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SHIPMENT_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PO_NO" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNTR_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_TICKET_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WEIGHT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NO_OF_BALES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_ONE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_TWO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_THREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_FIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRAW_SIX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_FINISHED" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISHED_BY" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FINISHED_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ST" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_WPIS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_FLAG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TRANS_TO_DTS_DTTM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DEGRADE_MOISTURE_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_MATERIAL_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DEGRADE_OUTTHROWS_PERCT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IS_DengJi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="supplyName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RegisterLoosePaperDistribution_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SourceID" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="OrganizationID" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DepartmentCode" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="BusinessDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExtensionField2" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ExtensionField3" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TypeOfWeighedWastePaper" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ShipmentNumber" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="R_DRAW_EXAM_INTERFACE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="issend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dictionary_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dictionary_Name" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="qe_examine_result" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="qe_examineMan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
