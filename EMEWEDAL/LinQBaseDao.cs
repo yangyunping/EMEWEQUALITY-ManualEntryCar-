@@ -222,14 +222,11 @@ namespace EMEWEDAL
             {
                 return db.ExecuteQuery<T>(strsql).ToList();
             }
-
-
         }
 
         public static List<T> ListT<T>(DataContext dc, Expression<Func<T, bool>> fun) where T : class
         {
             return dc.GetTable<T>().Where<T>(fun).AsEnumerable<T>().ToList();
-
         }
 
         #region  排序分页结果集

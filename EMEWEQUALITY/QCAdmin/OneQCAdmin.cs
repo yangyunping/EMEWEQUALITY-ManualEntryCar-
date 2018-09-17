@@ -1174,7 +1174,7 @@ namespace EMEWEQUALITY.QCAdmin
             if (btnCalculateAfter.Enabled)
             {
                 btnCalculateAfter.Enabled = false;
-                if (string.IsNullOrEmpty(txtQCInfo_PAPER_SCALE.Text))
+                if (string.IsNullOrEmpty(txtQCInfo_PAPER_SCALE.Text.Trim()))
                 {
                     #region 2012-10-19修改
                     if (MessageBox.Show("是否输入杂纸比例！", "计算提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -1578,7 +1578,28 @@ namespace EMEWEQUALITY.QCAdmin
                         btnSave.Enabled = true;
                     }
                     #endregion
+                    if (!string.IsNullOrEmpty(txtQCInfo_MOIST_PER_SAMPLE.Text.Trim()) && !string.IsNullOrEmpty(txtQCInfo_MATERIAL_SCALE.Text.Trim()) && !string.IsNullOrEmpty(txtQCInfo_PAPER_SCALE.Text.Trim()))
+                    {
+                        Expression<Func<Unusualstandard, bool>> fun = n => Convert.ToDecimal(n.Unusualstandard_DEGRADE_MOISTURE_PERCT) >= Convert.ToDecimal(txtQCInfo_MOIST_PER_SAMPLE.Text);
+                        fun = fun.And(n => Convert.ToDecimal(n.Unusualstandard_DEGRADE_MATERIAL_PERCT) >= Convert.ToDecimal(txtQCInfo_MATERIAL_SCALE.Text));
+                        fun = fun.And(n => Convert.ToDecimal(n.DEGRADE_OUTTHROWS_PERCT) >= Convert.ToDecimal(txtQCInfo_PAPER_SCALE.Text));
+                        IEnumerable<Unusualstandard> unusualstandard = UnusualstandardDAL.Query(fun).OrderBy(n=> n.Unusualstandard_DEGRADE_MATERIAL_PERCT);
 
+                        if (unusualstandard != null)
+                        {
+                            lblResults.Text = unusualstandard.First().Unusualstandard_PROD;
+                            if (!lblResults.Text.Equals(lblPROD_ID.Text))
+                            {
+                                lblResults.ForeColor = Color.Red;
+                            }
+                            else
+                            {
+                                lblResults.ForeColor = Color.Black;
+                            }
+                        }
+
+                        // bool b = ADDUnusual(iQcInfoID, "杂质", Convert.ToDouble(txtQCInfo_MATERIAL_SCALE.Text.Trim()), "Unusualstandard_DEGRADE_MATERIAL_PERCT");
+                    }
 
 
                 }
@@ -1794,7 +1815,7 @@ namespace EMEWEQUALITY.QCAdmin
 
                     #region  测试过程中不和U9交互 暂时屏蔽
 
-                    string sql = "select	U9Bool from dbo.U9Start where U9Name='一检管理'";
+                    string sql = "select U9Bool from dbo.U9Start where U9Name='一检管理'";
                     bool isbool = bool.Parse(LinQBaseDao.Query(sql).Tables[0].Rows[0]["U9Bool"].ToString());
                     if (isbool)
                     {
@@ -1847,7 +1868,6 @@ namespace EMEWEQUALITY.QCAdmin
                         LinQBaseDao.Query("delete  dbo.MATERIAL_QC_INTERFACE where SHIPMENT_NO='" + view_QCInfo_InTerface.SHIPMENT_NO + "'");
                         LinQBaseDao.Query("delete  dbo.OCC_MOIST_INTERFACE where SHIPMENT_NO='" + view_QCInfo_InTerface.SHIPMENT_NO + "'");
                         LinQBaseDao.Query("update QCInfo set QCInfo_ISSend=null,QCInfo_SendTime=null where QCInfo_id=" + iQcInfoID);
-
                     }
                     else
                     {

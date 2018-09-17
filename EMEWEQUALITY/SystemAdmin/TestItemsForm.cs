@@ -332,7 +332,6 @@ namespace EMEWEQUALITY.SystemAdmin
                     if (stateID > 0)
                     {
                         expr = expr.And(n => n.TestItems_Dictionary_ID == Converter.ToInt(cbxSeachState.SelectedValue.ToString()));
-
                         i++;
                     }
                 }
@@ -430,13 +429,10 @@ namespace EMEWEQUALITY.SystemAdmin
                             {
                                 j++;
                             }
-
-
                         }
                         if (j == 0)
                         {
                             MessageBox.Show("成功删除", "提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
                         }
                         else
                         {

@@ -33,6 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.winWordControl1 = new WinWordControl.WinWordControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtbeginTime = new System.Windows.Forms.DateTimePicker();
@@ -168,6 +169,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.lblQCInfo_PumpingPackets = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblResults = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblQCInfo_MATERIALWeightWay = new System.Windows.Forms.Label();
             this.lblQCInfo_PAPERWeightWay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -184,7 +187,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lblNO_OF_BALES = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -212,7 +214,7 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Location = new System.Drawing.Point(299, 95);
+            this.panel2.Location = new System.Drawing.Point(302, 164);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 32);
             this.panel2.TabIndex = 130;
@@ -238,6 +240,13 @@
             this.label12.Size = new System.Drawing.Size(123, 19);
             this.label12.TabIndex = 1;
             this.label12.Text = "正在打印……";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(5, 5);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(398, 23);
+            this.progressBar1.TabIndex = 0;
             // 
             // winWordControl1
             // 
@@ -282,14 +291,14 @@
             // 
             // txtbeginTime
             // 
-            this.txtbeginTime.Location = new System.Drawing.Point(72, 54);
+            this.txtbeginTime.Location = new System.Drawing.Point(71, 62);
             this.txtbeginTime.Name = "txtbeginTime";
             this.txtbeginTime.Size = new System.Drawing.Size(117, 21);
             this.txtbeginTime.TabIndex = 82;
             // 
             // txtendTime
             // 
-            this.txtendTime.Location = new System.Drawing.Point(271, 54);
+            this.txtendTime.Location = new System.Drawing.Point(270, 62);
             this.txtendTime.Name = "txtendTime";
             this.txtendTime.Size = new System.Drawing.Size(117, 21);
             this.txtendTime.TabIndex = 81;
@@ -297,7 +306,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(620, 63);
+            this.label10.Location = new System.Drawing.Point(619, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(101, 12);
             this.label10.TabIndex = 80;
@@ -311,7 +320,7 @@
             "",
             "是",
             "否"});
-            this.cbbxISSend.Location = new System.Drawing.Point(722, 57);
+            this.cbbxISSend.Location = new System.Drawing.Point(721, 62);
             this.cbbxISSend.Name = "cbbxISSend";
             this.cbbxISSend.Size = new System.Drawing.Size(65, 20);
             this.cbbxISSend.TabIndex = 79;
@@ -319,11 +328,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(414, 63);
+            this.label8.Location = new System.Drawing.Point(413, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
+            this.label8.Size = new System.Drawing.Size(59, 12);
             this.label8.TabIndex = 78;
-            this.label8.Text = "是否修改：";
+            this.label8.Text = "是否修改:";
             // 
             // cbbxYesNoUpdate
             // 
@@ -333,15 +342,15 @@
             "",
             "是",
             "否"});
-            this.cbbxYesNoUpdate.Location = new System.Drawing.Point(483, 57);
+            this.cbbxYesNoUpdate.Location = new System.Drawing.Point(472, 62);
             this.cbbxYesNoUpdate.Name = "cbbxYesNoUpdate";
-            this.cbbxYesNoUpdate.Size = new System.Drawing.Size(94, 20);
+            this.cbbxYesNoUpdate.Size = new System.Drawing.Size(106, 20);
             this.cbbxYesNoUpdate.TabIndex = 77;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(204, 58);
+            this.label7.Location = new System.Drawing.Point(203, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 73;
@@ -350,7 +359,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 60);
+            this.label6.Location = new System.Drawing.Point(6, 66);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 73;
@@ -359,7 +368,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(793, 22);
+            this.label4.Location = new System.Drawing.Point(793, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 71;
@@ -368,9 +377,9 @@
             // btnQCOneInfo
             // 
             this.btnQCOneInfo.Enabled = false;
-            this.btnQCOneInfo.Location = new System.Drawing.Point(859, 60);
+            this.btnQCOneInfo.Location = new System.Drawing.Point(859, 58);
             this.btnQCOneInfo.Name = "btnQCOneInfo";
-            this.btnQCOneInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnQCOneInfo.Size = new System.Drawing.Size(70, 28);
             this.btnQCOneInfo.TabIndex = 57;
             this.btnQCOneInfo.Text = "搜    索";
             this.btnQCOneInfo.UseVisualStyleBackColor = true;
@@ -380,9 +389,9 @@
             // txtWaitCarNo
             // 
             this.txtWaitCarNo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtWaitCarNo.Location = new System.Drawing.Point(468, 16);
+            this.txtWaitCarNo.Location = new System.Drawing.Point(472, 20);
             this.txtWaitCarNo.Name = "txtWaitCarNo";
-            this.txtWaitCarNo.Size = new System.Drawing.Size(128, 26);
+            this.txtWaitCarNo.Size = new System.Drawing.Size(124, 26);
             this.txtWaitCarNo.TabIndex = 61;
             this.txtWaitCarNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWaitPO_NO_KeyPress);
             // 
@@ -390,7 +399,7 @@
             // 
             this.cbxWaitQCInfoState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxWaitQCInfoState.FormattingEnabled = true;
-            this.cbxWaitQCInfoState.Location = new System.Drawing.Point(859, 20);
+            this.cbxWaitQCInfoState.Location = new System.Drawing.Point(859, 23);
             this.cbxWaitQCInfoState.Name = "cbxWaitQCInfoState";
             this.cbxWaitQCInfoState.Size = new System.Drawing.Size(121, 20);
             this.cbxWaitQCInfoState.TabIndex = 70;
@@ -398,7 +407,7 @@
             // txtWaitWEIGHTTICKETNO
             // 
             this.txtWaitWEIGHTTICKETNO.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtWaitWEIGHTTICKETNO.Location = new System.Drawing.Point(669, 16);
+            this.txtWaitWEIGHTTICKETNO.Location = new System.Drawing.Point(669, 20);
             this.txtWaitWEIGHTTICKETNO.MaxLength = 13;
             this.txtWaitWEIGHTTICKETNO.Name = "txtWaitWEIGHTTICKETNO";
             this.txtWaitWEIGHTTICKETNO.Size = new System.Drawing.Size(118, 26);
@@ -408,7 +417,7 @@
             // txtWaitSHIPMENT_NO
             // 
             this.txtWaitSHIPMENT_NO.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtWaitSHIPMENT_NO.Location = new System.Drawing.Point(271, 16);
+            this.txtWaitSHIPMENT_NO.Location = new System.Drawing.Point(271, 20);
             this.txtWaitSHIPMENT_NO.MaxLength = 13;
             this.txtWaitSHIPMENT_NO.Name = "txtWaitSHIPMENT_NO";
             this.txtWaitSHIPMENT_NO.Size = new System.Drawing.Size(117, 26);
@@ -418,7 +427,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(616, 19);
+            this.label35.Location = new System.Drawing.Point(616, 27);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(53, 12);
             this.label35.TabIndex = 58;
@@ -427,7 +436,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(216, 20);
+            this.label2.Location = new System.Drawing.Point(216, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 68;
@@ -436,7 +445,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(411, 19);
+            this.label34.Location = new System.Drawing.Point(411, 27);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(53, 12);
             this.label34.TabIndex = 60;
@@ -445,7 +454,7 @@
             // txtWaitPO_NO
             // 
             this.txtWaitPO_NO.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtWaitPO_NO.Location = new System.Drawing.Point(72, 16);
+            this.txtWaitPO_NO.Location = new System.Drawing.Point(72, 20);
             this.txtWaitPO_NO.MaxLength = 13;
             this.txtWaitPO_NO.Name = "txtWaitPO_NO";
             this.txtWaitPO_NO.Size = new System.Drawing.Size(117, 26);
@@ -455,7 +464,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 20);
+            this.label3.Location = new System.Drawing.Point(18, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 66;
@@ -1170,7 +1179,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(586, 109);
+            this.label33.Location = new System.Drawing.Point(586, 117);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(65, 12);
             this.label33.TabIndex = 107;
@@ -1180,7 +1189,7 @@
             // 
             this.txtQCInfo_PAPER_SCALE.Enabled = false;
             this.txtQCInfo_PAPER_SCALE.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQCInfo_PAPER_SCALE.Location = new System.Drawing.Point(651, 104);
+            this.txtQCInfo_PAPER_SCALE.Location = new System.Drawing.Point(651, 110);
             this.txtQCInfo_PAPER_SCALE.Name = "txtQCInfo_PAPER_SCALE";
             this.txtQCInfo_PAPER_SCALE.Size = new System.Drawing.Size(81, 26);
             this.txtQCInfo_PAPER_SCALE.TabIndex = 106;
@@ -1188,7 +1197,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(377, 109);
+            this.label30.Location = new System.Drawing.Point(377, 117);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(65, 12);
             this.label30.TabIndex = 105;
@@ -1198,7 +1207,7 @@
             // 
             this.txtQCInfo_MATERIAL_SCALE.Enabled = false;
             this.txtQCInfo_MATERIAL_SCALE.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQCInfo_MATERIAL_SCALE.Location = new System.Drawing.Point(442, 108);
+            this.txtQCInfo_MATERIAL_SCALE.Location = new System.Drawing.Point(442, 110);
             this.txtQCInfo_MATERIAL_SCALE.Name = "txtQCInfo_MATERIAL_SCALE";
             this.txtQCInfo_MATERIAL_SCALE.Size = new System.Drawing.Size(81, 26);
             this.txtQCInfo_MATERIAL_SCALE.TabIndex = 104;
@@ -1206,7 +1215,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(586, 80);
+            this.label32.Location = new System.Drawing.Point(585, 86);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(65, 12);
             this.label32.TabIndex = 103;
@@ -1216,7 +1225,7 @@
             // 
             this.txtQCInfo_PAPER_WEIGHT.Enabled = false;
             this.txtQCInfo_PAPER_WEIGHT.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQCInfo_PAPER_WEIGHT.Location = new System.Drawing.Point(651, 73);
+            this.txtQCInfo_PAPER_WEIGHT.Location = new System.Drawing.Point(650, 79);
             this.txtQCInfo_PAPER_WEIGHT.Name = "txtQCInfo_PAPER_WEIGHT";
             this.txtQCInfo_PAPER_WEIGHT.Size = new System.Drawing.Size(81, 26);
             this.txtQCInfo_PAPER_WEIGHT.TabIndex = 102;
@@ -1224,7 +1233,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(377, 82);
+            this.label25.Location = new System.Drawing.Point(376, 86);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(65, 12);
             this.label25.TabIndex = 101;
@@ -1234,9 +1243,9 @@
             // 
             this.cbxQCInfoState.Enabled = false;
             this.cbxQCInfoState.FormattingEnabled = true;
-            this.cbxQCInfoState.Location = new System.Drawing.Point(85, 145);
+            this.cbxQCInfoState.Location = new System.Drawing.Point(85, 146);
             this.cbxQCInfoState.Name = "cbxQCInfoState";
-            this.cbxQCInfoState.Size = new System.Drawing.Size(97, 20);
+            this.cbxQCInfoState.Size = new System.Drawing.Size(111, 20);
             this.cbxQCInfoState.TabIndex = 89;
             this.cbxQCInfoState.SelectedIndexChanged += new System.EventHandler(this.cbxQCInfoState_SelectedIndexChanged);
             // 
@@ -1244,7 +1253,7 @@
             // 
             this.txtQCInfo_MATERIAL_WEIGHT.Enabled = false;
             this.txtQCInfo_MATERIAL_WEIGHT.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQCInfo_MATERIAL_WEIGHT.Location = new System.Drawing.Point(442, 78);
+            this.txtQCInfo_MATERIAL_WEIGHT.Location = new System.Drawing.Point(441, 79);
             this.txtQCInfo_MATERIAL_WEIGHT.Name = "txtQCInfo_MATERIAL_WEIGHT";
             this.txtQCInfo_MATERIAL_WEIGHT.Size = new System.Drawing.Size(81, 26);
             this.txtQCInfo_MATERIAL_WEIGHT.TabIndex = 100;
@@ -1252,7 +1261,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 149);
+            this.label13.Location = new System.Drawing.Point(18, 150);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 12);
             this.label13.TabIndex = 90;
@@ -1261,7 +1270,7 @@
             // lblCurrentQcState
             // 
             this.lblCurrentQcState.AutoSize = true;
-            this.lblCurrentQcState.Location = new System.Drawing.Point(777, 148);
+            this.lblCurrentQcState.Location = new System.Drawing.Point(777, 150);
             this.lblCurrentQcState.Name = "lblCurrentQcState";
             this.lblCurrentQcState.Size = new System.Drawing.Size(47, 12);
             this.lblCurrentQcState.TabIndex = 91;
@@ -1271,7 +1280,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(586, 47);
+            this.label23.Location = new System.Drawing.Point(586, 53);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(65, 12);
             this.label23.TabIndex = 99;
@@ -1281,7 +1290,7 @@
             // 
             this.txtQCInfo_BAGWeight.Enabled = false;
             this.txtQCInfo_BAGWeight.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQCInfo_BAGWeight.Location = new System.Drawing.Point(651, 43);
+            this.txtQCInfo_BAGWeight.Location = new System.Drawing.Point(651, 46);
             this.txtQCInfo_BAGWeight.Name = "txtQCInfo_BAGWeight";
             this.txtQCInfo_BAGWeight.Size = new System.Drawing.Size(81, 26);
             this.txtQCInfo_BAGWeight.TabIndex = 98;
@@ -1289,18 +1298,20 @@
             // lblWEIGHT_TICKET_NO
             // 
             this.lblWEIGHT_TICKET_NO.AutoSize = true;
-            this.lblWEIGHT_TICKET_NO.Location = new System.Drawing.Point(72, 52);
+            this.lblWEIGHT_TICKET_NO.Location = new System.Drawing.Point(72, 53);
             this.lblWEIGHT_TICKET_NO.Name = "lblWEIGHT_TICKET_NO";
-            this.lblWEIGHT_TICKET_NO.Size = new System.Drawing.Size(0, 12);
+            this.lblWEIGHT_TICKET_NO.Size = new System.Drawing.Size(17, 12);
             this.lblWEIGHT_TICKET_NO.TabIndex = 95;
+            this.lblWEIGHT_TICKET_NO.Text = "XX";
             // 
             // lblCNTR_NO
             // 
             this.lblCNTR_NO.AutoSize = true;
-            this.lblCNTR_NO.Location = new System.Drawing.Point(75, 26);
+            this.lblCNTR_NO.Location = new System.Drawing.Point(72, 26);
             this.lblCNTR_NO.Name = "lblCNTR_NO";
-            this.lblCNTR_NO.Size = new System.Drawing.Size(0, 12);
+            this.lblCNTR_NO.Size = new System.Drawing.Size(17, 12);
             this.lblCNTR_NO.TabIndex = 94;
+            this.lblCNTR_NO.Text = "XX";
             // 
             // label22
             // 
@@ -1314,7 +1325,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(21, 52);
+            this.label16.Location = new System.Drawing.Point(21, 53);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
             this.label16.TabIndex = 92;
@@ -1325,8 +1336,9 @@
             this.lblDEGRADE_MOISTURE_PERCT.AutoSize = true;
             this.lblDEGRADE_MOISTURE_PERCT.Location = new System.Drawing.Point(688, 26);
             this.lblDEGRADE_MOISTURE_PERCT.Name = "lblDEGRADE_MOISTURE_PERCT";
-            this.lblDEGRADE_MOISTURE_PERCT.Size = new System.Drawing.Size(0, 12);
+            this.lblDEGRADE_MOISTURE_PERCT.Size = new System.Drawing.Size(17, 12);
             this.lblDEGRADE_MOISTURE_PERCT.TabIndex = 80;
+            this.lblDEGRADE_MOISTURE_PERCT.Text = "XX";
             // 
             // label19
             // 
@@ -1342,8 +1354,9 @@
             this.lblPO_NO.AutoSize = true;
             this.lblPO_NO.Location = new System.Drawing.Point(322, 26);
             this.lblPO_NO.Name = "lblPO_NO";
-            this.lblPO_NO.Size = new System.Drawing.Size(0, 12);
+            this.lblPO_NO.Size = new System.Drawing.Size(17, 12);
             this.lblPO_NO.TabIndex = 78;
+            this.lblPO_NO.Text = "XX";
             // 
             // label5
             // 
@@ -1357,15 +1370,16 @@
             // lblQCInfo_MATERIAL_EXAMINER
             // 
             this.lblQCInfo_MATERIAL_EXAMINER.AutoSize = true;
-            this.lblQCInfo_MATERIAL_EXAMINER.Location = new System.Drawing.Point(321, 52);
+            this.lblQCInfo_MATERIAL_EXAMINER.Location = new System.Drawing.Point(322, 53);
             this.lblQCInfo_MATERIAL_EXAMINER.Name = "lblQCInfo_MATERIAL_EXAMINER";
-            this.lblQCInfo_MATERIAL_EXAMINER.Size = new System.Drawing.Size(0, 12);
+            this.lblQCInfo_MATERIAL_EXAMINER.Size = new System.Drawing.Size(17, 12);
             this.lblQCInfo_MATERIAL_EXAMINER.TabIndex = 76;
+            this.lblQCInfo_MATERIAL_EXAMINER.Text = "XX";
             // 
             // lblWeightRe
             // 
             this.lblWeightRe.AutoSize = true;
-            this.lblWeightRe.Location = new System.Drawing.Point(249, 52);
+            this.lblWeightRe.Location = new System.Drawing.Point(249, 53);
             this.lblWeightRe.Name = "lblWeightRe";
             this.lblWeightRe.Size = new System.Drawing.Size(77, 12);
             this.lblWeightRe.TabIndex = 75;
@@ -1376,8 +1390,9 @@
             this.lblPROD_ID.AutoSize = true;
             this.lblPROD_ID.Location = new System.Drawing.Point(438, 26);
             this.lblPROD_ID.Name = "lblPROD_ID";
-            this.lblPROD_ID.Size = new System.Drawing.Size(0, 12);
+            this.lblPROD_ID.Size = new System.Drawing.Size(17, 12);
             this.lblPROD_ID.TabIndex = 74;
+            this.lblPROD_ID.Text = "XX";
             // 
             // label20
             // 
@@ -1393,8 +1408,9 @@
             this.lblSHIPMENT_NO.AutoSize = true;
             this.lblSHIPMENT_NO.Location = new System.Drawing.Point(189, 26);
             this.lblSHIPMENT_NO.Name = "lblSHIPMENT_NO";
-            this.lblSHIPMENT_NO.Size = new System.Drawing.Size(0, 12);
+            this.lblSHIPMENT_NO.Size = new System.Drawing.Size(17, 12);
             this.lblSHIPMENT_NO.TabIndex = 68;
+            this.lblSHIPMENT_NO.Text = "XX";
             // 
             // label24
             // 
@@ -1408,13 +1424,16 @@
             // lblQCInfo_PumpingPackets
             // 
             this.lblQCInfo_PumpingPackets.AutoSize = true;
-            this.lblQCInfo_PumpingPackets.Location = new System.Drawing.Point(189, 52);
+            this.lblQCInfo_PumpingPackets.Location = new System.Drawing.Point(189, 53);
             this.lblQCInfo_PumpingPackets.Name = "lblQCInfo_PumpingPackets";
-            this.lblQCInfo_PumpingPackets.Size = new System.Drawing.Size(0, 12);
+            this.lblQCInfo_PumpingPackets.Size = new System.Drawing.Size(17, 12);
             this.lblQCInfo_PumpingPackets.TabIndex = 64;
+            this.lblQCInfo_PumpingPackets.Text = "XX";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblResults);
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.lblQCInfo_MATERIALWeightWay);
             this.groupBox1.Controls.Add(this.lblQCInfo_PAPERWeightWay);
             this.groupBox1.Controls.Add(this.label1);
@@ -1467,11 +1486,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "当前质检信息";
             // 
+            // lblResults
+            // 
+            this.lblResults.AutoSize = true;
+            this.lblResults.Location = new System.Drawing.Point(869, 26);
+            this.lblResults.Name = "lblResults";
+            this.lblResults.Size = new System.Drawing.Size(17, 12);
+            this.lblResults.TabIndex = 130;
+            this.lblResults.Text = "XX";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(783, 26);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 12);
+            this.label14.TabIndex = 129;
+            this.label14.Text = "检测等级参考：";
+            // 
             // lblQCInfo_MATERIALWeightWay
             // 
             this.lblQCInfo_MATERIALWeightWay.AutoSize = true;
             this.lblQCInfo_MATERIALWeightWay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblQCInfo_MATERIALWeightWay.Location = new System.Drawing.Point(532, 83);
+            this.lblQCInfo_MATERIALWeightWay.Location = new System.Drawing.Point(531, 86);
             this.lblQCInfo_MATERIALWeightWay.Name = "lblQCInfo_MATERIALWeightWay";
             this.lblQCInfo_MATERIALWeightWay.Size = new System.Drawing.Size(0, 12);
             this.lblQCInfo_MATERIALWeightWay.TabIndex = 128;
@@ -1480,7 +1517,7 @@
             // 
             this.lblQCInfo_PAPERWeightWay.AutoSize = true;
             this.lblQCInfo_PAPERWeightWay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblQCInfo_PAPERWeightWay.Location = new System.Drawing.Point(739, 81);
+            this.lblQCInfo_PAPERWeightWay.Location = new System.Drawing.Point(738, 86);
             this.lblQCInfo_PAPERWeightWay.Name = "lblQCInfo_PAPERWeightWay";
             this.lblQCInfo_PAPERWeightWay.Size = new System.Drawing.Size(0, 12);
             this.lblQCInfo_PAPERWeightWay.TabIndex = 127;
@@ -1508,10 +1545,10 @@
             // txtQCInfo_REMARK
             // 
             this.txtQCInfo_REMARK.Enabled = false;
-            this.txtQCInfo_REMARK.Location = new System.Drawing.Point(271, 142);
+            this.txtQCInfo_REMARK.Location = new System.Drawing.Point(263, 148);
             this.txtQCInfo_REMARK.Multiline = true;
             this.txtQCInfo_REMARK.Name = "txtQCInfo_REMARK";
-            this.txtQCInfo_REMARK.Size = new System.Drawing.Size(476, 57);
+            this.txtQCInfo_REMARK.Size = new System.Drawing.Size(469, 57);
             this.txtQCInfo_REMARK.TabIndex = 122;
             // 
             // label9
@@ -1549,7 +1586,7 @@
             // btnCalculateAfter
             // 
             this.btnCalculateAfter.Enabled = false;
-            this.btnCalculateAfter.Location = new System.Drawing.Point(853, 148);
+            this.btnCalculateAfter.Location = new System.Drawing.Point(853, 145);
             this.btnCalculateAfter.Name = "btnCalculateAfter";
             this.btnCalculateAfter.Size = new System.Drawing.Size(75, 23);
             this.btnCalculateAfter.TabIndex = 120;
@@ -1570,7 +1607,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(19, 81);
+            this.label18.Location = new System.Drawing.Point(18, 86);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(65, 12);
             this.label18.TabIndex = 112;
@@ -1580,9 +1617,9 @@
             // 
             this.txtQCInfo_MOIST_PER_SAMPLE.Enabled = false;
             this.txtQCInfo_MOIST_PER_SAMPLE.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQCInfo_MOIST_PER_SAMPLE.Location = new System.Drawing.Point(85, 77);
+            this.txtQCInfo_MOIST_PER_SAMPLE.Location = new System.Drawing.Point(84, 79);
             this.txtQCInfo_MOIST_PER_SAMPLE.Name = "txtQCInfo_MOIST_PER_SAMPLE";
-            this.txtQCInfo_MOIST_PER_SAMPLE.Size = new System.Drawing.Size(97, 26);
+            this.txtQCInfo_MOIST_PER_SAMPLE.Size = new System.Drawing.Size(111, 26);
             this.txtQCInfo_MOIST_PER_SAMPLE.TabIndex = 113;
             // 
             // txtQCInfo_MOIST_EXAMINER
@@ -1590,13 +1627,13 @@
             this.txtQCInfo_MOIST_EXAMINER.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtQCInfo_MOIST_EXAMINER.Location = new System.Drawing.Point(85, 110);
             this.txtQCInfo_MOIST_EXAMINER.Name = "txtQCInfo_MOIST_EXAMINER";
-            this.txtQCInfo_MOIST_EXAMINER.Size = new System.Drawing.Size(175, 26);
+            this.txtQCInfo_MOIST_EXAMINER.Size = new System.Drawing.Size(111, 26);
             this.txtQCInfo_MOIST_EXAMINER.TabIndex = 109;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(130, 52);
+            this.label11.Location = new System.Drawing.Point(130, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 63;
@@ -1605,26 +1642,20 @@
             // lblNO_OF_BALES
             // 
             this.lblNO_OF_BALES.AutoSize = true;
-            this.lblNO_OF_BALES.Location = new System.Drawing.Point(443, 52);
+            this.lblNO_OF_BALES.Location = new System.Drawing.Point(438, 53);
             this.lblNO_OF_BALES.Name = "lblNO_OF_BALES";
-            this.lblNO_OF_BALES.Size = new System.Drawing.Size(0, 12);
+            this.lblNO_OF_BALES.Size = new System.Drawing.Size(17, 12);
             this.lblNO_OF_BALES.TabIndex = 62;
+            this.lblNO_OF_BALES.Text = "XX";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(379, 52);
+            this.label29.Location = new System.Drawing.Point(379, 53);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(65, 12);
             this.label29.TabIndex = 61;
             this.label29.Text = "送货件数：";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(5, 5);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(398, 23);
-            this.progressBar1.TabIndex = 0;
             // 
             // OneQCAdmin
             // 
@@ -1812,5 +1843,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblResults;
+        private System.Windows.Forms.Label label14;
     }
 }
