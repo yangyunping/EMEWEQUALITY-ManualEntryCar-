@@ -618,7 +618,7 @@ namespace EMEWEQUALITY
             }
             // Bangding_Load("");
 
-            if (e.ClickedItem.Name == "toolStrip_ManaualEntryCar")
+            if (e.ClickedItem.Name == "toolStrip_ManaualEntryCar")//手动录入登记
             {
                 FormManaualEntryCar carinfo = new FormManaualEntryCar();
 

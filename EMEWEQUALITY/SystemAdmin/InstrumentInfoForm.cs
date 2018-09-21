@@ -48,19 +48,19 @@ namespace EMEWEQUALITY.SystemAdmin
                 DataTable dt = LinQBaseDao.Query(sql).Tables[0];
                 if (dt.Rows.Count > 0)
                 {
-                    cob_ClientName.DataSource = dt;
                     cob_ClientName.DisplayMember = "Client_NAME";
                     cob_ClientName.ValueMember = "Client_ID";
+                    cob_ClientName.DataSource = dt;
                     cmbCollection.SelectedIndex = 0;
                 }
-                dt = LinQBaseDao.Query("select Collection_ID,Collection_Name from CollectionInfo").Tables[0];
-                if (dt.Rows.Count > 0)
-                {
-                    cmbCollection.DataSource = dt;
-                    cmbCollection.DisplayMember = "Collection_Name";
-                    cmbCollection.ValueMember = "Collection_ID";
-                    cmbCollection.SelectedIndex = 0;
-                }
+                //dt = LinQBaseDao.Query("select Collection_ID,Collection_Name from CollectionInfo").Tables[0];
+                //if (dt.Rows.Count > 0)
+                //{
+                //    cmbCollection.DisplayMember = "Collection_Name";
+                //    cmbCollection.ValueMember = "Collection_ID";
+                //    cmbCollection.DataSource = dt;
+                //    cmbCollection.SelectedIndex = 0;
+                //}
             }
             catch (Exception)
             {
@@ -78,9 +78,9 @@ namespace EMEWEQUALITY.SystemAdmin
             dr["UserID"] = 0;
             dr["UserName"] = "";
             dt.Rows.InsertAt(dr, 0);
-            cobInstrument_UserName.DataSource = dt;
             cobInstrument_UserName.DisplayMember = "UserName";
             cobInstrument_UserName.ValueMember = "UserID";
+            cobInstrument_UserName.DataSource = dt;
             cobInstrument_UserName.SelectedIndex = 0;
         }
 

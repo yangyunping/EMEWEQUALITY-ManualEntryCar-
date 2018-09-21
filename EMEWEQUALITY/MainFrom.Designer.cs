@@ -166,6 +166,7 @@
             this.TSMIDictionary.Name = "TSMIDictionary";
             this.TSMIDictionary.Size = new System.Drawing.Size(180, 22);
             this.TSMIDictionary.Text = "字典管理";
+            this.TSMIDictionary.Visible = false;
             this.TSMIDictionary.Click += new System.EventHandler(this.TSMIDictionary_Click);
             // 
             // 系统配置ToolStripMenuItem
@@ -188,7 +189,7 @@
             // 
             this.TSMIPParity.Enabled = false;
             this.TSMIPParity.Name = "TSMIPParity";
-            this.TSMIPParity.Size = new System.Drawing.Size(180, 22);
+            this.TSMIPParity.Size = new System.Drawing.Size(172, 22);
             this.TSMIPParity.Text = "串口设置";
             this.TSMIPParity.Visible = false;
             this.TSMIPParity.Click += new System.EventHandler(this.TSMIPParity_Click);
@@ -197,7 +198,7 @@
             // 
             this.TSMIUpdateQCTime.Enabled = false;
             this.TSMIUpdateQCTime.Name = "TSMIUpdateQCTime";
-            this.TSMIUpdateQCTime.Size = new System.Drawing.Size(180, 22);
+            this.TSMIUpdateQCTime.Size = new System.Drawing.Size(172, 22);
             this.TSMIUpdateQCTime.Text = "打印标题设置";
             this.TSMIUpdateQCTime.Visible = false;
             this.TSMIUpdateQCTime.Click += new System.EventHandler(this.TSMIUpdateQCTime_Click);
@@ -206,7 +207,7 @@
             // 
             this.TSMIPunch.Enabled = false;
             this.TSMIPunch.Name = "TSMIPunch";
-            this.TSMIPunch.Size = new System.Drawing.Size(180, 22);
+            this.TSMIPunch.Size = new System.Drawing.Size(172, 22);
             this.TSMIPunch.Text = "初始化设置";
             this.TSMIPunch.Visible = false;
             this.TSMIPunch.Click += new System.EventHandler(this.TSMIPunch_Click);
@@ -215,7 +216,7 @@
             // 
             this.TSMIMenu.Enabled = false;
             this.TSMIMenu.Name = "TSMIMenu";
-            this.TSMIMenu.Size = new System.Drawing.Size(180, 22);
+            this.TSMIMenu.Size = new System.Drawing.Size(172, 22);
             this.TSMIMenu.Text = "菜单管理";
             this.TSMIMenu.Visible = false;
             this.TSMIMenu.Click += new System.EventHandler(this.TSMIMenu_Click);
@@ -224,7 +225,7 @@
             // 
             this.重量检测设置ToolStripMenuItem.Enabled = false;
             this.重量检测设置ToolStripMenuItem.Name = "重量检测设置ToolStripMenuItem";
-            this.重量检测设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.重量检测设置ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.重量检测设置ToolStripMenuItem.Text = "重量检测设置";
             this.重量检测设置ToolStripMenuItem.Visible = false;
             this.重量检测设置ToolStripMenuItem.Click += new System.EventHandler(this.重量检测设置ToolStripMenuItem_Click);
@@ -233,7 +234,7 @@
             // 
             this.短信设置ToolStripMenuItem.Enabled = false;
             this.短信设置ToolStripMenuItem.Name = "短信设置ToolStripMenuItem";
-            this.短信设置ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.短信设置ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.短信设置ToolStripMenuItem.Text = "短信设置";
             this.短信设置ToolStripMenuItem.Visible = false;
             this.短信设置ToolStripMenuItem.Click += new System.EventHandler(this.短信设置ToolStripMenuItem_Click);
@@ -242,7 +243,7 @@
             // 
             this.检测项目异常标准ToolStripMenuItem.Enabled = false;
             this.检测项目异常标准ToolStripMenuItem.Name = "检测项目异常标准ToolStripMenuItem";
-            this.检测项目异常标准ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.检测项目异常标准ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.检测项目异常标准ToolStripMenuItem.Text = "检测项目异常标准";
             this.检测项目异常标准ToolStripMenuItem.Visible = false;
             this.检测项目异常标准ToolStripMenuItem.Click += new System.EventHandler(this.检测项目异常标准ToolStripMenuItem_Click);
@@ -508,7 +509,7 @@
             // 
             this.TSMICarStatistics.Enabled = false;
             this.TSMICarStatistics.Name = "TSMICarStatistics";
-            this.TSMICarStatistics.Size = new System.Drawing.Size(180, 22);
+            this.TSMICarStatistics.Size = new System.Drawing.Size(148, 22);
             this.TSMICarStatistics.Text = "车辆质检统计";
             this.TSMICarStatistics.Visible = false;
             this.TSMICarStatistics.Click += new System.EventHandler(this.TSMICarStatistics_Click);
@@ -517,7 +518,7 @@
             // 
             this.TSMIQCStatistics.Enabled = false;
             this.TSMIQCStatistics.Name = "TSMIQCStatistics";
-            this.TSMIQCStatistics.Size = new System.Drawing.Size(180, 22);
+            this.TSMIQCStatistics.Size = new System.Drawing.Size(148, 22);
             this.TSMIQCStatistics.Text = "质检数据统计";
             this.TSMIQCStatistics.Visible = false;
             this.TSMIQCStatistics.Click += new System.EventHandler(this.TSMIQCStatistics_Click);
@@ -526,7 +527,7 @@
             // 
             this.TSMIUpdateQCStatistics.Enabled = false;
             this.TSMIUpdateQCStatistics.Name = "TSMIUpdateQCStatistics";
-            this.TSMIUpdateQCStatistics.Size = new System.Drawing.Size(180, 22);
+            this.TSMIUpdateQCStatistics.Size = new System.Drawing.Size(148, 22);
             this.TSMIUpdateQCStatistics.Text = "修改数据统计";
             this.TSMIUpdateQCStatistics.Visible = false;
             this.TSMIUpdateQCStatistics.Click += new System.EventHandler(this.TSMIUpdateQCStatistics_Click);
@@ -535,7 +536,7 @@
             // 
             this.退货统计ToolStripMenuItem.Enabled = false;
             this.退货统计ToolStripMenuItem.Name = "退货统计ToolStripMenuItem";
-            this.退货统计ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退货统计ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.退货统计ToolStripMenuItem.Text = "退货统计";
             this.退货统计ToolStripMenuItem.Visible = false;
             this.退货统计ToolStripMenuItem.Click += new System.EventHandler(this.退货统计ToolStripMenuItem_Click);

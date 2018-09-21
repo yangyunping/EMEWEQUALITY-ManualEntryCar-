@@ -1578,12 +1578,14 @@ namespace EMEWEQUALITY.QCAdmin
                         btnSave.Enabled = true;
                     }
                     #endregion
+
+# region        根据水分平均值、杂质、杂纸计算出货品等级符合的最佳等级
                     if (!string.IsNullOrEmpty(txtQCInfo_MOIST_PER_SAMPLE.Text.Trim()) && !string.IsNullOrEmpty(txtQCInfo_MATERIAL_SCALE.Text.Trim()) && !string.IsNullOrEmpty(txtQCInfo_PAPER_SCALE.Text.Trim()))
                     {
                         Expression<Func<Unusualstandard, bool>> fun = n => Convert.ToDecimal(n.Unusualstandard_DEGRADE_MOISTURE_PERCT) >= Convert.ToDecimal(txtQCInfo_MOIST_PER_SAMPLE.Text);
                         fun = fun.And(n => Convert.ToDecimal(n.Unusualstandard_DEGRADE_MATERIAL_PERCT) >= Convert.ToDecimal(txtQCInfo_MATERIAL_SCALE.Text));
                         fun = fun.And(n => Convert.ToDecimal(n.DEGRADE_OUTTHROWS_PERCT) >= Convert.ToDecimal(txtQCInfo_PAPER_SCALE.Text));
-                        IEnumerable<Unusualstandard> unusualstandard = UnusualstandardDAL.Query(fun).OrderBy(n=> n.Unusualstandard_DEGRADE_MATERIAL_PERCT);
+                        IEnumerable<Unusualstandard> unusualstandard = UnusualstandardDAL.Query(fun).OrderBy(n=> n.Unusualstandard_DEGRADE_MOISTURE_PERCT);
 
                         if (unusualstandard != null)
                         {
@@ -1597,7 +1599,7 @@ namespace EMEWEQUALITY.QCAdmin
                                 lblResults.ForeColor = Color.Black;
                             }
                         }
-
+#endregion
                         // bool b = ADDUnusual(iQcInfoID, "杂质", Convert.ToDouble(txtQCInfo_MATERIAL_SCALE.Text.Trim()), "Unusualstandard_DEGRADE_MATERIAL_PERCT");
                     }
 

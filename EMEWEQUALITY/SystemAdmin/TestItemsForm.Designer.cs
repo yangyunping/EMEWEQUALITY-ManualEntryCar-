@@ -183,7 +183,6 @@
             this.btnAdd.TabIndex = 199;
             this.btnAdd.Text = "添  加";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpUser

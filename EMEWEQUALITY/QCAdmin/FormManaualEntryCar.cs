@@ -30,7 +30,7 @@ namespace EMEWEQUALITY.QCAdmin
             txt_REF_NO.Text = "";
             txt_SHIPMENT_NO.Text = "";
             txt_WEIGHT_TICKET_NO.Text = "";
-            
+            cmb_PROD_ID.Text = "";
         }
 
         private void btn_CarAdd_Click(object sender, EventArgs e)
