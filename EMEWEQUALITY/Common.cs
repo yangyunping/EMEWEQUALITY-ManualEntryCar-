@@ -406,8 +406,6 @@ namespace EMEWEQUALITY
         /// 当前是否有获取的水分仪数据 true 为获取，False为不获取
         /// </summary>
         public static bool ISCURRENTDATA = false;
-
-
         /// <summary>
         /// 当前是否有获取的2号水分仪数据 true 为获取，False为不获取
         /// </summary>

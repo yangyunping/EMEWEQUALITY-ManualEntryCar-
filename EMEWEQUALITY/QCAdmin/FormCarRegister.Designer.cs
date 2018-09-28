@@ -563,9 +563,9 @@
             // 
             // btnSeacher
             // 
-            this.btnSeacher.Location = new System.Drawing.Point(1009, 46);
+            this.btnSeacher.Location = new System.Drawing.Point(1005, 53);
             this.btnSeacher.Name = "btnSeacher";
-            this.btnSeacher.Size = new System.Drawing.Size(88, 43);
+            this.btnSeacher.Size = new System.Drawing.Size(90, 39);
             this.btnSeacher.TabIndex = 78;
             this.btnSeacher.Text = "搜   索";
             this.btnSeacher.UseCompatibleTextRendering = true;

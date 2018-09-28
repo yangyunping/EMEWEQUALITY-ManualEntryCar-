@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.winWordControl1 = new WinWordControl.WinWordControl();
             this.lblDRAW_EXAM_INTERFACE_ID = new System.Windows.Forms.Label();
             this.lblPackets_ID = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -109,7 +110,6 @@
             this.tsprintB = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.printMenu = new System.Windows.Forms.ToolStripLabel();
-            this.winWordControl1 = new WinWordControl.WinWordControl();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lvwUserList)).BeginInit();
@@ -146,6 +146,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "抽包详情";
+            // 
+            // winWordControl1
+            // 
+            this.winWordControl1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.winWordControl1.Location = new System.Drawing.Point(252, 107);
+            this.winWordControl1.Name = "winWordControl1";
+            this.winWordControl1.Size = new System.Drawing.Size(440, 336);
+            this.winWordControl1.TabIndex = 13;
             // 
             // lblDRAW_EXAM_INTERFACE_ID
             // 
@@ -263,7 +271,7 @@
             // lblPackets_DTS
             // 
             this.lblPackets_DTS.AutoSize = true;
-            this.lblPackets_DTS.Location = new System.Drawing.Point(355, 51);
+            this.lblPackets_DTS.Location = new System.Drawing.Point(355, 52);
             this.lblPackets_DTS.Name = "lblPackets_DTS";
             this.lblPackets_DTS.Size = new System.Drawing.Size(0, 12);
             this.lblPackets_DTS.TabIndex = 1;
@@ -271,7 +279,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(627, 51);
+            this.label8.Location = new System.Drawing.Point(627, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 0;
@@ -280,7 +288,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(278, 51);
+            this.label4.Location = new System.Drawing.Point(278, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 12);
             this.label4.TabIndex = 0;
@@ -289,7 +297,7 @@
             // lblNO_OF_BALES
             // 
             this.lblNO_OF_BALES.AutoSize = true;
-            this.lblNO_OF_BALES.Location = new System.Drawing.Point(125, 51);
+            this.lblNO_OF_BALES.Location = new System.Drawing.Point(125, 52);
             this.lblNO_OF_BALES.Name = "lblNO_OF_BALES";
             this.lblNO_OF_BALES.Size = new System.Drawing.Size(0, 12);
             this.lblNO_OF_BALES.TabIndex = 1;
@@ -297,7 +305,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 51);
+            this.label2.Location = new System.Drawing.Point(66, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 0;
@@ -355,7 +363,7 @@
             // 
             // txtbeginTime
             // 
-            this.txtbeginTime.Location = new System.Drawing.Point(415, 67);
+            this.txtbeginTime.Location = new System.Drawing.Point(415, 68);
             this.txtbeginTime.Name = "txtbeginTime";
             this.txtbeginTime.Size = new System.Drawing.Size(138, 21);
             this.txtbeginTime.TabIndex = 60;
@@ -363,7 +371,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(599, 73);
+            this.label15.Location = new System.Drawing.Point(599, 72);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 12);
             this.label15.TabIndex = 57;
@@ -393,7 +401,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(808, 29);
+            this.label14.Location = new System.Drawing.Point(808, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(125, 12);
             this.label14.TabIndex = 12;
@@ -422,7 +430,7 @@
             // 
             // txtPO_NO
             // 
-            this.txtPO_NO.Location = new System.Drawing.Point(472, 25);
+            this.txtPO_NO.Location = new System.Drawing.Point(472, 26);
             this.txtPO_NO.Name = "txtPO_NO";
             this.txtPO_NO.Size = new System.Drawing.Size(100, 21);
             this.txtPO_NO.TabIndex = 10;
@@ -446,9 +454,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(872, 65);
+            this.button1.Location = new System.Drawing.Point(839, 64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(76, 33);
             this.button1.TabIndex = 9;
             this.button1.Text = "查询";
             this.button1.UseVisualStyleBackColor = true;
@@ -457,7 +465,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 29);
+            this.label9.Location = new System.Drawing.Point(35, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 0;
@@ -466,7 +474,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 71);
+            this.label13.Location = new System.Drawing.Point(18, 72);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(197, 12);
             this.label13.TabIndex = 6;
@@ -475,7 +483,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(221, 31);
+            this.label10.Location = new System.Drawing.Point(221, 30);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 12);
             this.label10.TabIndex = 2;
@@ -484,7 +492,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(606, 31);
+            this.label12.Location = new System.Drawing.Point(606, 30);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 12);
             this.label12.TabIndex = 6;
@@ -493,7 +501,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(413, 31);
+            this.label11.Location = new System.Drawing.Point(413, 30);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 4;
@@ -849,14 +857,6 @@
             this.printMenu.Size = new System.Drawing.Size(53, 22);
             this.printMenu.Text = "打印模板";
             this.printMenu.Click += new System.EventHandler(this.printMenu_Click);
-            // 
-            // winWordControl1
-            // 
-            this.winWordControl1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.winWordControl1.Location = new System.Drawing.Point(252, 107);
-            this.winWordControl1.Name = "winWordControl1";
-            this.winWordControl1.Size = new System.Drawing.Size(440, 336);
-            this.winWordControl1.TabIndex = 13;
             // 
             // PacktsForm
             // 
